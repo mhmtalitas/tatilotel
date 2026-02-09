@@ -53,7 +53,7 @@
     display: none;
     background: #fff;
     padding: 25px;
-    border-radius: 15px;
+    border-radius: 20px !important;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     gap: 15px;
     align-items: center;

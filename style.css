@@ -255,8 +255,8 @@ h4 {
 }
 
 .main-nav-item {
-    position: static;
-    /* Allow mega menu to size to container */
+    position: relative;
+    /* Changed from static for dropdown positioning */
 }
 
 .main-nav-link {
@@ -285,11 +285,12 @@ h4 {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
-    /* Now full width of container */
+    min-width: 260px;
+    /* Standard dropdown width */
+    width: auto;
     background: #fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 20px;
     display: none;
     z-index: 1001;
     border-top: 2px solid var(--primary-color);
@@ -300,13 +301,11 @@ h4 {
     animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Mega Menu Grid Layout */
+/* Mega Menu Grid Layout - Changed to simple list for dropdowns */
 .mega-menu-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 columns for side-by-side layout (Konsept, Kıbrıs, Popüler) */
-    gap: 40px;
-    align-items: start;
+    display: block;
+    /* Removed grid */
+    flex-direction: column;
 }
 
 .mega-col h4 {

@@ -4,10 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sömestre Turları - TatilOtel</title>
+    <title>Turlar - TatilOtel</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css">
 </head>
 
 <body>
@@ -18,14 +26,12 @@
         <div class="top-header">
             <div class="container top-header-container">
                 <a href="index.html" class="logo">
-                    <span class="logo-icon"><i class="fa-solid fa-umbrella-beach"></i></span>
-                    Tatil<span class="highlight">Otel</span>
+                    <img src="assets/logo.png" alt="TatilOtel" class="logo-img">
                 </a>
                 <div class="top-actions">
                     <div class="top-phone">
                         <i class="fa-solid fa-phone"></i> 0850 532 37 73
                     </div>
-                    <!-- Notification removed -->
                     <a href="#" class="btn-register">Kayıt Ol</a>
                     <a href="#" class="btn-login"><i class="fa-solid fa-user"></i> Giriş Yap</a>
                 </div>
@@ -40,66 +46,14 @@
             <div class="container">
                 <nav class="main-nav">
                     <ul class="main-nav-list">
-                        <!-- OTEL Mega Menu -->
-                        <li class="main-nav-item">
-                            <a href="hotels.html" class="main-nav-link">
-                                Otel <i class="fa-solid fa-chevron-down"></i>
-                            </a>
-                            <div class="mega-menu">
-                                <div class="mega-menu-grid">
-                                    <div class="mega-col">
-                                        <h4>Konsept Oteller</h4>
-                                        <ul>
-                                            <li><a href="#">2 Çocuk Ücretsiz Oteller</a></li>
-                                            <li><a href="#">Aquaparklı Oteller</a></li>
-                                            <li><a href="#">Balayı Otelleri</a></li>
-                                            <li><a href="#">Bungalov Otelleri</a></li>
-                                            <li><a href="#">Cave Oteller</a></li>
-                                            <li><a href="#">Çocuk Dostu Oteller</a></li>
-                                            <li><a href="#">Denize Sıfır Oteller</a></li>
-                                            <li><a href="#">Havalimanı Otelleri</a></li>
-                                            <li><a href="#">Her Şey Dahil Oteller</a></li>
-                                            <li><a href="#">İş Otelleri</a></li>
-                                            <li><a href="#">İslami Konsept Oteller</a></li>
-                                            <li><a href="#">Jakuzili Oteller</a></li>
-                                            <li><a href="#">Kayak Otelleri</a></li>
-                                            <li><a href="#">Sezon Fırsatı Otelleri</a></li>
-                                            <li><a href="#">Spa Otelleri</a></li>
-                                            <li><a href="#">Termal Oteller</a></li>
-                                            <li><a href="#">Villa Otelleri</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="mega-col">
-                                        <h4>Kıbrıs Otelleri</h4>
-                                        <ul>
-                                            <li><a href="#">Girne Otelleri</a></li>
-                                            <li><a href="#">Lefkoşa Otelleri</a></li>
-                                            <li><a href="#">Gazimağusa Otelleri</a></li>
-                                            <li><a href="#">İskele Otelleri</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="mega-col">
-                                        <h4>Popüler</h4>
-                                        <ul>
-                                            <li><a href="#">Dipkarpaz Otelleri</a></li>
-                                            <li><a href="#">Lapta Otelleri</a></li>
-                                            <li><a href="#">Bafra Otelleri</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- Image removed to match index -->
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- TUR Mega Menu -->
+                        <!-- KONSEPT TURLAR Dropdown -->
                         <li class="main-nav-item">
                             <a href="tours.html" class="main-nav-link">
-                                Tur <i class="fa-solid fa-chevron-down"></i>
+                                KONSEPT TURLAR <i class="fa-solid fa-chevron-down"></i>
                             </a>
                             <div class="mega-menu">
                                 <div class="mega-menu-grid">
                                     <div class="mega-col">
-                                        <h4>Konsept Turlar</h4>
                                         <ul>
                                             <li><a href="#">Kültür Turları</a></li>
                                             <li><a href="#">Balayı Turları</a></li>
@@ -108,8 +62,18 @@
                                             <li><a href="#">Fotoğraf Turları</a></li>
                                         </ul>
                                     </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- YURTİÇİ TURLARI Dropdown -->
+                        <li class="main-nav-item">
+                            <a href="tours.html" class="main-nav-link">
+                                YURTİÇİ TURLARI <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-grid">
                                     <div class="mega-col">
-                                        <h4>Yurtiçi Turları</h4>
                                         <ul>
                                             <li><a href="#">Ege Akdeniz Turları</a></li>
                                             <li><a href="#">Doğu Anadolu</a></li>
@@ -118,8 +82,18 @@
                                             <li><a href="#">GAP Turları</a></li>
                                         </ul>
                                     </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- YURT DIŞI TURLARI Dropdown -->
+                        <li class="main-nav-item">
+                            <a href="tours.html" class="main-nav-link">
+                                YURT DIŞI TURLARI <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-grid">
                                     <div class="mega-col">
-                                        <h4>Yurt Dışı Turları</h4>
                                         <ul>
                                             <li><a href="#">Avrupa Turları</a></li>
                                             <li><a href="#">Amerika Turları</a></li>
@@ -128,14 +102,10 @@
                                             <li><a href="#">İspanya Turları</a></li>
                                         </ul>
                                     </div>
-                                    <!-- Image removed to match index -->
                                 </div>
                             </div>
                         </li>
 
-                        <li class="main-nav-item"><a href="tours.html" class="main-nav-link">YURTDIŞI TURLARI</a></li>
-                        <li class="main-nav-item"><a href="hotels.html" class="main-nav-link">KAYAK OTELLERİ</a></li>
-                        <li class="main-nav-item"><a href="hotels.html" class="main-nav-link">KIBRIS OTELLERİ</a></li>
                         <li class="main-nav-item"><a href="tours.html" class="main-nav-link">SÖMESTİR TURLARI</a></li>
                         <li class="main-nav-item"><a href="#" class="main-nav-link" style="color:red;">KAMPANYALAR</a>
                         </li>

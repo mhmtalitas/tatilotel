@@ -1304,8 +1304,13 @@ h4 {
         transform: none;
     }
 
+    /* CRITICAL: Disable hover on mobile to prevent conflict with .active toggle */
+    .main-nav-item:hover .mega-menu {
+        display: none !important;
+    }
+
     .main-nav-item.active .mega-menu {
-        display: block;
+        display: block !important;
         /* Show when parent is toggled active */
     }
 

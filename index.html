@@ -696,48 +696,51 @@
             evt.currentTarget.classList.add("active");
         }
 
-        // Mobile Menu Toggle
-        (function () {
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            const mainNavBar = document.querySelector('.main-nav-bar');
+        // Mobile Menu Toggle - PRODUCTION VERSION
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNavBar = document.querySelector('.main-nav-bar');
 
-            if (menuBtn) {
-                menuBtn.onclick = function (e) {
-                    e.preventDefault();
-                    mainNavBar.classList.toggle('active');
-                };
-            }
-
-            // Mobile Mega Menu Accordion
-            const menuItems = document.querySelectorAll('.main-nav-item');
-
-            menuItems.forEach(item => {
-                const link = item.querySelector('.main-nav-link');
-                const megaMenu = item.querySelector('.mega-menu');
-
-                // Only apply logic if the item actually has a mega menu
-                if (link && megaMenu) {
-                    link.onclick = function (e) {
-                        // Strict check for mobile view
-                        if (window.innerWidth <= 768) {
-                            e.preventDefault();
-
-                            // 1. Toggle THIS item immediately
-                            const isOpen = item.classList.toggle('active');
-
-                            // 2. If we just opened it, we must close all OTHERS
-                            if (isOpen) {
-                                menuItems.forEach(otherItem => {
-                                    if (otherItem !== item) {
-                                        otherItem.classList.remove('active');
-                                    }
-                                });
-                            }
-                        }
-                    };
-                }
+        // Hamburger menu toggle
+        if (menuBtn && mainNavBar) {
+            menuBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                mainNavBar.classList.toggle('active');
             });
-        })();
+        }
+
+        // Mega menu accordion - Direct approach on each link
+        const menuItems = document.querySelectorAll('.main-nav-item');
+
+        menuItems.forEach((item, index) => {
+            const link = item.querySelector('.main-nav-link');
+            const megaMenu = item.querySelector('.mega-menu');
+
+            if (link && megaMenu) {
+                link.addEventListener('click', function (e) {
+                    // Only handle on mobile
+                    if (window.innerWidth > 768) {
+                        return;
+                    }
+
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Get current state
+                    const wasActive = item.classList.contains('active');
+
+                    // Close all menus
+                    menuItems.forEach((otherItem) => {
+                        otherItem.classList.remove('active');
+                    });
+
+                    // Toggle this one
+                    if (!wasActive) {
+                        item.classList.add('active');
+                    }
+                }, true); // Use capture phase
+            }
+        });
     </script>
 </body>
 

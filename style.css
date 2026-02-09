@@ -181,10 +181,9 @@ h4 {
 }
 
 .btn-login {
-    background-color: #2c3e50;
+    background: linear-gradient(135deg, #F8971F 0%, #e0820e 100%);
     color: #fff;
     padding: 10px 25px;
-    /* Professional padding */
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -195,9 +194,9 @@ h4 {
 }
 
 .btn-login:hover {
-    background-color: #34495e;
+    background: linear-gradient(135deg, #e0820e 0%, #d67610 100%);
     transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(44, 62, 80, 0.2);
+    box-shadow: 0 4px 12px rgba(248, 151, 31, 0.3);
 }
 
 /* .top-link removed as we use btn-register now */

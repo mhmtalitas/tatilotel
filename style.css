@@ -209,6 +209,29 @@ h4 {
     border-bottom: 1px solid #e0e0e0;
 }
 
+/* Hide on mobile by default - shown via JS when hamburger clicked */
+@media (max-width: 768px) {
+    .main-nav-bar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        z-index: 1000;
+        border: none;
+        border-top: 1px solid #eee;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .main-nav-bar.active {
+        display: block;
+    }
+}
+
 .main-nav-bar .container {
     position: relative;
     /* Anchor for mega menu */
@@ -1247,6 +1270,12 @@ h4 {
 }
 
 @media (max-width: 768px) {
+
+    /* Account for fixed header on mobile */
+    body {
+        padding-top: 60px;
+    }
+
     .top-header {
         padding: 10px 0;
     }
@@ -1256,30 +1285,8 @@ h4 {
         /* Hide top actions on mobile to prevent overflow */
     }
 
-    /* Mobile Navigation */
-    .main-nav-bar {
-        display: none;
-        /* Hidden by default */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #fff;
-        z-index: 1000;
-        border-top: 1px solid #eee;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        max-height: calc(100vh - 70px);
-        /* Limit height to viewport minus header */
-        overflow-y: auto;
-        /* Allow scrolling within the menu */
-        overscroll-behavior: contain;
-        /* Prevent body scroll when menu is open */
-    }
+    /* Mobile nav styles are defined earlier in the CSS */
 
-    /* When class 'acitve' is added by JS */
-    .main-nav-bar.active {
-        display: block;
-    }
 
     .main-nav-list {
         flex-direction: column;

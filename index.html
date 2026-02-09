@@ -14,6 +14,7 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css">
 </head>
 
 <body>
@@ -151,84 +152,124 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">Hayalinizdeki Tatili Keşfedin</h1>
-            <p class="hero-subtitle">En uygun fiyatlarla lüks oteller ve unutulmaz anlar sizi bekliyor.</p>
+    <!-- Search Section (Obilet Style - Below Navbar) -->
+    <section class="search-section">
+        <div class="container">
+            <!-- Search Tabs -->
+            <div class="search-tabs">
+                <button class="search-tab active" onclick="openSearch(event, 'hotel-search')">
+                    <i class="fa-solid fa-hotel"></i> Otel
+                </button>
+                <button class="search-tab" onclick="openSearch(event, 'tour-search')">
+                    <i class="fa-solid fa-plane"></i> Tur
+                </button>
+            </div>
 
-            <!-- Search Section Wrapper -->
-            <div class="search-container-wrapper">
-                <!-- Tabs -->
-                <div class="search-tabs">
-                    <button class="search-tab active" onclick="openSearch(event, 'hotel-search')">
-                        <i class="fa-solid fa-hotel"></i> Otel Ara
-                    </button>
-                    <button class="search-tab" onclick="openSearch(event, 'tour-search')">
-                        <i class="fa-solid fa-plane"></i> Tur Ara
-                    </button>
+            <!-- Hotel Search Box -->
+            <div id="hotel-search" class="search-box active">
+                <div class="search-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="search-input-group">
+                        <label>Nereye?</label>
+                        <input type="text" placeholder="Şehir veya Otel Ara">
+                    </div>
                 </div>
+                <div class="search-item">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <div class="search-input-group">
+                        <label>Giriş - Çıkış</label>
+                        <input type="text" placeholder="Tarih Seçin">
+                    </div>
+                </div>
+                <div class="search-item">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="search-input-group">
+                        <label>Misafir</label>
+                        <input type="text" placeholder="2 Yetişkin">
+                    </div>
+                </div>
+                <button class="search-btn">Otel Ara</button>
+            </div>
 
-                <!-- Hotel Search Box -->
-                <div id="hotel-search" class="search-box active">
-                    <div class="search-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div class="search-input-group">
-                            <label>Nereye?</label>
-                            <input type="text" placeholder="Şehir veya Otel Ara">
-                        </div>
+            <!-- Tour Search Box -->
+            <div id="tour-search" class="search-box">
+                <div class="search-item">
+                    <i class="fa-solid fa-globe"></i>
+                    <div class="search-input-group">
+                        <label>Nereye Gitmek İstersin?</label>
+                        <input type="text" placeholder="Ülke, Şehir veya Tur Adı">
                     </div>
-                    <div class="search-divider"></div>
-                    <div class="search-item">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div class="search-input-group">
-                            <label>Giriş - Çıkış</label>
-                            <input type="text" placeholder="Tarih Seçin">
-                        </div>
-                    </div>
-                    <div class="search-divider"></div>
-                    <div class="search-item">
-                        <i class="fa-solid fa-user"></i>
-                        <div class="search-input-group">
-                            <label>Misafir</label>
-                            <input type="text" placeholder="2 Yetişkin">
-                        </div>
-                    </div>
-                    <button class="search-btn">Otel Ara</button>
                 </div>
-
-                <!-- Tour Search Box -->
-                <div id="tour-search" class="search-box">
-                    <div class="search-item">
-                        <i class="fa-solid fa-globe"></i>
-                        <div class="search-input-group">
-                            <label>Nereye Gitmek İstersin?</label>
-                            <input type="text" placeholder="Ülke, Şehir veya Tur Adı">
-                        </div>
+                <div class="search-item">
+                    <i class="fa-solid fa-calendar-alt"></i>
+                    <div class="search-input-group">
+                        <label>Tarih Aralığı</label>
+                        <input type="text" placeholder="Hangi Tarihler?">
                     </div>
-                    <div class="search-divider"></div>
-                    <div class="search-item">
-                        <i class="fa-solid fa-calendar-alt"></i>
-                        <div class="search-input-group">
-                            <label>Tarih Aralığı</label>
-                            <input type="text" placeholder="Hangi Tarihler?">
-                        </div>
-                    </div>
-                    <div class="search-divider"></div>
-                    <div class="search-item">
-                        <i class="fa-solid fa-users"></i> <!-- Generic user icon -->
-                        <div class="search-input-group">
-                            <label>Kişi Sayısı</label>
-                            <input type="text" placeholder="Kaç Kişi?">
-                        </div>
-                    </div>
-                    <!-- Reusing generic class but could specialize icon -->
-                    <button class="search-btn" style="background-color: #e67e22;">Tur Ara</button>
                 </div>
+                <div class="search-item">
+                    <i class="fa-solid fa-users"></i>
+                    <div class="search-input-group">
+                        <label>Kişi Sayısı</label>
+                        <input type="text" placeholder="Kaç Kişi?">
+                    </div>
+                </div>
+                <button class="search-btn">Tur Ara</button>
             </div>
         </div>
     </section>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                    alt="Tatil Görseli 1">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Hayalinizdeki Tatili Keşfedin</h2>
+                    <p>En uygun fiyatlarla lüks oteller ve unutulmaz anlar sizi bekliyor</p>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                    alt="Tatil Görseli 2">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Eşsiz Deneyimler Sizi Bekliyor</h2>
+                    <p>Kıbrıs'ın en güzel otelleri ve turları ile unutulmaz anılar biriktirin</p>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                    alt="Tatil Görseli 3">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Sömestre Tatilinde Fırsatları Kaçırmayın</h2>
+                    <p>Ailece keyifli bir tatil için özel kampanyalarımızı inceleyin</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="slider-btn prev" onclick="changeSlide(-1)">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn next" onclick="changeSlide(1)">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- Slider Dots -->
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
 
     <!-- Professional Tour Cards Section (Replaces Quick Actions) -->
     <section class="pro-section" style="background-color: #fff; padding-top: 40px; padding-bottom: 20px;">
@@ -741,6 +782,69 @@
                 }, true); // Use capture phase
             }
         });
+
+        // ========================================
+        // HERO SLIDER FUNCTIONALITY
+        // ========================================
+        let currentSlideIndex = 1;
+        let slideInterval;
+
+        // Show specific slide
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+
+            if (!slides.length) return;
+
+            if (n > slides.length) {
+                currentSlideIndex = 1;
+            }
+            if (n < 1) {
+                currentSlideIndex = slides.length;
+            }
+
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Remove active from all dots
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+
+            // Show current slide
+            slides[currentSlideIndex - 1].classList.add('active');
+            dots[currentSlideIndex - 1].classList.add('active');
+        }
+
+        // Next/Previous controls
+        function changeSlide(n) {
+            clearInterval(slideInterval);
+            currentSlideIndex += n;
+            showSlide(currentSlideIndex);
+            startAutoPlay();
+        }
+
+        // Dot controls
+        function currentSlide(n) {
+            clearInterval(slideInterval);
+            currentSlideIndex = n;
+            showSlide(currentSlideIndex);
+            startAutoPlay();
+        }
+
+        // Auto play
+        function startAutoPlay() {
+            slideInterval = setInterval(() => {
+                currentSlideIndex++;
+                showSlide(currentSlideIndex);
+            }, 5000); // Change slide every 5 seconds
+        }
+
+        // Initialize slider
+        showSlide(currentSlideIndex);
+        startAutoPlay();
     </script>
 </body>
 

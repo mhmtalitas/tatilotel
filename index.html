@@ -49,57 +49,6 @@
             <div class="container">
                 <nav class="main-nav">
                     <ul class="main-nav-list">
-                        <!-- OTEL Mega Menu -->
-                        <li class="main-nav-item">
-                            <a href="hotels.html" class="main-nav-link">
-                                Otel <i class="fa-solid fa-chevron-down"></i>
-                            </a>
-                            <div class="mega-menu">
-                                <div class="mega-menu-grid">
-                                    <div class="mega-col">
-                                        <h4>Konsept Oteller</h4>
-                                        <ul>
-                                            <li><a href="#">2 Çocuk Ücretsiz Oteller</a></li>
-                                            <li><a href="#">Aquaparklı Oteller</a></li>
-                                            <li><a href="#">Balayı Otelleri</a></li>
-                                            <li><a href="#">Bungalov Otelleri</a></li>
-                                            <li><a href="#">Cave Oteller</a></li>
-                                            <li><a href="#">Çocuk Dostu Oteller</a></li>
-                                            <li><a href="#">Denize Sıfır Oteller</a></li>
-                                            <li><a href="#">Havalimanı Otelleri</a></li>
-                                            <li><a href="#">Her Şey Dahil Oteller</a></li>
-                                            <li><a href="#">İş Otelleri</a></li>
-                                            <li><a href="#">İslami Konsept Oteller</a></li>
-                                            <li><a href="#">Jakuzili Oteller</a></li>
-                                            <li><a href="#">Kayak Otelleri</a></li>
-                                            <li><a href="#">Sezon Fırsatı Otelleri</a></li>
-                                            <li><a href="#">Spa Otelleri</a></li>
-                                            <li><a href="#">Termal Oteller</a></li>
-                                            <li><a href="#">Villa Otelleri</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="mega-col">
-                                        <h4>Kıbrıs Otelleri</h4>
-                                        <ul>
-                                            <li><a href="#">Girne Otelleri</a></li>
-                                            <li><a href="#">Lefkoşa Otelleri</a></li>
-                                            <li><a href="#">Gazimağusa Otelleri</a></li>
-                                            <li><a href="#">İskele Otelleri</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="mega-col">
-                                        <h4>Popüler</h4>
-                                        <ul>
-                                            <li><a href="#">Dipkarpaz Otelleri</a></li>
-                                            <li><a href="#">Lapta Otelleri</a></li>
-                                            <li><a href="#">Bafra Otelleri</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- Image removed as requested -->
-                                </div>
-                            </div>
-                        </li>
-
                         <!-- TUR Mega Menu -->
                         <li class="main-nav-item">
                             <a href="tours.html" class="main-nav-link">
@@ -137,14 +86,11 @@
                                             <li><a href="#">İspanya Turları</a></li>
                                         </ul>
                                     </div>
-                                    <!-- Image removed as requested -->
                                 </div>
                             </div>
                         </li>
 
                         <li class="main-nav-item"><a href="tours.html" class="main-nav-link">YURTDIŞI TURLARI</a></li>
-                        <li class="main-nav-item"><a href="hotels.html" class="main-nav-link">KAYAK OTELLERİ</a></li>
-                        <li class="main-nav-item"><a href="hotels.html" class="main-nav-link">KIBRIS OTELLERİ</a></li>
                         <li class="main-nav-item"><a href="tours.html" class="main-nav-link">SÖMESTİR TURLARI</a></li>
                         <li class="main-nav-item"><a href="#" class="main-nav-link" style="color:red;">KAMPANYALAR</a>
                         </li>
@@ -157,44 +103,8 @@
     <!-- Search Section (Obilet Style - Below Navbar) -->
     <section class="search-section">
         <div class="container">
-            <!-- Search Tabs -->
-            <div class="search-tabs">
-                <button class="search-tab active" onclick="openSearch(event, 'hotel-search')">
-                    <i class="fa-solid fa-hotel"></i> Otel
-                </button>
-                <button class="search-tab" onclick="openSearch(event, 'tour-search')">
-                    <i class="fa-solid fa-plane"></i> Tur
-                </button>
-            </div>
-
-            <!-- Hotel Search Box -->
-            <div id="hotel-search" class="search-box active">
-                <div class="search-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div class="search-input-group">
-                        <label>Nereye?</label>
-                        <input type="text" placeholder="Şehir veya Otel Ara">
-                    </div>
-                </div>
-                <div class="search-item">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <div class="search-input-group">
-                        <label>Giriş - Çıkış</label>
-                        <input type="text" placeholder="Tarih Seçin">
-                    </div>
-                </div>
-                <div class="search-item">
-                    <i class="fa-solid fa-user"></i>
-                    <div class="search-input-group">
-                        <label>Misafir</label>
-                        <input type="text" placeholder="2 Yetişkin">
-                    </div>
-                </div>
-                <button class="search-btn">Otel Ara</button>
-            </div>
-
-            <!-- Tour Search Box -->
-            <div id="tour-search" class="search-box">
+            <!-- Tour Search Box (No Tabs - Direct Search) -->
+            <div class="search-box active">
                 <div class="search-item">
                     <i class="fa-solid fa-globe"></i>
                     <div class="search-input-group">

@@ -213,16 +213,16 @@ h4 {
 @media (max-width: 768px) {
     .main-nav-bar {
         display: none;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 50px;
+        /* Below fixed header */
         left: 0;
         width: 100%;
+        height: calc(100vh - 50px);
+        /* Full screen minus header */
         background: #fff;
-        z-index: 1000;
+        z-index: 999;
         border: none;
-        border-top: 1px solid #eee;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        max-height: calc(100vh - 70px);
         overflow-y: auto;
         overscroll-behavior: contain;
     }
@@ -1273,7 +1273,7 @@ h4 {
 
     /* Account for fixed header on mobile */
     body {
-        padding-top: 60px;
+        padding-top: 50px;
     }
 
     .top-header {

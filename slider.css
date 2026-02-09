@@ -4,6 +4,7 @@
 .search-section {
     background: linear-gradient(135deg, #F8971F 0%, #e0820e 100%);
     padding: 30px 0;
+    margin-top: 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 

@@ -133,6 +133,19 @@ h4 {
     align-items: center;
 }
 
+/* Logo */
+.logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
 .top-actions {
     display: flex;
     align-items: center;

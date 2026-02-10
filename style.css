@@ -3725,22 +3725,53 @@ h4 {
     }
 
     .timeline {
-        padding-left: 45px;
+        padding-left: 0;
+        margin-left: 0;
     }
 
     .timeline::before {
-        left: 15px;
+        display: none;
+    }
+
+    .timeline-item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 30px;
+        padding-left: 0;
     }
 
     .day-circle {
-        left: -45px;
-        width: 36px;
-        height: 36px;
-        font-size: 0.6rem;
+        position: static;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 5px;
+        border: 2px solid #ccc;
+        background: #f0f0f0;
+        color: #333;
     }
 
     .day-circle span {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .timeline-content {
+        padding-left: 0;
+        width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    .detail-tabs {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
     }
 
     .pax-controls {

@@ -1,0 +1,128 @@
+/* --- ULTIMATE MOBILE FIX --- */
+/* Bu kodlar en altta olmali ve !important ile digerlerini ezmeli */
+@media screen and (max-width: 900px) {
+
+    /* 1. Global Overflow Protection */
+    html,
+    body {
+        overflow-x: hidden !important;
+        position: relative !important;
+        max-width: 100vw !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 2. Fix Header */
+    body {
+        padding-top: 140px !important;
+        /* Header height safety */
+    }
+
+    .header-wrapper {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        max-width: 100vw !important;
+        z-index: 9999;
+    }
+
+    /* 3. Force Containers inside Viewport */
+    .container,
+    .detail-grid,
+    .detail-content,
+    .detail-sidebar,
+    .tour-detail-main,
+    section {
+        width: 100% !important;
+        max-width: 100vw !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 15px !important;
+        /* Standart padding */
+        padding-right: 15px !important;
+        overflow-wrap: break-word !important;
+        /* Text wrapping */
+    }
+
+    /* 4. Reset Grid Layout to Stack */
+    .detail-grid,
+    .info-grid-2col {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    /* 5. Fix Timeline overflows */
+    .timeline,
+    .timeline-item,
+    .timeline-content {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    .timeline-content {
+        padding: 0 !important;
+    }
+
+    .day-circle {
+        position: static !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* 6. Fix Tabs Overflow */
+    .detail-tabs {
+        width: 100% !important;
+        padding: 10px 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        gap: 10px !important;
+        border-bottom: 1px solid #eee;
+    }
+
+    .tab-btn {
+        flex: 0 0 auto !important;
+        /* Don't shrink tabs */
+        padding: 10px 15px !important;
+    }
+
+    /* 7. General Text Constraints */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    span,
+    li,
+    div {
+        max-width: 100% !important;
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+
+    /* 8. Fix Sidebar Cards */
+    .sticky-card,
+    .sidebar-info-section,
+    .promo-banner {
+        width: 100% !important;
+        max-width: 100% !important;
+        position: static !important;
+        /* No sticky on mobile */
+        margin: 15px 0 !important;
+        padding: 15px !important;
+    }
+
+    /* 9. Image Constraints */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}

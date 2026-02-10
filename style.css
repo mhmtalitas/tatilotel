@@ -3314,16 +3314,29 @@ h4 {
     align-items: center;
     gap: 12px;
     margin-top: 25px;
+    overflow: hidden;
+    /* Prevent overflow */
+    transform: translateZ(0);
+    /* Hardware acceleration to stop jitter */
+    will-change: transform;
 }
 
 .promo-banner img {
     height: 24px;
+    width: auto;
+    flex-shrink: 0;
+    /* Prevent image from squishing */
 }
 
 .promo-text {
     font-size: 0.75rem;
     font-weight: 700;
     color: #c91b1b;
+    flex: 1;
+    /* Allow text to fill space */
+    border: none;
+    /* Ensure no border flickers */
+    line-height: 1.2;
 }
 
 .sidebar-info-section {
@@ -3785,3 +3798,4 @@ h4 {
             height: 32px;
         }
     }
+}

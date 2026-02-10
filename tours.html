@@ -41,9 +41,16 @@
                 </button>
             </div>
         </div>
+        <!-- header-wrapper continues -->
+
+        <div class="menu-overlay" id="menuOverlay"></div>
 
         <!-- Bottom Row: Navigation -->
-        <div class="main-nav-bar">
+        <div class="main-nav-bar" id="mobileMenu">
+            <div class="drawer-header">
+                <img src="assets/logo.png" alt="TatilOtel" class="logo-img" style="height: 30px;">
+                <button class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
+            </div>
             <div class="container">
                 <nav class="main-nav">
                     <ul class="main-nav-list">
@@ -113,133 +120,198 @@
                     </ul>
                 </nav>
             </div>
+            <div class="drawer-footer">
+                <a href="tel:08505323773" class="drawer-phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>0850 532 37 73</span>
+                </a>
+            </div>
         </div>
     </div>
 
-    <!-- Page Header -->
-    <header class="page-header"
-        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');">
-        <div class="container page-header-content">
-            <h1>Sömestre Turları</h1>
-            <p>Çocuklarınızla unutulmaz bir sömestre tatili için en iyi tur fırsatları</p>
+    <!-- Results Header / Filter Bar -->
+    <div class="results-top-bar">
+        <div class="container">
+            <div class="search-mini-bar">
+                <div class="mini-input">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" placeholder="Tur adı, Şehir veya Tema giriniz" value="Ramazan Bayramı Turları">
+                </div>
+                <div class="mini-input">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <input type="text" placeholder="Dönem Seçiniz" value="Nisan 2026">
+                </div>
+                <button class="mini-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
         </div>
-    </header>
+    </div>
 
     <!-- Main Content -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="layout-grid">
-                <!-- Sidebar -->
-                <aside class="sidebar">
-                    <div class="filter-box">
-                        <h3>Bölgeler</h3>
-                        <ul class="filter-list">
-                            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Yurtiçi (24)</a></li>
-                            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Avrupa (18)</a></li>
-                            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Uzakdoğu (6)</a></li>
-                            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Balkanlar (12)</a></li>
-                            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Amerika (3)</a></li>
-                        </ul>
+    <main class="tours-main">
+        <div class="container search-layout">
+            <!-- Sidebar Filters -->
+            <aside class="search-sidebar">
+                <div class="online-res-box">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        Online Rezervasyon <span class="count">(131)</span>
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Sonuçları Filtrele <span class="reset">Tümünü Temizle</span></h4>
+
+                    <div class="filter-section">
+                        <h5>Dönemler</h5>
+                        <div class="tag-filters">
+                            <span class="tag">Ocak</span>
+                            <span class="tag">Şubat</span>
+                            <span class="tag">Mart</span>
+                            <span class="tag active">Nisan</span>
+                            <span class="tag">Mayıs</span>
+                            <span class="tag">Haziran</span>
+                        </div>
                     </div>
-                </aside>
 
-                <!-- Tour List -->
-                <div class="hotel-list-content">
-                    <div class="hotel-grid-2col">
-                        <!-- Tour Card 1 -->
-                        <div class="hotel-card">
-                            <div class="hotel-image">
-                                <img src="https://images.unsplash.com/photo-1512453979798-5ea932a838fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                    alt="Dubai Turu">
-                                <span class="badge">Popüler</span>
-                                <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
-                            </div>
-                            <div class="hotel-content">
-                                <h3 class="hotel-title">FIRSAT DUBAİ TURU VİZE DAHİL 3 Gece 4 Gün</h3>
-                                <div class="hotel-location"><i class="fa-solid fa-globe"></i> Dubai, BAE</div>
-                                <p class="tour-desc">Türk Hava Yolları ile Ulaşım, 4* Otel konaklaması, Vize ücreti
-                                    dahil, panoramik şehir turu.</p>
-                                <div class="hotel-price-row">
-                                    <div class="price-info">
-                                        <span class="price-label">Kişi Başı</span>
-                                        <span class="price">$599</span>
-                                    </div>
-                                    <a href="#" class="btn-sm btn-primary">İncele</a>
+                    <div class="filter-section">
+                        <h5>Özel Günler</h5>
+                        <div class="tag-filters">
+                            <span class="tag">Sömestir</span>
+                            <span class="tag active">Ramazan Bayramı</span>
+                            <span class="tag">Kurban Bayramı</span>
+                            <span class="tag">Yılbaşı</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h5>Vize Durumu</h5>
+                        <div class="checkbox-filters">
+                            <label><input type="checkbox"> Vizesiz Turlar (48)</label>
+                            <label><input type="checkbox"> Vizeli Turlar (83)</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h5>Gece Sayısı</h5>
+                        <div class="checkbox-filters">
+                            <label><input type="checkbox"> 1-3 Gece (37)</label>
+                            <label><input type="checkbox"> 4-6 Gece (61)</label>
+                            <label><input type="checkbox"> 7-9 Gece (27)</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h5>Kalkış Noktaları</h5>
+                        <div class="checkbox-filters">
+                            <label><input type="checkbox"> İstanbul (117)</label>
+                            <label><input type="checkbox"> İzmir (4)</label>
+                            <label><input type="checkbox"> Ankara (4)</label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Results Content -->
+            <div class="search-results">
+                <div class="results-summary">
+                    <h2>Ramazan Bayramı Turları için toplam 131 tur bulduk!</h2>
+                    <nav class="breadcrumb-mini">
+                        <span>Etstur</span> > <span>Yurtdışı Turları</span> > <span class="active">Ramazan Bayramı
+                            Turları</span>
+                    </nav>
+                </div>
+
+                <div class="sorting-bar">
+                    <div class="sort-select">Kalkış Noktaları <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="sort-options">
+                        <span class="sort-item"><i class="fa-solid fa-arrow-up-wide-short"></i> Tarihe Göre</span>
+                        <span class="sort-item"><i class="fa-solid fa-arrow-down-wide-short"></i> Fiyata Göre</span>
+                    </div>
+                </div>
+
+                <!-- Tour Cards Area -->
+                <div class="tour-results-list">
+                    <!-- Tour Card 1 -->
+                    <div class="tour-card-horizontal">
+                        <div class="card-img-side">
+                            <img src="https://images.unsplash.com/photo-1581442111166-5f80b9bcd382?q=80&w=800&auto=format&fit=crop"
+                                alt="Balkanlar">
+                            <span class="card-badge firsat">Fırsat Turu</span>
+                        </div>
+                        <div class="card-info-side">
+                            <div class="card-main-info">
+                                <h3><a href="tour-detail.html" style="text-decoration: none; color: inherit;">Pegasus
+                                        Hava Yolları ile Ohrid ve Üsküp 3 Gece 4 Gün Panorama | Ramazan Bayramı |</a>
+                                </h3>
+                                <div class="info-meta">
+                                    <span class="meta-item"><i class="fa-solid fa-location-dot"></i> İstanbul -> Ohrid,
+                                        Üsküp</span>
+                                    <span class="meta-item"><i class="fa-regular fa-moon"></i> 3 gece 4 gün</span>
+                                    <span class="meta-item"><i class="fa-regular fa-calendar"></i> 19 Mar'26 - 22
+                                        Mar'26</span>
                                 </div>
+                                <div class="card-labels">
+                                    <span class="lbl-primary">Ortak Katılıma Uygun</span>
+                                    <span class="lbl-secondary">Ramazan Bayramı</span>
+                                    <span class="lbl-success">Vizesiz Turlar</span>
+                                    <span class="lbl-info">Balkanlar Turu</span>
+                                </div>
+                            </div>
+                            <div class="card-price-side">
+                                <div class="online-tag"><i class="fa-solid fa-circle-check"></i> Online Rezervasyon
+                                </div>
+                                <div class="price-box">
+                                    <span class="price-from">529 EUR</span>
+                                    <span class="price-tl">'dan itibaren 27.578 TL</span>
+                                </div>
+                                <a href="tour-detail.html" class="view-btn"><i
+                                        class="fa-solid fa-chevron-right"></i></a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Tour Card 2 -->
-                        <div class="hotel-card">
-                            <div class="hotel-image">
-                                <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                    alt="Venedik Turu">
-                                <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
-                            </div>
-                            <div class="hotel-content">
-                                <h3 class="hotel-title">Klasik İtalya Turu: 7 Gece</h3>
-                                <div class="hotel-location"><i class="fa-solid fa-globe"></i> İtalya</div>
-                                <p class="tour-desc">Roma, Floransa, Venedik turu. Freebird Havayolları ile direkt uçuş.
-                                    Ekstra turlar hariç.</p>
-                                <div class="hotel-price-row">
-                                    <div class="price-info">
-                                        <span class="price-label">Kişi Başı</span>
-                                        <span class="price">€749</span>
-                                    </div>
-                                    <a href="#" class="btn-sm btn-primary">İncele</a>
-                                </div>
-                            </div>
+                    <!-- Tour Card 2 -->
+                    <div class="tour-card-horizontal">
+                        <div class="card-img-side">
+                            <img src="https://images.unsplash.com/photo-1559905952-b1bd68df4fb1?q=80&w=800&auto=format&fit=crop"
+                                alt="Belgrad">
+                            <span class="card-badge hizli">Hızlı Tüketim</span>
                         </div>
-
-                        <!-- Tour Card 3 -->
-                        <div class="hotel-card">
-                            <div class="hotel-image">
-                                <img src="https://images.unsplash.com/photo-1543783207-c1f5fc6953c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                    alt="İspanya Turu">
-                                <span class="badge discount">Son 3 Koltuk</span>
-                                <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
-                            </div>
-                            <div class="hotel-content">
-                                <h3 class="hotel-title">Büyük İspanya Turu ve Endülüs Rüyası</h3>
-                                <div class="hotel-location"><i class="fa-solid fa-globe"></i> İspanya</div>
-                                <p class="tour-desc">Barselona, Madrid, Sevilla, Granada şehir turları. 7 Gece 8 Gün.
-                                </p>
-                                <div class="hotel-price-row">
-                                    <div class="price-info">
-                                        <span class="price-label">Kişi Başı</span>
-                                        <span class="price">€899</span>
-                                    </div>
-                                    <a href="#" class="btn-sm btn-primary">İncele</a>
+                        <div class="card-info-side">
+                            <div class="card-main-info">
+                                <h3><a href="tour-detail.html" style="text-decoration: none; color: inherit;">Türk Hava
+                                        Yolları ile Belgrad 3 Gece 4 Gün Panorama | Ocak - Mart |</a></h3>
+                                <div class="info-meta">
+                                    <span class="meta-item"><i class="fa-solid fa-location-dot"></i> İstanbul ->
+                                        Belgrad</span>
+                                    <span class="meta-item"><i class="fa-regular fa-moon"></i> 3 gece 4 gün</span>
+                                    <span class="meta-item"><i class="fa-regular fa-calendar"></i> 18 Mar'26 - 21
+                                        Mar'26</span>
+                                </div>
+                                <div class="card-labels">
+                                    <span class="lbl-primary">Ortak Katılıma Uygun</span>
+                                    <span class="lbl-secondary">Ramazan Bayramı</span>
+                                    <span class="lbl-success">Vizesiz Turlar</span>
+                                    <span class="lbl-info">Balkanlar Turu</span>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Tour Card 4 -->
-                        <div class="hotel-card">
-                            <div class="hotel-image">
-                                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                    alt="Roma Turu">
-                                <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
-                            </div>
-                            <div class="hotel-content">
-                                <h3 class="hotel-title">Roma & Floransa & Venedik - İtalya Ekspresi</h3>
-                                <div class="hotel-location"><i class="fa-solid fa-globe"></i> İtalya</div>
-                                <p class="tour-desc">Hızlı tren ile şehirlerarası transfer. Merkez otellerde konaklama.
-                                </p>
-                                <div class="hotel-price-row">
-                                    <div class="price-info">
-                                        <span class="price-label">Kişi Başı</span>
-                                        <span class="price">€650</span>
-                                    </div>
-                                    <a href="#" class="btn-sm btn-primary">İncele</a>
+                            <div class="card-price-side">
+                                <div class="online-tag"><i class="fa-solid fa-circle-check"></i> Online Rezervasyon
                                 </div>
+                                <div class="price-box">
+                                    <span class="price-from">559 EUR</span>
+                                    <span class="price-tl">'dan itibaren 29.142 TL</span>
+                                </div>
+                                <a href="tour-detail.html" class="view-btn"><i
+                                        class="fa-solid fa-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -293,18 +365,28 @@
         </div>
     </footer>
     <script>
-        // Mobile Menu Toggle - PRODUCTION VERSION
+        // Mobile Menu Toggle - Side Drawer Version
         const menuBtn = document.querySelector('.mobile-menu-btn');
-        const mainNavBar = document.querySelector('.main-nav-bar');
+        const closeDrawer = document.getElementById('closeDrawer');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
 
-        // Hamburger menu toggle
-        if (menuBtn && mainNavBar) {
-            menuBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                mainNavBar.classList.toggle('active');
-            });
+        function toggleMenu(show = true) {
+            if (show) {
+                mobileMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
         }
+
+        if (menuBtn) menuBtn.addEventListener('click', () => toggleMenu(true));
+        if (closeDrawer) closeDrawer.addEventListener('click', () => toggleMenu(false));
+        if (menuOverlay) menuOverlay.addEventListener('click', () => toggleMenu(false));
+
 
         // Mega menu accordion - Direct approach on each link
         const menuItems = document.querySelectorAll('.main-nav-item');

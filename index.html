@@ -45,8 +45,14 @@
             </div>
         </div>
 
+        <div class="menu-overlay" id="menuOverlay"></div>
+
         <!-- Bottom Row: Navigation -->
-        <div class="main-nav-bar">
+        <div class="main-nav-bar" id="mobileMenu">
+            <div class="drawer-header">
+                <img src="assets/logo.png" alt="TatilOtel" class="logo-img" style="height: 30px;">
+                <button class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
+            </div>
             <div class="container">
                 <nav class="main-nav">
                     <ul class="main-nav-list">
@@ -115,6 +121,12 @@
                         </li>
                     </ul>
                 </nav>
+            </div>
+            <div class="drawer-footer">
+                <a href="tel:08505323773" class="drawer-phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>0850 532 37 73</span>
+                </a>
             </div>
         </div>
     </div>
@@ -267,7 +279,17 @@
                             <span class="btn-text">Tur Ara</span>
                         </button>
                     </form>
+
+                    <!-- Popular Searches (Inside the card) -->
+                    <div class="ets-popular-searches">
+                        <span class="label">Popüler Aramalar:</span>
+                        <a href="#">Kapadokya Turları <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#">Balkan Turları <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#">Karadeniz Turları <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#">GAP Turları <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -629,18 +651,28 @@
             evt.currentTarget.classList.add("active");
         }
 
-        // Mobile Menu Toggle - PRODUCTION VERSION
+        // Mobile Menu Toggle - Side Drawer Version
         const menuBtn = document.querySelector('.mobile-menu-btn');
-        const mainNavBar = document.querySelector('.main-nav-bar');
+        const closeDrawer = document.getElementById('closeDrawer');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
 
-        // Hamburger menu toggle
-        if (menuBtn && mainNavBar) {
-            menuBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                mainNavBar.classList.toggle('active');
-            });
+        function toggleMenu(show = true) {
+            if (show) {
+                mobileMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
         }
+
+        if (menuBtn) menuBtn.addEventListener('click', () => toggleMenu(true));
+        if (closeDrawer) closeDrawer.addEventListener('click', () => toggleMenu(false));
+        if (menuOverlay) menuOverlay.addEventListener('click', () => toggleMenu(false));
+
 
         // Mega menu accordion - Direct approach on each link
         const menuItems = document.querySelectorAll('.main-nav-item');

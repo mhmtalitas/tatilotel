@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tur Detayı | Tatilotel</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sticky Info Bar (Visible on scroll) -->
+    <div class="sticky-info-bar" id="stickyBar">
+        <div class="container sticky-bar-container">
+            <div class="sticky-bar-left">
+                <div class="sticky-bar-title">Türk Hava Yolları ile Belgrad 3 Gece 4 Gün Panorama</div>
+                <div class="sticky-bar-meta">3 Gece 4 Gün | 18 Mart 2026</div>
+            </div>
+            <div class="sticky-bar-right">
+                <div class="sticky-bar-price">
+                    <span class="sticky-price-main">559 EUR</span>
+                    <span class="sticky-price-sub">'dan itibaren</span>
+                </div>
+                <button class="sticky-rez-btn">REZERVASYON YAP</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header-wrapper">
+        <!-- Top Row -->
+        <div class="top-header">
+            <div class="container top-header-container">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="TatilOtel" class="logo-img">
+                </a>
+                <div class="top-actions">
+                    <div class="top-phone">
+                        <i class="fa-solid fa-phone"></i> 0850 532 37 73
+                    </div>
+                    <a href="login.html" class="btn-register">Üye Ol</a>
+                    <a href="login.html" class="btn-login"><i class="fa-solid fa-user"></i> Giriş Yap</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- header-wrapper continues -->
+
+        <div class="menu-overlay" id="menuOverlay"></div>
+
+        <!-- Bottom Row: Navigation -->
+        <div class="main-nav-bar" id="mobileMenu">
+            <div class="drawer-header">
+                <img src="assets/logo.png" alt="TatilOtel" class="logo-img" style="height: 30px;">
+                <button class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="container">
+                <nav class="main-nav">
+                    <ul class="main-nav-list">
+                        <li class="main-nav-item">
+                            <a href="tours.html" class="main-nav-link">KONSEPT TURLAR <i
+                                    class="fa-solid fa-chevron-down"></i></a>
+                        </li>
+                        <li class="main-nav-item">
+                            <a href="tours.html" class="main-nav-link">YURTİÇİ TURLARI <i
+                                    class="fa-solid fa-chevron-down"></i></a>
+                        </li>
+                        <li class="main-nav-item">
+                            <a href="tours.html" class="main-nav-link">YURT DIŞI TURLARI <i
+                                    class="fa-solid fa-chevron-down"></i></a>
+                        </li>
+                        <li class="main-nav-item">
+                            <a href="tours.html" class="main-nav-link">SÖMESTİR TURLARI</a>
+                        </li>
+                        <li class="main-nav-item">
+                            <a href="#" class="main-nav-link" style="color: #ff0000;">KAMPANYALAR</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="drawer-footer">
+                <a href="tel:08505323773" class="drawer-phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>0850 532 37 73</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tour Detail Hero -->
+    <header class="tour-detail-hero"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1543783207-c1f5fc6953c9?q=80&w=1920&auto=format&fit=crop');">
+        <div class="container hero-content-box">
+            <div class="hero-text">
+                <h1>Türk Hava Yolları ile Belgrad 3 Gece 4 Gün Panorama | Ocak - Mart |</h1>
+                <div class="hero-badges">
+                    <span class="hero-badge"><i class="fa-solid fa-star"></i> Ortak Katılıma Uygun <i
+                            class="fa-solid fa-circle-info"></i></span>
+                </div>
+                <div class="hero-meta-info">
+                    <div class="meta-item"><i class="fa-solid fa-location-dot"></i> İstanbul <i
+                            class="fa-solid fa-chevron-right"></i> Belgrad</div>
+                    <div class="meta-item"><i class="fa-regular fa-moon"></i> 3 gece 4 gün</div>
+                    <div class="meta-item"><i class="fa-regular fa-calendar"></i> 18 Mart 2026 - 21 Mart 2026 arasında 0
+                        tur</div>
+                </div>
+            </div>
+            <button class="share-float-btn"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+    </header>
+
+    <div class="breadcrumb-bar">
+        <div class="container">
+            <nav class="breadcrumb-mini">
+                <a href="index.html">Etstur</a> > <a href="tours.html">Yurtdışı Turları</a> > <span class="active">Türk
+                    Hava Yolları ile Belgrad 3 Gece 4 Gün Panorama | Ocak - Mart |</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Detail Layout -->
+    <main class="tour-detail-main">
+        <div class="container detail-grid">
+            <!-- Left Side: Content -->
+            <div class="detail-content">
+                <!-- Navigation Tabs -->
+                <div class="detail-tabs">
+                    <button class="tab-btn active">TUR PROGRAMI</button>
+                    <button class="tab-btn">GENEL BİLGİLER</button>
+                    <button class="tab-btn">DESTİNASYONLAR</button>
+                    <button class="tab-btn">FOTOĞRAFLAR</button>
+                </div>
+
+                <!-- Itinerary Section -->
+                <section class="itinerary-section">
+                    <div class="timeline">
+                        <!-- Day 1 -->
+                        <div class="timeline-item">
+                            <div class="day-circle"><span>1.</span> GÜN</div>
+                            <div class="timeline-content">
+                                <h3>İstanbul - Belgrad</h3>
+                                <p>İstanbul Havalimanı dış hatlar gidiş terminali Türk Hava Yolları kontuarı önünde saat
+                                    05.20'de bulunma. Bilet, bagaj ve pasaport işlemlerimiz sonrasında Türk Hava
+                                    Yolları'nın TK1081 sefer sayılı uçuşu ile saat 08.20'te Belgrad'a uçuş. Yerel saat
+                                    ile 08.10'da Belgrad Havalimanı'na iniş. Panoramik Belgrad turu için yola çıkıyoruz.
+                                    Belgrad merkezde aracımızdan inerek yürüyüş turuna başlıyoruz. Yürüyüş turunda
+                                    göreceğimiz...</p>
+                                <a href="#" class="read-more-link">Devamı için <i
+                                        class="fa-solid fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Day 2 -->
+                        <div class="timeline-item">
+                            <div class="day-circle"><span>2.</span> GÜN</div>
+                            <div class="timeline-content">
+                                <h3>Belgrad</h3>
+                                <p>Otelimizde alacağımız kahvaltı sonrasında serbest zaman. Dileyen misafirlerimiz
+                                    rehberimiz tarafından ekstra olarak düzenlenecek Karlofça-Petrovaradin-Novi Sad-Big
+                                    Fashion Outlet turuna katılabilirler.</p>
+                                <div class="extra-tour-box">
+                                    <span class="extra-label">EKSTRA GEZİ</span>
+                                    <p>Karlofça - Petrovaradin - Novi Sad - Big Fashion Outlet Turu | Yetişkin : 70 EUR
+                                        | Çocuk : 45 EUR <a href="#" class="detay-link">Detay <i
+                                                class="fa-solid fa-chevron-down"></i></a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Day 3 -->
+                        <div class="timeline-item">
+                            <div class="day-circle"><span>3.</span> GÜN</div>
+                            <div class="timeline-content">
+                                <h3>Belgrad</h3>
+                                <p>Otelimizde alacağımız kahvaltı sonrasında serbest zaman. Dileyen misafirlerimiz
+                                    rehberimiz tarafından ekstra olarak düzenlenecek Zemun - Çiçekler Evi ve Yugoslavya
+                                    Müzesi - Nikola Tesla Müzesi turuna ve Otantik Restoranda Sırp Gecesi programımıza
+                                    katılabilirler.</p>
+                                <div class="extra-tour-box">
+                                    <span class="extra-label">EKSTRA GEZİ</span>
+                                    <p>Otantik Restoranda Sırp Gecesi | Yetişkin : 70 EUR | Çocuk : 50 EUR <a href="#"
+                                            class="detay-link">Detay <i class="fa-solid fa-chevron-down"></i></a></p>
+                                </div>
+                                <div class="extra-tour-box">
+                                    <span class="extra-label">EKSTRA GEZİ</span>
+                                    <p>Zemun-Çiçekler Evi ve Yugoslavya Müzesi-Nikola Tesla Müzesi | Yetişkin : 75 EUR |
+                                        Çocuk : 50 EUR <a href="#" class="detay-link">Detay <i
+                                                class="fa-solid fa-chevron-down"></i></a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Day 4 -->
+                        <div class="timeline-item none-border">
+                            <div class="day-circle"><span>4.</span> GÜN</div>
+                            <div class="timeline-content">
+                                <h3>Belgrad - İstanbul</h3>
+                                <p>Otelimizde alacağımız kahvaltı sonrasında check-out işlemlerimizi gerçekleştirip,
+                                    transfer saatine kadar serbest zaman. Rehberimizin bildireceği transfer saatinde
+                                    Belgrad Havalimanı'na doğru hareket ediyoruz. Bilet, bagaj ve pasaport işlemlerimiz
+                                    sonrasında Türk Hava Yolları'nın TK1080 sefer sayılı uçuşu ile saat 15.15'de
+                                    İstanbul'a uçuş. Yerel saat ile 19.05'te İstanbul Havalimanı'na iniş ve turumuzun
+                                    sonu. Bir sonraki keyifli gezimizde buluşmak üzere veda ediyoruz.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="more-days-btn"><i class="fa-solid fa-plus"></i> Daha Fazla Gün Görüntüle</button>
+                </section>
+
+                <div class="divider"></div>
+
+                <!-- General Info Section -->
+                <section class="general-info-detail">
+                    <h2>Genel Bilgiler</h2>
+                    <div class="info-grid-2col">
+                        <div class="info-column">
+                            <h3>Ücrete Dahil Olan Hizmetler</h3>
+                            <ul>
+                                <li>Türk Havayolları ile İstanbul Havalimanından Belgrad Nikola Tesla Havalimanına gidiş
+                                    dönüş ekonomi sınıfı uçak bileti</li>
+                                <li>4* Nobel Hotel vb. tesisinde 3 gece kahvaltı dahil konaklama</li>
+                                <li>Havalimanı – otel arası çift yön transfer</li>
+                                <li>Panoramik Belgrad şehir turu</li>
+                                <li>Türkçe rehberlik hizmeti</li>
+                                <li>1618 sayılı Seyahat Acentaları Birliği Kanununa göre düzenlenen Mesleki sorumluluk
+                                    sigortası</li>
+                            </ul>
+                        </div>
+                        <div class="info-column">
+                            <h3>Ücrete Dahil Olmayan Hizmetler</h3>
+                            <ul>
+                                <li>Yurt dışı çıkış harcı</li>
+                                <li>Dahil olduğu belirtilmeyen tüm müze ve örenyeri giriş ücretleri</li>
+                                <li>Ekstra turlar</li>
+                                <li>Kişisel harcamalar</li>
+                                <li>Tur programında dahil olduğu açıkça belirtilmemiş tüm servisler</li>
+                                <li>Müze, ören yeri giriş ücretleri</li>
+                                <li>Seyahat sağlık sigortası (Tavsiye edilmektedir. Sınır polisi tarafından ibrazı
+                                    istenebilir. )</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-grid-2col mt-4">
+                        <div class="info-column">
+                            <h3>Tur Lideri</h3>
+                            <p>*İlgili tur, bölge karşılamalı olup, farklı acente misafirlerinin katılımına açık bir
+                                programdır. ETS TUR misafirleri, ETSTUR sorumluluğundadır. Rehberlik hizmeti varılan
+                                ülke başlangıçlıdır.</p>
+                        </div>
+                        <div class="info-column">
+                            <h3>İptal Şartları</h3>
+                            <p>Turun kalkış tarihinden 30 gün öncesine kadar cezasız iptal hakkı bulunmaktadır. Gezi
+                                için yeterli katılım sağlanamadığı takdirde; son iptal bildirim tarihi, gezi hareket
+                                tarihinden 20 gün öncesi olarak belirlenmiştir. Böyle bir durum geliştiğinde iptal
+                                bilgisi misafire iletilir.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Side: Sidebar Sticky -->
+            <aside class="detail-sidebar">
+                <div class="sticky-card">
+                    <div class="date-select-box">
+                        <label>Turun Tarihi</label>
+                        <select>
+                            <option>18 Mart 2026</option>
+                            <option>25 Mart 2026</option>
+                        </select>
+                    </div>
+
+                    <div class="pax-selector-box">
+                        <div class="pax-item">
+                            <div class="pax-info">
+                                <span class="pax-label">Yetişkin</span>
+                                <span class="pax-desc">12 yaş ve üzeri</span>
+                            </div>
+                            <div class="pax-controls">
+                                <button class="pax-btn" onclick="updatePax('adult', -1)">-</button>
+                                <span class="pax-count" id="adultCount">2</span>
+                                <button class="pax-btn" onclick="updatePax('adult', 1)">+</button>
+                            </div>
+                        </div>
+                        <div class="pax-item">
+                            <div class="pax-info">
+                                <span class="pax-label">Çocuk</span>
+                                <span class="pax-desc">2 - 12 yaş</span>
+                            </div>
+                            <div class="pax-controls">
+                                <button class="pax-btn" onclick="updatePax('child', -1)">-</button>
+                                <span class="pax-count" id="childCount">0</span>
+                                <button class="pax-btn" onclick="updatePax('child', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="price-display">
+                        <div class="price-label">Kişi başı</div>
+                        <div class="price-main">559 EURO</div>
+                        <div class="price-sub">'dan itibaren</div>
+                        <a href="javascript:void(0)" class="taksit-link" id="openTaksit">Taksit Seçenekleri <i
+                                class="fa-solid fa-credit-card"></i></a>
+                    </div>
+
+                    <button class="rez-btn">Rezervasyon Yap</button>
+                    <a href="#" class="price-table-link">Otellere Göre Fiyat Tablosu <i
+                            class="fa-solid fa-chevron-right"></i></a>
+
+                    <div class="promo-banner">
+                        <img src="https://img.etstur.com/promo/maximum_v2.png" alt="Maximum Card"
+                            onerror="this.src='https://images.unsplash.com/photo-1549416801-9a7788414436?q=80&w=200&auto=format&fit=crop'">
+                        <div class="promo-text">'a özel 7.500 TL Puan Fırsatı! <i class="fa-solid fa-circle-info"></i>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-info-section">
+                        <h4>Ulaşım Bilgileri</h4>
+                        <div class="flight-item">
+                            <i class="fa-solid fa-plane-departure"></i>
+                            <div class="flight-details">
+                                <div class="flight-route">Gidiş Uçuşu</div>
+                                <div class="flight-loc">İstanbul <span>(IST)</span> <i
+                                        class="fa-solid fa-chevron-right"></i> Belgrad <span>(BEG)</span> <i
+                                        class="fa-solid fa-circle-info"></i></div>
+                                <div class="flight-time">Kalkış : 18.03.2026 08:20</div>
+                                <div class="flight-time">Varış : 18.03.2026 08:10</div>
+                            </div>
+                        </div>
+                        <div class="flight-item">
+                            <i class="fa-solid fa-plane-arrival"></i>
+                            <div class="flight-details">
+                                <div class="flight-route">Dönüş Uçuşu</div>
+                                <div class="flight-loc">Belgrad <span>(BEG)</span> <i
+                                        class="fa-solid fa-chevron-right"></i> İstanbul <span>(IST)</span> <i
+                                        class="fa-solid fa-circle-info"></i></div>
+                                <div class="flight-time">Kalkış : 21.03.2026 15:15</div>
+                                <div class="flight-time">Varış : 21.03.2026 19:05</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-info-section">
+                        <h4>Fiyata Dahil Olanlar</h4>
+                        <ul class="simple-info-list">
+                            <li>Türk Havayolları ile İstanbul Havalimanından Belgrad Nikola Tesla Havalimanına gidiş
+                                dönüş ekonomi sınıfı uçak bileti</li>
+                            <li>4* Nobel Hotel vb. tesisinde 3 gece kahvaltı dahil konaklama</li>
+                            <li>Havalimanı – otel arası çift yön transfer</li>
+                            <li>Panoramik Belgrad şehir turu</li>
+                            <li>Türkçe rehberlik hizmeti</li>
+                            <li>1618 sayılı Seyahat Acentaları Birliği Kanununa göre düzenlenen Mesleki sorumluluk
+                                sigortası</li>
+                        </ul>
+                        <div class="tour-code">Tur Kodu : JTS26B3TK1</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="assets/logo.png" alt="TatilOtel" class="logo-img"
+                        style="filter: brightness(0) invert(1); height: 40px;">
+                </div>
+                <p>Hayalinizdeki tatili planlamanın en güvenilir ve kolay yolu. 10 yılı aşkın tecrübemizle
+                    hizmetinizdeyiz.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Hızlı Bağlantılar</h4>
+                <ul>
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="tours.html">Turlar</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kurumsal</h4>
+                <ul>
+                    <li><a href="#">Kullanım Şartları</a></li>
+                    <li><a href="#">Gizlilik Politikası</a></li>
+                    <li><a href="#">KVKK</a></li>
+                    <li><a href="#">İptal ve İade</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>İletişim</h4>
+                <ul>
+                    <li><i class="fa-solid fa-phone"></i> 0850 532 37 73</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@tatilotel.com.tr</li>
+                    <li><i class="fa-solid fa-location-dot"></i> İstanbul, Türkiye</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TatilOtel. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile Menu Toggle - Side Drawer Version
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const closeDrawer = document.getElementById('closeDrawer');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        function toggleMenu(show = true) {
+            if (show) {
+                mobileMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        if (menuBtn) menuBtn.addEventListener('click', () => toggleMenu(true));
+        if (closeDrawer) closeDrawer.addEventListener('click', () => toggleMenu(false));
+        if (menuOverlay) menuOverlay.addEventListener('click', () => toggleMenu(false));
+
+        // Sticky Bar Logic
+        const stickyBar = document.getElementById('stickyBar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                stickyBar.classList.add('visible');
+            } else {
+                stickyBar.classList.remove('visible');
+            }
+        });
+
+        // Pax Selector Logic
+        let counts = { adult: 2, child: 0 };
+        const basePrice = 559;
+
+        function updatePax(type, delta) {
+            if (type === 'adult' && counts.adult + delta < 1) return;
+            if (type === 'child' && counts.child + delta < 0) return;
+
+            counts[type] += delta;
+            document.getElementById(type + 'Count').innerText = counts[type];
+            updateTotalPrice();
+        }
+
+        function updateTotalPrice() {
+            // Simple calculation for demo
+            let total = (counts.adult * basePrice) + (counts.child * basePrice * 0.7);
+            document.querySelector('.price-main').innerText = Math.round(total) + ' EUR';
+            document.querySelector('.sticky-price-main').innerText = Math.round(total) + ' EUR';
+        }
+
+        // Tab Switching
+        const tabs = document.querySelectorAll('.tab-btn');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+
+        // Taksit Modal Logic
+        const taksitModal = document.getElementById('taksitModal');
+        const openTaksit = document.getElementById('openTaksit');
+        const closeTaksit = document.getElementById('closeTaksit');
+
+        if (openTaksit) {
+            openTaksit.addEventListener('click', () => {
+                taksitModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (closeTaksit) {
+            closeTaksit.addEventListener('click', () => {
+                taksitModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === taksitModal) {
+                taksitModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+
+    <!-- Taksit Modal -->
+    <div class="modal-overlay" id="taksitModal">
+        <div class="modal-container taksit-modal-container">
+            <button class="modal-close" id="closeTaksit"><i class="fa-solid fa-xmark"></i></button>
+            <h3>Taksit Seçenekleri</h3>
+            <p class="taksit-promo">Vade farksız 3 taksit fırsatını kaçırmayın!</p>
+
+            <div class="bank-grid">
+                <div class="bank-item">
+                    <img src="https://img.etstur.com/promo/maximum_v2.png" alt="Maximum">
+                    <div class="taksit-row"><span>3 Taksit</span> <strong>Vade Farksız</strong></div>
+                    <div class="taksit-row"><span>6 Taksit</span> <span>%1.5 Vade</span></div>
+                    <div class="taksit-row"><span>9 Taksit</span> <span>%2.1 Vade</span></div>
+                </div>
+                <div class="bank-item">
+                    <img src="https://img.etstur.com/promo/world_v2.png" alt="World">
+                    <div class="taksit-row"><span>3 Taksit</span> <strong>Vade Farksız</strong></div>
+                    <div class="taksit-row"><span>12 Taksit</span> <span>%3.0 Vade</span></div>
+                </div>
+                <div class="bank-item">
+                    <img src="https://img.etstur.com/promo/bonus_v2.png" alt="Bonus">
+                    <div class="taksit-row"><span>3 Taksit</span> <strong>Vade Farksız</strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

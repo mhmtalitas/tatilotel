@@ -444,8 +444,8 @@ h4 {
 .search-box {
     background-color: var(--white);
     padding: 10px 20px;
-    border-radius: 0 50px 50px 50px;
-    /* Top left square for tabs */
+    border-radius: 50px;
+    /* Fully rounded since tabs are removed */
     display: none;
     /* Default hidden, logic will show active */
     align-items: center;
@@ -503,7 +503,9 @@ h4 {
     /* Force strict equality */
     min-width: 0;
     /* Allow box to shrink below content size */
-    padding: 12px 20px;
+    max-width: calc(25% - 10px);
+    /* Ensure equal distribution */
+    padding: 12px 15px;
     background-color: #f0f2f5;
     /* Slightly darker for better visibility */
     border: 1px solid #e1e4e8;
@@ -534,19 +536,20 @@ h4 {
 }
 
 .search-input-group label {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     color: var(--text-light);
     font-weight: 600;
     /* Slightly lighter label */
     margin-bottom: 2px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     white-space: nowrap;
     /* Prevent wrapping */
     overflow: hidden;
     /* Hide overflow */
     text-overflow: ellipsis;
     /* Add dots if text is too long */
+    max-width: 100%;
 }
 
 .search-input-group input {
@@ -563,6 +566,200 @@ h4 {
 /* Hide the old dividers since we now have boxes */
 .search-divider {
     display: none;
+}
+
+.search-select {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 20px;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F8971F%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0 top 50%;
+    background-size: 0.65em auto;
+}
+
+.date-picker-trigger {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    flex: 1 1 0px;
+    max-width: calc(25% - 10px);
+    min-width: 0;
+}
+
+.date-display-text {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Custom Calendar Popup */
+.custom-calendar-popup {
+    display: none;
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 10000;
+    width: 650px;
+    border: 1px solid #e0e0e0;
+}
+
+.custom-calendar-popup.active {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.custom-calendar-popup::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    height: 30px;
+}
+
+/* cal-btn styles moved to slider.css */
+
+.months-container {
+    display: flex;
+    gap: 30px;
+}
+
+.month-view {
+    flex: 1;
+}
+
+.month-title {
+    text-align: center;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 10px;
+}
+
+.weekdays span {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #999;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.day-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #333;
+    transition: all 0.2s;
+}
+
+.day-cell:hover:not(.empty):not(.disabled) {
+    background-color: #f0f2f5;
+}
+
+.day-cell.empty {
+    cursor: default;
+}
+
+.day-cell.disabled {
+    color: #ddd;
+    cursor: not-allowed;
+}
+
+.day-cell.selected {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.day-cell.in-range {
+    background-color: rgba(248, 151, 31, 0.15);
+    color: #333;
+}
+
+.calendar-footer {
+    margin-top: 20px;
+    text-align: right;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.cal-apply-btn {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cal-apply-btn:hover {
+    background: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+    .custom-calendar-popup {
+        width: 320px;
+        left: 0;
+        transform: none;
+        padding: 15px;
+    }
+
+    .months-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .custom-calendar-popup::before {
+        left: 20px;
+    }
 }
 
 .search-btn {
@@ -1629,4 +1826,139 @@ h4 {
 .forgot-pass {
     color: var(--primary-color);
     text-decoration: none;
+}
+
+/* ============================================
+   MODAL SYSTEM
+   ============================================ */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-container {
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #95a5a6;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+    border: none;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: #eee;
+    color: #e74c3c;
+}
+
+.modal-content {
+    padding: 40px;
+}
+
+.modal-tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-tab {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    color: #95a5a6;
+    transition: all 0.3s;
+}
+
+.modal-tab.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.modal-body {
+    padding-top: 30px;
+}
+
+.modal-form-section {
+    display: none;
+}
+
+.modal-form-section.active {
+    display: block;
+}
+
+/* Custom button for switching within modal */
+.modal-switch-btn {
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s;
+}
+
+.modal-switch-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+
+    .modal-container.login-size,
+    .modal-container.register-size {
+        max-width: 95%;
+        margin: 10px;
+    }
+
+    .modal-content {
+        padding: 25px;
+    }
 }

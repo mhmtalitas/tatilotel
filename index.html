@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="TatilOtel - En iyi tatil fırsatları, oteller ve turlar. Hayalinizdeki tatili şimdi planlayın.">
+        content="TatilOtel - En iyi tatil fırsatları ve turlar. Hayalinizdeki tatili şimdi planlayın.">
     <title>TatilOtel - Hayalinizdeki Tatil Burada</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,8 +35,9 @@
                         <i class="fa-solid fa-phone"></i> 0850 532 37 73
                     </div>
                     <!-- Notification removed -->
-                    <a href="register.html" class="btn-register">Kayıt Ol</a>
-                    <a href="login.html" class="btn-login"><i class="fa-solid fa-user"></i> Giriş Yap</a>
+                    <a href="javascript:void(0)" class="btn-register" id="openRegister">Üye Ol</a>
+                    <a href="javascript:void(0)" class="btn-login" id="openLogin"><i class="fa-solid fa-user"></i> Giriş
+                        Yap</a>
                 </div>
                 <button class="mobile-menu-btn">
                     <i class="fa-solid fa-bars"></i>
@@ -122,26 +123,61 @@
     <section class="search-section">
         <div class="container">
             <!-- Tour Search Box (No Tabs - Direct Search) -->
+            <!-- Tour Search Box (Updated with specific fields) -->
             <div class="search-box active">
                 <div class="search-item">
-                    <i class="fa-solid fa-globe"></i>
+                    <i class="fa-solid fa-layer-group"></i>
                     <div class="search-input-group">
-                        <label>Nereye Gitmek İstersin?</label>
-                        <input type="text" placeholder="Ülke, Şehir veya Tur Adı">
+                        <label>Tur Kategorisi</label>
+                        <select class="search-select">
+                            <option value="">Hepsi</option>
+                            <option value="kultur">Kültür Turları</option>
+                            <option value="yurt-disi">Yurt Dışı Turları</option>
+                            <option value="gemi">Gemi Turları</option>
+                            <option value="kayak">Kayak Turları</option>
+                        </select>
                     </div>
                 </div>
                 <div class="search-item">
-                    <i class="fa-solid fa-calendar-alt"></i>
+                    <i class="fa-solid fa-umbrella-beach"></i>
                     <div class="search-input-group">
-                        <label>Tarih Aralığı</label>
-                        <input type="text" placeholder="Hangi Tarihler?">
+                        <label>Tur Alt Kategorisi</label>
+                        <select class="search-select">
+                            <option value="">Hepsi</option>
+                            <option value="italya">İtalya Turları</option>
+                            <option value="balkan">Balkan Turları</option>
+                            <option value="gap">GAP Turları</option>
+                            <option value="karadeniz">Karadeniz Turları</option>
+                        </select>
                     </div>
                 </div>
                 <div class="search-item">
-                    <i class="fa-solid fa-users"></i>
+                    <i class="fa-solid fa-location-dot"></i>
                     <div class="search-input-group">
-                        <label>Kişi Sayısı</label>
-                        <input type="text" placeholder="Kaç Kişi?">
+                        <label>Ziyaret Yeri</label>
+                        <input type="text" placeholder="Örn. İtalya, Balayı, Vizesiz">
+                    </div>
+                </div>
+                <div class="search-item date-picker-trigger" id="datePickerTrigger">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <div class="search-input-group">
+                        <label>Tarih</label>
+                        <div class="date-display-text" id="dateDisplayText">Başlangıç - Bitiş Tarihi</div>
+                    </div>
+                    <!-- Custom Range Calendar -->
+                    <div class="custom-calendar-popup" id="customCalendar">
+                        <div class="calendar-header">
+                            <button class="cal-btn prev" id="prevMonth"><i
+                                    class="fa-solid fa-chevron-left"></i></button>
+                            <button class="cal-btn next" id="nextMonth"><i
+                                    class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                        <div class="months-container" id="monthsContainer">
+                            <!-- JS will inject months here -->
+                        </div>
+                        <div class="calendar-footer">
+                            <button class="cal-apply-btn" id="applyDateBtn">Uygula</button>
+                        </div>
                     </div>
                 </div>
                 <button class="search-btn">Tur Ara</button>
@@ -149,54 +185,18 @@
         </div>
     </section>
 
-    <!-- Hero Slider Section -->
+    <!-- Hero Section (Single Image) -->
     <section class="hero-slider">
         <div class="slider-container">
-            <!-- Slide 1 -->
             <div class="slide active">
                 <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-                    alt="Tatil Görseli 1">
+                    alt="Tatil Görseli">
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
                     <h2>Hayalinizdeki Tatili Keşfedin</h2>
-                    <p>En uygun fiyatlarla lüks oteller ve unutulmaz anlar sizi bekliyor</p>
+                    <p>En uygun fiyatlarla unutulmaz turlar sizi bekliyor</p>
                 </div>
             </div>
-            <!-- Slide 2 -->
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-                    alt="Tatil Görseli 2">
-                <div class="slide-overlay"></div>
-                <div class="slide-content">
-                    <h2>Eşsiz Deneyimler Sizi Bekliyor</h2>
-                    <p>Kıbrıs'ın en güzel otelleri ve turları ile unutulmaz anılar biriktirin</p>
-                </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-                    alt="Tatil Görseli 3">
-                <div class="slide-overlay"></div>
-                <div class="slide-content">
-                    <h2>Sömestre Tatilinde Fırsatları Kaçırmayın</h2>
-                    <p>Ailece keyifli bir tatil için özel kampanyalarımızı inceleyin</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slider Controls -->
-        <button class="slider-btn prev" onclick="changeSlide(-1)">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button class="slider-btn next" onclick="changeSlide(1)">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-        <!-- Slider Dots -->
-        <div class="slider-dots">
-            <span class="dot active" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </section>
 
@@ -220,7 +220,7 @@
                 <!-- Tour Card 1 -->
                 <div class="pro-card">
                     <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1512453979798-5ea932a838fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                             alt="Dubai Turu">
                     </div>
                     <div class="pro-card-body">
@@ -258,7 +258,7 @@
                 <!-- Tour Card 3 -->
                 <div class="pro-card">
                     <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1543783207-c1f5fc6953c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                             alt="İspanya Turu">
                     </div>
                     <div class="pro-card-body">
@@ -330,152 +330,59 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Hotel Cards Section -->
-    <section class="pro-section">
-        <div class="container">
-            <div class="pro-section-header">
-                <div class="pro-title-group">
-                    <h2>Kıbrıs Otelleri</h2>
-                    <p>Kıbrıs'ın En iyi Otelleri</p>
-                </div>
-                <div class="pro-view-all">
-                    <span>Tümünü İncele</span>
-                    <a href="#" class="pro-nav-btn"><i class="fa-solid fa-chevron-left"></i></a>
-                    <a href="#" class="pro-nav-btn"><i class="fa-solid fa-chevron-right"></i></a>
-                </div>
-            </div>
-
-            <div class="pro-card-grid">
-                <!-- Card 1 -->
+                <!-- Tour Card 7 -->
                 <div class="pro-card">
                     <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Acapulco Resort">
+                        <img src="https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Kapadokya Turu">
                     </div>
                     <div class="pro-card-body">
-                        <h3 class="pro-card-title">Acapulco Resort Convention SPA Hotel</h3>
+                        <h3 class="pro-card-title">Kapadokya Balon Turu & Peribacaları (3 Gece)</h3>
                         <div class="pro-card-location">
-                            <span>Girne Otelleri</span>
-                            <span>Kıbrıs Otelleri</span>
-                            <span>Merkez</span>
-                        </div>
-                        <div class="pro-rating-badge">
-                            5 <i class="fa-solid fa-star" style="font-size: 0.6rem;"></i>
+                            <span>Kapadokya Turları</span>
+                            <span>Yurt İçi</span>
                         </div>
                         <div class="pro-card-footer">
-                            <a href="#" class="btn-deal">Fırsatı Yakala!</a>
+                            <a href="#" class="btn-deal" style="color: #e67e22;">Fırsatı Yakala! <i
+                                    class="fa-solid fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Tour Card 8 -->
                 <div class="pro-card">
                     <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1571896349842-6e5c48dc52e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Grand Pasha">
+                        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Yunanistan Turu">
                     </div>
                     <div class="pro-card-body">
-                        <h3 class="pro-card-title">Grand Pasha Kyrenia Hotel & Casino & Spa</h3>
+                        <h3 class="pro-card-title">Yunan Adaları & Atina Kültür Turu (5 Gece)</h3>
                         <div class="pro-card-location">
-                            <span>Girne Otelleri</span>
-                            <span>Kıbrıs Otelleri</span>
-                            <span>Merkez</span>
-                        </div>
-                        <div class="pro-rating-badge">
-                            5 <i class="fa-solid fa-star" style="font-size: 0.6rem;"></i>
+                            <span>Yunanistan Turları</span>
+                            <span>Avrupa</span>
                         </div>
                         <div class="pro-card-footer">
-                            <a href="#" class="btn-deal">Fırsatı Yakala!</a>
+                            <a href="#" class="btn-deal" style="color: #e67e22;">Fırsatı Yakala! <i
+                                    class="fa-solid fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Tour Card 9 -->
                 <div class="pro-card">
                     <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Concorde Luxury">
+                        <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Mısır Turu">
                     </div>
                     <div class="pro-card-body">
-                        <h3 class="pro-card-title">Concorde Luxury Resort Kıbrıs (Cyprus)</h3>
+                        <h3 class="pro-card-title">Mısır Piramitler & Nil Nehri Kruvaziyer Turu</h3>
                         <div class="pro-card-location">
-                            <span>Bafra Otelleri</span>
-                            <span>Kıbrıs Otelleri</span>
-                        </div>
-                        <div class="pro-rating-badge">
-                            5 <i class="fa-solid fa-star" style="font-size: 0.6rem;"></i>
+                            <span>Mısır Turları</span>
+                            <span>Afrika</span>
                         </div>
                         <div class="pro-card-footer">
-                            <a href="#" class="btn-deal">Fırsatı Yakala!</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="pro-card">
-                    <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Limak Cyprus">
-                    </div>
-                    <div class="pro-card-body">
-                        <h3 class="pro-card-title">Limak Cyprus Deluxe Hotel</h3>
-                        <div class="pro-card-location">
-                            <span>Bafra Otelleri</span>
-                            <span>Kıbrıs Otelleri</span>
-                        </div>
-                        <div class="pro-rating-badge">
-                            5 <i class="fa-solid fa-star" style="font-size: 0.6rem;"></i>
-                        </div>
-                        <div class="pro-card-footer">
-                            <a href="#" class="btn-deal">Fırsatı Yakala!</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="pro-card">
-                    <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Chamada Prestige">
-                    </div>
-                    <div class="pro-card-body">
-                        <h3 class="pro-card-title">Chamada Prestige Hotel & Spa</h3>
-                        <div class="pro-card-location">
-                            <span>Girne Otelleri</span>
-                            <span>Kıbrıs Otelleri</span>
-                            <span>Merkez</span>
-                        </div>
-                        <div class="pro-rating-badge" style="background-color: #7f8c8d;">
-                            0 <i class="fa-solid fa-star" style="font-size: 0.6rem;"></i>
-                        </div>
-                        <div class="pro-card-footer">
-                            <a href="#" class="btn-deal">Fırsatı Yakala!</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="pro-card">
-                    <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Les Ambassadeurs">
-                    </div>
-                    <div class="pro-card-body">
-                        <h3 class="pro-card-title">Les Ambassadeurs Hotel Casino & Marina</h3>
-                        <div class="pro-card-location">
-                            <span>Girne Otelleri</span>
-                            <span>Kıbrıs Otelleri</span>
-                            <span>Merkez</span>
-                        </div>
-                        <div class="pro-rating-badge">
-                            4 <i class="fa-solid fa-star" style="font-size: 0.6rem;"></i>
-                        </div>
-                        <div class="pro-card-footer">
-                            <a href="#" class="btn-deal">Fırsatı Yakala!</a>
+                            <a href="#" class="btn-deal" style="color: #e67e22;">Fırsatı Yakala! <i
+                                    class="fa-solid fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -483,103 +390,11 @@
         </div>
     </section>
 
+    <!-- Kıbrıs Otelleri section removed -->
 
 
-    <!-- Popular Hotels -->
-    <section class="popular-hotels section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2>Popüler Oteller</h2>
-                <p>Misafirlerimizin en çok tercih ettiği otelleri inceleyin.</p>
-            </div>
-            <div class="hotel-grid">
-                <!-- Hotel Card 1 -->
-                <div class="hotel-card">
-                    <div class="hotel-image">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                            alt="Luxury Resort">
-                        <span class="badge">Popüler</span>
-                        <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
-                    </div>
-                    <div class="hotel-content">
-                        <div class="hotel-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <span>(4.9)</span>
-                        </div>
-                        <h3 class="hotel-title">Grand Luxury Resort & Spa</h3>
-                        <p class="hotel-location"><i class="fa-solid fa-location-dot"></i> Antalya, Türkiye</p>
-                        <div class="hotel-price-row">
-                            <div class="price-info">
-                                <span class="price-label">Gecelik</span>
-                                <span class="price">₺3.500</span>
-                            </div>
-                            <a href="#" class="btn-sm btn-primary">İncele</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Hotel Card 2 -->
-                <div class="hotel-card">
-                    <div class="hotel-image">
-                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                            alt="Seaside Hotel">
-                        <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
-                    </div>
-                    <div class="hotel-content">
-                        <div class="hotel-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                            <span>(4.5)</span>
-                        </div>
-                        <h3 class="hotel-title">Blue Ocean Hotel</h3>
-                        <p class="hotel-location"><i class="fa-solid fa-location-dot"></i> Bodrum, Türkiye</p>
-                        <div class="hotel-price-row">
-                            <div class="price-info">
-                                <span class="price-label">Gecelik</span>
-                                <span class="price">₺2.800</span>
-                            </div>
-                            <a href="#" class="btn-sm btn-primary">İncele</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hotel Card 3 -->
-                <div class="hotel-card">
-                    <div class="hotel-image">
-                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                            alt="Mountain View Hotel">
-                        <span class="badge discount">%15 İndirim</span>
-                        <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
-                    </div>
-                    <div class="hotel-content">
-                        <div class="hotel-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <span>(4.0)</span>
-                        </div>
-                        <h3 class="hotel-title">Pine Mountain Resort</h3>
-                        <p class="hotel-location"><i class="fa-solid fa-location-dot"></i> Fethiye, Türkiye</p>
-                        <div class="hotel-price-row">
-                            <div class="price-info">
-                                <span class="price-label">Gecelik</span>
-                                <span class="price">₺1.950</span>
-                            </div>
-                            <a href="#" class="btn-sm btn-primary">İncele</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Popular Hotels section removed -->
 
     <!-- Call to Action -->
     <section class="cta section-padding">
@@ -615,7 +430,6 @@
                 <h4>Hızlı Bağlantılar</h4>
                 <ul>
                     <li><a href="#">Hakkımızda</a></li>
-                    <li><a href="#">Oteller</a></li>
                     <li><a href="#">Turlar</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">İletişim</a></li>
@@ -634,7 +448,7 @@
             <div class="footer-col">
                 <h4>İletişim</h4>
                 <ul>
-                    <li><i class="fa-solid fa-phone"></i> +90 (850) 123 45 67</li>
+                    <li><i class="fa-solid fa-phone"></i> 0850 532 37 73</li>
                     <li><i class="fa-solid fa-envelope"></i> info@tatilotel.com.tr</li>
                     <li><i class="fa-solid fa-location-dot"></i> İstanbul, Türkiye</li>
                 </ul>
@@ -646,6 +460,80 @@
             </div>
         </div>
     </footer>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-container">
+            <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-tabs">
+                <div class="modal-tab active" data-target="loginSection">Giriş Yap</div>
+                <div class="modal-tab" data-target="registerSection">Üye Ol</div>
+            </div>
+            <div class="modal-content">
+                <!-- Login Section -->
+                <div class="modal-form-section active" id="loginSection">
+
+                    <form class="auth-form">
+                        <div class="form-group">
+                            <label>E-posta Adresi</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" placeholder="ornek@mail.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Parola</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" placeholder="••••••••" required>
+                            </div>
+                        </div>
+                        <div class="remember-forgot">
+                            <label class="remember-me"><input type="checkbox"> Beni Hatırla</label>
+                            <a href="#" class="forgot-pass">Şifremi Unuttum?</a>
+                        </div>
+                        <button type="submit" class="auth-btn">Giriş Yap</button>
+                    </form>
+                    <div class="auth-footer">
+                        Henüz üye değil misiniz? <button class="modal-switch-btn"
+                            onclick="switchModal('registerSection')">Üye Ol</button>
+                    </div>
+                </div>
+
+                <!-- Register Section -->
+                <div class="modal-form-section" id="registerSection">
+
+                    <form class="auth-form">
+                        <div class="form-group">
+                            <label>Ad Soyad</label>
+                            <div class="input-wrapper"><i class="fa-solid fa-user"></i><input type="text"
+                                    placeholder="Adınız Soyadınız" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label>E-posta Adresi</label>
+                            <div class="input-wrapper"><i class="fa-solid fa-envelope"></i><input type="email"
+                                    placeholder="ornek@mail.com" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon Numarası</label>
+                            <div class="input-wrapper"><i class="fa-solid fa-phone"></i><input type="tel"
+                                    placeholder="05XX XXX XX XX" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Parola</label>
+                            <div class="input-wrapper"><i class="fa-solid fa-lock"></i><input type="password"
+                                    placeholder="••••••••" required></div>
+                        </div>
+                        <button type="submit" class="auth-btn">Üye Ol</button>
+                    </form>
+                    <div class="auth-footer">
+                        Zaten üye misiniz? <button class="modal-switch-btn" onclick="switchModal('loginSection')">Giriş
+                            Yap</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         function openSearch(evt, searchName) {
@@ -713,69 +601,227 @@
             }
         });
 
-        // ========================================
-        // HERO SLIDER FUNCTIONALITY
-        // ========================================
-        let currentSlideIndex = 1;
-        let slideInterval;
 
-        // Show specific slide
-        function showSlide(n) {
-            const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.dot');
 
-            if (!slides.length) return;
+        // Modal Functionality
+        const authModal = document.getElementById('authModal');
+        const closeModal = document.getElementById('closeModal');
+        const openLogin = document.getElementById('openLogin');
+        const openRegister = document.getElementById('openRegister');
+        const modalTabs = document.querySelectorAll('.modal-tab');
+        const modalSections = document.querySelectorAll('.modal-form-section');
 
-            if (n > slides.length) {
-                currentSlideIndex = 1;
+        function toggleModal(show = true, section = 'loginSection') {
+            if (show) {
+                authModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                switchModal(section);
+            } else {
+                authModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
             }
-            if (n < 1) {
-                currentSlideIndex = slides.length;
+        }
+
+        function switchModal(sectionId) {
+            modalSections.forEach(section => section.classList.remove('active'));
+            modalTabs.forEach(tab => tab.classList.remove('active'));
+
+            document.getElementById(sectionId).classList.add('active');
+            document.querySelector(`[data-target="${sectionId}"]`).classList.add('active');
+        }
+
+        openLogin.addEventListener('click', () => toggleModal(true, 'loginSection'));
+        openRegister.addEventListener('click', () => toggleModal(true, 'registerSection'));
+        closeModal.addEventListener('click', () => toggleModal(false));
+
+        authModal.addEventListener('click', (e) => {
+            if (e.target === authModal) toggleModal(false);
+        });
+
+        modalTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                switchModal(tab.getAttribute('data-target'));
+            });
+        });
+
+        // ========================================
+        // CUSTOM DATE RANGE PICKER (Obilet Style)
+        // ========================================
+        const datePickerTrigger = document.getElementById('datePickerTrigger');
+        const customCalendar = document.getElementById('customCalendar');
+        const monthsContainer = document.getElementById('monthsContainer');
+        const prevMonthBtn = document.getElementById('prevMonth');
+        const nextMonthBtn = document.getElementById('nextMonth');
+        const dateDisplayText = document.getElementById('dateDisplayText');
+        const applyDateBtn = document.getElementById('applyDateBtn');
+
+        let currentDate = new Date();
+        let selectedStartDate = null;
+        let selectedEndDate = null;
+
+        const monthNames = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+
+        // Prevent ALL clicks inside calendar from bubbling up
+        customCalendar.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        // Toggle Calendar - only the trigger area (not the calendar itself)
+        datePickerTrigger.addEventListener('click', (e) => {
+            if (!customCalendar.classList.contains('active')) {
+                customCalendar.classList.add('active');
+                renderCalendar();
+            }
+        });
+
+        // Close ONLY when clicking outside the entire trigger area
+        document.addEventListener('click', (e) => {
+            if (!datePickerTrigger.contains(e.target)) {
+                customCalendar.classList.remove('active');
+            }
+        });
+
+        prevMonthBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        nextMonthBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        // Close calendar ONLY on Uygula button
+        applyDateBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            customCalendar.classList.remove('active');
+        });
+
+        // Resize listener to re-render properly
+        window.addEventListener('resize', () => {
+            // Debounce or just re-render if active
+            if (customCalendar.classList.contains('active')) {
+                renderCalendar();
+            }
+        });
+
+        function renderCalendar() {
+            monthsContainer.innerHTML = '';
+
+            // Determine number of months to show based on screen width
+            const isMobile = window.innerWidth < 768;
+            const monthsToShow = isMobile ? 1 : 2;
+
+            // Render months
+            for (let i = 0; i < monthsToShow; i++) {
+                const monthDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + i, 1);
+                const monthHTML = createMonthHTML(monthDate);
+                monthsContainer.innerHTML += monthHTML;
             }
 
-            // Hide all slides
-            slides.forEach(slide => {
-                slide.classList.remove('active');
+            // Re-attach listeners for day cells
+            document.querySelectorAll('.day-cell:not(.empty):not(.disabled)').forEach(cell => {
+                cell.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    handleDateClick(new Date(e.target.dataset.date));
+                });
             });
-
-            // Remove active from all dots
-            dots.forEach(dot => {
-                dot.classList.remove('active');
-            });
-
-            // Show current slide
-            slides[currentSlideIndex - 1].classList.add('active');
-            dots[currentSlideIndex - 1].classList.add('active');
         }
 
-        // Next/Previous controls
-        function changeSlide(n) {
-            clearInterval(slideInterval);
-            currentSlideIndex += n;
-            showSlide(currentSlideIndex);
-            startAutoPlay();
+        function createMonthHTML(date) {
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            const firstDay = new Date(year, month, 1).getDay(); // 0 is Sunday
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            // Adjust for Monday start (Turkey)
+            let adjustedFirstDay = firstDay === 0 ? 6 : firstDay - 1;
+
+            let html = `
+                <div class="month-view">
+                    <div class="month-title">${monthNames[month]} ${year}</div>
+                    <div class="weekdays">
+                        <span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cts</span><span>Paz</span>
+                    </div>
+                    <div class="days-grid">
+            `;
+
+            // Empty slots
+            for (let i = 0; i < adjustedFirstDay; i++) {
+                html += `<div class="day-cell empty"></div>`;
+            }
+
+            // Days
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            for (let i = 1; i <= daysInMonth; i++) {
+                const cellDate = new Date(year, month, i);
+                let classes = 'day-cell';
+
+                // Past dates check
+                if (cellDate < today) {
+                    classes += ' disabled';
+                }
+
+                // Selection check
+                if (selectedStartDate && cellDate.getTime() === selectedStartDate.getTime()) classes += ' selected';
+                if (selectedEndDate && cellDate.getTime() === selectedEndDate.getTime()) classes += ' selected';
+
+                // Range check
+                if (selectedStartDate && selectedEndDate && cellDate > selectedStartDate && cellDate < selectedEndDate) {
+                    classes += ' in-range';
+                }
+
+                html += `<div class="${classes}" data-date="${cellDate.toISOString()}">${i}</div>`;
+            }
+
+            html += `</div></div>`;
+            return html;
         }
 
-        // Dot controls
-        function currentSlide(n) {
-            clearInterval(slideInterval);
-            currentSlideIndex = n;
-            showSlide(currentSlideIndex);
-            startAutoPlay();
+        function handleDateClick(date) {
+            if (!selectedStartDate || (selectedStartDate && selectedEndDate)) {
+                // New selection - start fresh
+                selectedStartDate = date;
+                selectedEndDate = null;
+            } else {
+                // Second click - set end date
+                if (date < selectedStartDate) {
+                    // If clicked before start, swap
+                    selectedEndDate = selectedStartDate;
+                    selectedStartDate = date;
+                } else if (date.getTime() === selectedStartDate.getTime()) {
+                    // Same date clicked, ignore
+                    return;
+                } else {
+                    selectedEndDate = date;
+                }
+            }
+
+            updateDisplayText();
+            renderCalendar();
         }
 
-        // Auto play
-        function startAutoPlay() {
-            slideInterval = setInterval(() => {
-                currentSlideIndex++;
-                showSlide(currentSlideIndex);
-            }, 5000); // Change slide every 5 seconds
+        function updateDisplayText() {
+            if (selectedStartDate && selectedEndDate) {
+                dateDisplayText.textContent = `${formatDate(selectedStartDate)} - ${formatDate(selectedEndDate)}`;
+                dateDisplayText.style.color = '#333';
+            } else if (selectedStartDate) {
+                dateDisplayText.textContent = `${formatDate(selectedStartDate)} - Bitiş Tarihi Seçin`;
+                dateDisplayText.style.color = '#333';
+            } else {
+                dateDisplayText.textContent = 'Başlangıç - Bitiş Tarihi';
+            }
         }
 
-        // Initialize slider
-        showSlide(currentSlideIndex);
-        startAutoPlay();
+        function formatDate(date) {
+            return `${date.getDate()} ${monthNames[date.getMonth()]}`;
+        }
     </script>
 </body>
 
 </html>
+```

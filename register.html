@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kayıt Ol - TatilOtel</title>
+    <title>Üye Ol - TatilOtel</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,12 +18,98 @@
 </head>
 
 <body>
-    <!-- Top Row (Small version for Auth) -->
-    <div class="top-header">
-        <div class="container top-header-container" style="justify-content: center;">
-            <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="TatilOtel" class="logo-img">
-            </a>
+    <!-- Header -->
+    <div class="header-wrapper">
+        <!-- Top Row -->
+        <div class="top-header">
+            <div class="container top-header-container">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="TatilOtel" class="logo-img">
+                </a>
+                <div class="top-actions">
+                    <div class="top-phone">
+                        <i class="fa-solid fa-phone"></i> 0850 532 37 73
+                    </div>
+                    <a href="register.html" class="btn-register">Üye Ol</a>
+                    <a href="login.html" class="btn-login"><i class="fa-solid fa-user"></i> Giriş Yap</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Bottom Row: Navigation -->
+        <div class="main-nav-bar">
+            <div class="container">
+                <nav class="main-nav">
+                    <ul class="main-nav-list">
+                        <!-- KONSEPT TURLAR Dropdown -->
+                        <li class="main-nav-item">
+                            <a href="tours.html" class="main-nav-link">
+                                KONSEPT TURLAR <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-grid">
+                                    <div class="mega-col">
+                                        <ul>
+                                            <li><a href="#">Kültür Turları</a></li>
+                                            <li><a href="#">Balayı Turları</a></li>
+                                            <li><a href="#">Günübirlik Turlar</a></li>
+                                            <li><a href="#">Gemi Turları</a></li>
+                                            <li><a href="#">Fotoğraf Turları</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- YURTİÇİ TURLARI Dropdown -->
+                        <li class="main-nav-item">
+                            <a href="tours.html" class="main-nav-link">
+                                YURTİÇİ TURLARI <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-grid">
+                                    <div class="mega-col">
+                                        <ul>
+                                            <li><a href="#">Ege Akdeniz Turları</a></li>
+                                            <li><a href="#">Doğu Anadolu</a></li>
+                                            <li><a href="#">Kapadokya Turları</a></li>
+                                            <li><a href="#">Karadeniz Turları</a></li>
+                                            <li><a href="#">GAP Turları</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- YURT DIŞI TURLARI Dropdown -->
+                        <li class="main-nav-item">
+                            <a href="tours.html" class="main-nav-link">
+                                YURT DIŞI TURLARI <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-grid">
+                                    <div class="mega-col">
+                                        <ul>
+                                            <li><a href="#">Avrupa Turları</a></li>
+                                            <li><a href="#">Amerika Turları</a></li>
+                                            <li><a href="#">Balkan Turları</a></li>
+                                            <li><a href="#">Uzakdoğu Turları</a></li>
+                                            <li><a href="#">İspanya Turları</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="main-nav-item"><a href="tours.html" class="main-nav-link">SÖMESTİR TURLARI</a></li>
+                        <li class="main-nav-item"><a href="#" class="main-nav-link" style="color:red;">KAMPANYALAR</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
 
@@ -74,7 +160,7 @@
                     </label>
                 </div>
 
-                <button type="submit" class="auth-btn">Kayıt Ol</button>
+                <button type="submit" class="auth-btn">Üye Ol</button>
             </form>
 
             <div class="social-auth">
@@ -97,10 +183,89 @@
         </div>
     </div>
 
-    <footer
-        style="background: #fff; padding: 20px; text-align: center; color: #7f8c8d; font-size: 0.9rem; border-top: 1px solid #eee;">
-        &copy; 2024 TatilOtel. Tüm hakları saklıdır.
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="footer-logo">
+                    Tatil<span class="highlight">Otel</span>
+                </a>
+                <p>Hayalinizdeki tatili planlamanın en güvenilir ve kolay yolu. 10 yılı aşkın tecrübemizle
+                    hizmetinizdeyiz.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Hızlı Bağlantılar</h4>
+                <ul>
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">Oteller</a></li>
+                    <li><a href="#">Turlar</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kurumsal</h4>
+                <ul>
+                    <li><a href="#">Kullanım Şartları</a></li>
+                    <li><a href="#">Gizlilik Politikası</a></li>
+                    <li><a href="#">KVKK</a></li>
+                    <li><a href="#">İptal ve İade</a></li>
+                    <li><a href="#">Çerez Politikası</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>İletişim</h4>
+                <ul>
+                    <li><i class="fa-solid fa-phone"></i> 0850 532 37 73</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@tatilotel.com.tr</li>
+                    <li><i class="fa-solid fa-location-dot"></i> İstanbul, Türkiye</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 TatilOtel. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNavBar = document.querySelector('.main-nav-bar');
+
+        if (menuBtn && mainNavBar) {
+            menuBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                mainNavBar.classList.toggle('active');
+            });
+        }
+
+        // Mega menu accordion for mobile
+        const menuItems = document.querySelectorAll('.main-nav-item');
+        menuItems.forEach((item) => {
+            const link = item.querySelector('.main-nav-link');
+            const megaMenu = item.querySelector('.mega-menu');
+
+            if (link && megaMenu) {
+                link.addEventListener('click', function (e) {
+                    if (window.innerWidth > 768) return;
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const wasActive = item.classList.contains('active');
+                    menuItems.forEach((otherItem) => otherItem.classList.remove('active'));
+                    if (!wasActive) item.classList.add('active');
+                }, true);
+            }
+        });
+    </script>
 </body>
 
 </html>

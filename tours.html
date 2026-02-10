@@ -32,8 +32,9 @@
                     <div class="top-phone">
                         <i class="fa-solid fa-phone"></i> 0850 532 37 73
                     </div>
-                    <a href="register.html" class="btn-register">Kayıt Ol</a>
-                    <a href="login.html" class="btn-login"><i class="fa-solid fa-user"></i> Giriş Yap</a>
+                    <a href="javascript:void(0)" class="btn-register" id="openRegister">Üye Ol</a>
+                    <a href="javascript:void(0)" class="btn-login" id="openLogin"><i class="fa-solid fa-user"></i> Giriş
+                        Yap</a>
                 </div>
                 <button class="mobile-menu-btn">
                     <i class="fa-solid fa-bars"></i>
@@ -279,63 +280,180 @@
             <div class="footer-col">
                 <h4>İletişim</h4>
                 <ul>
-                    <li><i class="fa-solid fa-phone"></i> +90 (850) 123 45 67</li>
+                    <li><i class="fa-solid fa-phone"></i> 0850 532 37 73</li>
                     <li><i class="fa-solid fa-envelope"></i> info@tatilotel.com.tr</li>
+                    <li><i class="fa-solid fa-location-dot"></i> İstanbul, Türkiye</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2026 TatilOtel.</p>
+                <p>&copy; 2026 TatilOtel. Tüm hakları saklıdır.</p>
             </div>
         </div>
-        <script>
-            // Mobile Menu Toggle - PRODUCTION VERSION
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            const mainNavBar = document.querySelector('.main-nav-bar');
+    </footer>
+    <script>
+        // Mobile Menu Toggle - PRODUCTION VERSION
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNavBar = document.querySelector('.main-nav-bar');
 
-            // Hamburger menu toggle
-            if (menuBtn && mainNavBar) {
-                menuBtn.addEventListener('click', function (e) {
+        // Hamburger menu toggle
+        if (menuBtn && mainNavBar) {
+            menuBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                mainNavBar.classList.toggle('active');
+            });
+        }
+
+        // Mega menu accordion - Direct approach on each link
+        const menuItems = document.querySelectorAll('.main-nav-item');
+
+        menuItems.forEach((item, index) => {
+            const link = item.querySelector('.main-nav-link');
+            const megaMenu = item.querySelector('.mega-menu');
+
+            if (link && megaMenu) {
+                link.addEventListener('click', function (e) {
+                    // Only handle on mobile
+                    if (window.innerWidth > 768) {
+                        return;
+                    }
+
                     e.preventDefault();
                     e.stopPropagation();
-                    mainNavBar.classList.toggle('active');
-                });
+
+                    // Get current state
+                    const wasActive = item.classList.contains('active');
+
+                    // Close all menus
+                    menuItems.forEach((otherItem) => {
+                        otherItem.classList.remove('active');
+                    });
+
+                    // Toggle this one
+                    if (!wasActive) {
+                        item.classList.add('active');
+                    }
+                }, true); // Use capture phase
             }
+        });
 
-            // Mega menu accordion - Direct approach on each link
-            const menuItems = document.querySelectorAll('.main-nav-item');
+        // Modal Functionality
+        const authModal = document.getElementById('authModal');
+        const closeModal = document.getElementById('closeModal');
+        const openLogin = document.getElementById('openLogin');
+        const openRegister = document.getElementById('openRegister');
+        const modalTabs = document.querySelectorAll('.modal-tab');
+        const modalSections = document.querySelectorAll('.modal-form-section');
 
-            menuItems.forEach((item, index) => {
-                const link = item.querySelector('.main-nav-link');
-                const megaMenu = item.querySelector('.mega-menu');
+        function toggleModal(show = true, section = 'loginSection') {
+            if (show) {
+                authModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                switchModal(section);
+            } else {
+                authModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
 
-                if (link && megaMenu) {
-                    link.addEventListener('click', function (e) {
-                        // Only handle on mobile
-                        if (window.innerWidth > 768) {
-                            return;
-                        }
+        function switchModal(sectionId) {
+            modalSections.forEach(section => section.classList.remove('active'));
+            modalTabs.forEach(tab => tab.classList.remove('active'));
 
-                        e.preventDefault();
-                        e.stopPropagation();
+            document.getElementById(sectionId).classList.add('active');
+            document.querySelector(`[data-target="${sectionId}"]`).classList.add('active');
+        }
 
-                        // Get current state
-                        const wasActive = item.classList.contains('active');
+        openLogin.addEventListener('click', () => toggleModal(true, 'loginSection'));
+        openRegister.addEventListener('click', () => toggleModal(true, 'registerSection'));
+        closeModal.addEventListener('click', () => toggleModal(false));
 
-                        // Close all menus
-                        menuItems.forEach((otherItem) => {
-                            otherItem.classList.remove('active');
-                        });
+        authModal.addEventListener('click', (e) => {
+            if (e.target === authModal) toggleModal(false);
+        });
 
-                        // Toggle this one
-                        if (!wasActive) {
-                            item.classList.add('active');
-                        }
-                    }, true); // Use capture phase
-                }
+        modalTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                switchModal(tab.getAttribute('data-target'));
             });
-        </script>
+        });
+    </script>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-container">
+            <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-tabs">
+                <div class="modal-tab active" data-target="loginSection">Giriş Yap</div>
+                <div class="modal-tab" data-target="registerSection">Üye Ol</div>
+            </div>
+            <div class="modal-content">
+                <!-- Login Section -->
+                <div class="modal-form-section active" id="loginSection">
+
+                    <form class="auth-form">
+                        <div class="form-group">
+                            <label>E-posta Adresi</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" placeholder="ornek@mail.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Parola</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" placeholder="••••••••" required>
+                            </div>
+                        </div>
+                        <div class="remember-forgot">
+                            <label class="remember-me"><input type="checkbox"> Beni Hatırla</label>
+                            <a href="#" class="forgot-pass">Şifremi Unuttum?</a>
+                        </div>
+                        <button type="submit" class="auth-btn">Giriş Yap</button>
+                    </form>
+                    <div class="auth-footer">
+                        Henüz üye değil misiniz? <button class="modal-switch-btn"
+                            onclick="switchModal('registerSection')">Üye Ol</button>
+                    </div>
+                </div>
+
+                <!-- Register Section -->
+                <div class="modal-form-section" id="registerSection">
+
+                    <form class="auth-form">
+                        <div class="form-group">
+                            <label>Ad Soyad</label>
+                            <div class="input-wrapper"><i class="fa-solid fa-user"></i><input type="text"
+                                    placeholder="Adınız Soyadınız" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label>E-posta Adresi</label>
+                            <div class="input-wrapper"><i class="fa-solid fa-envelope"></i><input type="email"
+                                    placeholder="ornek@mail.com" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon Numarası</label>
+                            <div class="input-wrapper"><i class="fa-solid fa-phone"></i><input type="tel"
+                                    placeholder="05XX XXX XX XX" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Parola</label>
+                            <div class="input-wrapper"><i class="fa-solid fa-lock"></i><input type="password"
+                                    placeholder="••••••••" required></div>
+                        </div>
+                        <button type="submit" class="auth-btn">Üye Ol</button>
+                    </form>
+                    <div class="auth-footer">
+                        Zaten üye misiniz? <button class="modal-switch-btn" onclick="switchModal('loginSection')">Giriş
+                            Yap</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

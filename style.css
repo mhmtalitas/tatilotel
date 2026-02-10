@@ -3711,75 +3711,77 @@ h4 {
         white-space: nowrap;
         padding: 12px 20px;
         font-size: 0.9rem;
-    }
-}
 
-@media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 1.35rem;
-        line-height: 1.3;
-    }
+        /* Timeline Fixes for ALL mobile/tablet */
+        .timeline {
+            padding-left: 0;
+            margin-left: 0;
+        }
 
-    .meta-item {
-        font-size: 0.85rem;
-    }
+        .timeline::before {
+            display: none;
+        }
 
-    .timeline {
-        padding-left: 0;
-        margin-left: 0;
-    }
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding-left: 0;
+            min-width: 0;
+            /* Critical for flex child shrinking */
+        }
 
-    .timeline::before {
-        display: none;
-    }
+        .day-circle {
+            position: static;
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+            border: 2px solid #ccc;
+            background: #f0f0f0;
+            color: #333;
+            flex-shrink: 0;
+        }
 
-    .timeline-item {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-bottom: 30px;
-        padding-left: 0;
-    }
+        .day-circle span {
+            font-size: 0.9rem;
+        }
 
-    .day-circle {
-        position: static;
-        width: 40px;
-        height: 40px;
-        margin-bottom: 5px;
-        border: 2px solid #ccc;
-        background: #f0f0f0;
-        color: #333;
-    }
+        .timeline-content {
+            padding-left: 0;
+            width: 100%;
+            min-width: 0;
+            /* Critical for flex child shrinking */
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
 
-    .day-circle span {
-        font-size: 0.9rem;
-    }
-
-    .timeline-content {
-        padding-left: 0;
-        width: 100%;
-        overflow-wrap: break-word;
-    }
-
-    .detail-tabs {
-        width: 100%;
-        margin-left: 0;
-        padding-left: 0;
-        padding-right: 0;
-        display: flex;
-        gap: 10px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #eee;
+        .detail-tabs {
+            width: 100%;
+            margin-left: 0;
+            padding-left: 0;
+            padding-right: 0;
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
     }
 
-    .pax-controls {
-        gap: 10px;
-    }
+    @media (max-width: 480px) {
+        .hero-text h1 {
+            font-size: 1.35rem;
+            line-height: 1.3;
+        }
 
-    .pax-btn {
-        width: 32px;
-        height: 32px;
+        .pax-controls {
+            gap: 10px;
+        }
+
+        .pax-btn {
+            width: 32px;
+            height: 32px;
+        }
     }
-}

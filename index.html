@@ -120,67 +120,153 @@
     </div>
 
     <!-- Search Section (Obilet Style - Below Navbar) -->
-    <section class="search-section">
-        <div class="container">
-            <!-- Tour Search Box (No Tabs - Direct Search) -->
-            <!-- Tour Search Box (Updated with specific fields) -->
-            <div class="search-box active">
-                <div class="search-item">
-                    <i class="fa-solid fa-layer-group"></i>
-                    <div class="search-input-group">
-                        <label>Tur Kategorisi</label>
-                        <select class="search-select">
-                            <option value="">Hepsi</option>
-                            <option value="kultur">Kültür Turları</option>
-                            <option value="yurt-disi">Yurt Dışı Turları</option>
-                            <option value="gemi">Gemi Turları</option>
-                            <option value="kayak">Kayak Turları</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="search-item">
-                    <i class="fa-solid fa-umbrella-beach"></i>
-                    <div class="search-input-group">
-                        <label>Tur Alt Kategorisi</label>
-                        <select class="search-select">
-                            <option value="">Hepsi</option>
-                            <option value="italya">İtalya Turları</option>
-                            <option value="balkan">Balkan Turları</option>
-                            <option value="gap">GAP Turları</option>
-                            <option value="karadeniz">Karadeniz Turları</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="search-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div class="search-input-group">
-                        <label>Ziyaret Yeri</label>
-                        <input type="text" placeholder="Örn. İtalya, Balayı, Vizesiz">
-                    </div>
-                </div>
-                <div class="search-item date-picker-trigger" id="datePickerTrigger">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <div class="search-input-group">
-                        <label>Tarih</label>
-                        <div class="date-display-text" id="dateDisplayText">Başlangıç - Bitiş Tarihi</div>
-                    </div>
-                    <!-- Custom Range Calendar -->
-                    <div class="custom-calendar-popup" id="customCalendar">
-                        <div class="calendar-header">
-                            <button class="cal-btn prev" id="prevMonth"><i
-                                    class="fa-solid fa-chevron-left"></i></button>
-                            <button class="cal-btn next" id="nextMonth"><i
-                                    class="fa-solid fa-chevron-right"></i></button>
+    <!-- ETS Tur Style Hero Section -->
+    <section class="ets-hero-wrapper">
+        <div class="ets-hero-bg">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                alt="Tatil Arkaplan">
+            <div class="ets-hero-overlay"></div>
+        </div>
+
+        <div class="container ets-hero-content">
+            <!-- Badge Removed -->
+            <h1 class="ets-hero-title">Hayalindeki tatili TatilOtel ile planla!</h1>
+
+            <div class="ets-search-container">
+                <!-- Tabs Removed -->
+
+
+                <!-- Search Box Card -->
+                <div class="ets-search-card">
+                    <form class="ets-search-form">
+                        <div class="ets-input-group search-trigger">
+                            <input type="text" id="destinationInput"
+                                placeholder="Tur adı, Şehir, Ülke veya Tema giriniz" autocomplete="off">
+                            <!-- Suggestions Dropdown -->
+                            <div class="search-suggestions" id="searchSuggestions">
+                                <div class="suggestion-category">
+                                    <h4>Popüler Kategoriler</h4>
+                                    <div class="suggestion-tags">
+                                        <span class="suggestion-tag" onclick="selectSuggestion('Yurt Dışı Turlar')">Yurt
+                                            Dışı Turlar</span>
+                                        <span class="suggestion-tag" onclick="selectSuggestion('Kültür Turları')">Kültür
+                                            Turları</span>
+                                        <span class="suggestion-tag" onclick="selectSuggestion('Gemi Turları')">Gemi
+                                            Turları</span>
+                                        <span class="suggestion-tag" onclick="selectSuggestion('Balayı Turları')">Balayı
+                                            Turları</span>
+                                    </div>
+                                </div>
+                                <div class="suggestion-category">
+                                    <h4>Yurt İçi Turlar</h4>
+                                    <div class="suggestion-tags">
+                                        <span class="suggestion-tag"
+                                            onclick="selectSuggestion('Karadeniz Turları')">Karadeniz Turları</span>
+                                        <span class="suggestion-tag"
+                                            onclick="selectSuggestion('Kapadokya Turları')">Kapadokya Turları</span>
+                                        <span class="suggestion-tag"
+                                            onclick="selectSuggestion('Ege - Akdeniz Turları')">Ege - Akdeniz</span>
+                                        <span class="suggestion-tag" onclick="selectSuggestion('GAP Turları')">GAP
+                                            Turları</span>
+                                    </div>
+                                </div>
+                                <div class="suggestion-category">
+                                    <h4>Yurt Dışı Turlar</h4>
+                                    <div class="suggestion-tags">
+                                        <span class="suggestion-tag" onclick="selectSuggestion('İtalya Turları')">İtalya
+                                            Turları</span>
+                                        <span class="suggestion-tag" onclick="selectSuggestion('Balkan Turları')">Balkan
+                                            Turları</span>
+                                        <span class="suggestion-tag" onclick="selectSuggestion('Mısır Turları')">Mısır
+                                            Turları</span>
+                                        <span class="suggestion-tag"
+                                            onclick="selectSuggestion('Uzakdoğu Turları')">Uzakdoğu Turları</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="months-container" id="monthsContainer">
-                            <!-- JS will inject months here -->
+                        <div class="ets-input-group date-trigger" id="datePickerTrigger">
+                            <span id="dateDisplayText">Tarih Seçiniz</span>
+                            <div class="custom-calendar-popup" id="customCalendar">
+                                <!-- Calendar Tabs -->
+                                <div class="calendar-tabs">
+                                    <div class="cal-tab active">Aylar</div>
+                                    <div class="cal-tab">Resmi Tatil ve Özel Günler</div>
+                                </div>
+
+                                <!-- Month Grid Content -->
+                                <div class="calendar-content">
+                                    <div class="months-grid" id="monthsGrid">
+                                        <!-- Helper function in JS will populate this to ensure dynamic dates -->
+                                        <label class="month-option">
+                                            <input type="radio" name="monthSelect" value="Şubat 2026" checked>
+                                            <span class="checkmark"></span>
+                                            <span class="month-text">Şubat 2026</span>
+                                        </label>
+                                        <label class="month-option">
+                                            <input type="radio" name="monthSelect" value="Mart 2026">
+                                            <span class="checkmark"></span>
+                                            <span class="month-text">Mart 2026</span>
+                                        </label>
+                                        <label class="month-option">
+                                            <input type="radio" name="monthSelect" value="Nisan 2026">
+                                            <span class="checkmark"></span>
+                                            <span class="month-text">Nisan 2026</span>
+                                        </label>
+                                        <label class="month-option">
+                                            <input type="radio" name="monthSelect" value="Mayıs 2026">
+                                            <span class="checkmark"></span>
+                                            <span class="month-text">Mayıs 2026</span>
+                                        </label>
+                                        <label class="month-option">
+                                            <input type="radio" name="monthSelect" value="Haziran 2026">
+                                            <span class="checkmark"></span>
+                                            <span class="month-text">Haziran 2026</span>
+                                        </label>
+                                        <label class="month-option">
+                                            <input type="radio" name="monthSelect" value="Temmuz 2026">
+                                            <span class="checkmark"></span>
+                                            <span class="month-text">Temmuz 2026</span>
+                                        </label>
+                                        <label class="month-option">
+                                            <input type="radio" name="monthSelect" value="Ağustos 2026">
+                                            <span class="checkmark"></span>
+                                            <span class="month-text">Ağustos 2026</span>
+                                        </label>
+                                        <label class="month-option">
+                                            <input type="radio" name="monthSelect" value="Eylül 2026">
+                                            <span class="checkmark"></span>
+                                            <span class="month-text">Eylül 2026</span>
+                                        </label>
+                                        <label class="month-option">
+                                            <input type="radio" name="monthSelect" value="Ekim 2026">
+                                            <span class="checkmark"></span>
+                                            <span class="month-text">Ekim 2026</span>
+                                        </label>
+                                        <label class="month-option">
+                                            <input type="radio" name="monthSelect" value="Kasım 2026">
+                                            <span class="checkmark"></span>
+                                            <span class="month-text">Kasım 2026</span>
+                                        </label>
+                                        <label class="month-option">
+                                            <input type="radio" name="monthSelect" value="Aralık 2026">
+                                            <span class="checkmark"></span>
+                                            <span class="month-text">Aralık 2026</span>
+                                        </label>
+                                        <label class="month-option">
+                                            <input type="radio" name="monthSelect" value="Ocak 2027">
+                                            <span class="checkmark"></span>
+                                            <span class="month-text">Ocak 2027</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="calendar-footer">
-                            <button class="cal-apply-btn" id="applyDateBtn">Uygula</button>
-                        </div>
-                    </div>
+                        <button type="button" class="ets-search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
                 </div>
-                <button class="search-btn">Tur Ara</button>
             </div>
         </div>
     </section>
@@ -634,178 +720,76 @@
         // ========================================
         // CUSTOM DATE RANGE PICKER (Obilet Style)
         // ========================================
-        const datePickerTrigger = document.getElementById('datePickerTrigger');
-        const customCalendar = document.getElementById('customCalendar');
-        const monthsContainer = document.getElementById('monthsContainer');
-        const prevMonthBtn = document.getElementById('prevMonth');
-        const nextMonthBtn = document.getElementById('nextMonth');
+        // ========================================
+        // SEARCH & DATE PICKER LOGIC
+        // ========================================
+
+        // --- 1. Date Picker (Month Selection) ---
+        const dateTrigger = document.getElementById('datePickerTrigger');
+        const calendarPopup = document.getElementById('customCalendar');
         const dateDisplayText = document.getElementById('dateDisplayText');
-        const applyDateBtn = document.getElementById('applyDateBtn');
+        const monthOptions = document.querySelectorAll('input[name="monthSelect"]');
 
-        let currentDate = new Date();
-        let selectedStartDate = null;
-        let selectedEndDate = null;
+        if (dateTrigger && calendarPopup) {
+            // Toggle Popup
+            dateTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Close other popups (suggestions)
+                const suggestions = document.getElementById('searchSuggestions');
+                if (suggestions) suggestions.style.display = 'none';
 
-        const monthNames = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+                // Toggle display
+                const isVisible = calendarPopup.style.display === 'block';
+                calendarPopup.style.display = isVisible ? 'none' : 'block';
+            });
 
-        // Prevent ALL clicks inside calendar from bubbling up
-        customCalendar.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!calendarPopup.contains(e.target) && !dateTrigger.contains(e.target)) {
+                    calendarPopup.style.display = 'none';
+                }
+            });
 
-        // Toggle Calendar - only the trigger area (not the calendar itself)
-        datePickerTrigger.addEventListener('click', (e) => {
-            if (!customCalendar.classList.contains('active')) {
-                customCalendar.classList.add('active');
-                renderCalendar();
-            }
-        });
+            // Handle Month Selection
+            monthOptions.forEach(option => {
+                option.addEventListener('change', (e) => {
+                    if (e.target.checked) {
+                        const selectedMonth = e.target.value;
+                        dateDisplayText.textContent = selectedMonth;
+                        dateDisplayText.style.color = '#333';
+                        dateDisplayText.style.fontWeight = '600';
 
-        // Close ONLY when clicking outside the entire trigger area
-        document.addEventListener('click', (e) => {
-            if (!datePickerTrigger.contains(e.target)) {
-                customCalendar.classList.remove('active');
-            }
-        });
-
-        prevMonthBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            currentDate.setMonth(currentDate.getMonth() - 1);
-            renderCalendar();
-        });
-
-        nextMonthBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            currentDate.setMonth(currentDate.getMonth() + 1);
-            renderCalendar();
-        });
-
-        // Close calendar ONLY on Uygula button
-        applyDateBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            customCalendar.classList.remove('active');
-        });
-
-        // Resize listener to re-render properly
-        window.addEventListener('resize', () => {
-            // Debounce or just re-render if active
-            if (customCalendar.classList.contains('active')) {
-                renderCalendar();
-            }
-        });
-
-        function renderCalendar() {
-            monthsContainer.innerHTML = '';
-
-            // Determine number of months to show based on screen width
-            const isMobile = window.innerWidth < 768;
-            const monthsToShow = isMobile ? 1 : 2;
-
-            // Render months
-            for (let i = 0; i < monthsToShow; i++) {
-                const monthDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + i, 1);
-                const monthHTML = createMonthHTML(monthDate);
-                monthsContainer.innerHTML += monthHTML;
-            }
-
-            // Re-attach listeners for day cells
-            document.querySelectorAll('.day-cell:not(.empty):not(.disabled)').forEach(cell => {
-                cell.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    handleDateClick(new Date(e.target.dataset.date));
+                        // Close popup after short delay for better UX
+                        setTimeout(() => {
+                            calendarPopup.style.display = 'none';
+                        }, 200);
+                    }
                 });
             });
         }
 
-        function createMonthHTML(date) {
-            const year = date.getFullYear();
-            const month = date.getMonth();
-            const firstDay = new Date(year, month, 1).getDay(); // 0 is Sunday
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-            // Adjust for Monday start (Turkey)
-            let adjustedFirstDay = firstDay === 0 ? 6 : firstDay - 1;
-
-            let html = `
-                <div class="month-view">
-                    <div class="month-title">${monthNames[month]} ${year}</div>
-                    <div class="weekdays">
-                        <span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cts</span><span>Paz</span>
-                    </div>
-                    <div class="days-grid">
-            `;
-
-            // Empty slots
-            for (let i = 0; i < adjustedFirstDay; i++) {
-                html += `<div class="day-cell empty"></div>`;
-            }
-
-            // Days
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-
-            for (let i = 1; i <= daysInMonth; i++) {
-                const cellDate = new Date(year, month, i);
-                let classes = 'day-cell';
-
-                // Past dates check
-                if (cellDate < today) {
-                    classes += ' disabled';
-                }
-
-                // Selection check
-                if (selectedStartDate && cellDate.getTime() === selectedStartDate.getTime()) classes += ' selected';
-                if (selectedEndDate && cellDate.getTime() === selectedEndDate.getTime()) classes += ' selected';
-
-                // Range check
-                if (selectedStartDate && selectedEndDate && cellDate > selectedStartDate && cellDate < selectedEndDate) {
-                    classes += ' in-range';
-                }
-
-                html += `<div class="${classes}" data-date="${cellDate.toISOString()}">${i}</div>`;
-            }
-
-            html += `</div></div>`;
-            return html;
-        }
-
-        function handleDateClick(date) {
-            if (!selectedStartDate || (selectedStartDate && selectedEndDate)) {
-                // New selection - start fresh
-                selectedStartDate = date;
-                selectedEndDate = null;
-            } else {
-                // Second click - set end date
-                if (date < selectedStartDate) {
-                    // If clicked before start, swap
-                    selectedEndDate = selectedStartDate;
-                    selectedStartDate = date;
-                } else if (date.getTime() === selectedStartDate.getTime()) {
-                    // Same date clicked, ignore
-                    return;
-                } else {
-                    selectedEndDate = date;
-                }
-            }
-
-            updateDisplayText();
-            renderCalendar();
-        }
-
-        function updateDisplayText() {
-            if (selectedStartDate && selectedEndDate) {
-                dateDisplayText.textContent = `${formatDate(selectedStartDate)} - ${formatDate(selectedEndDate)}`;
-                dateDisplayText.style.color = '#333';
-            } else if (selectedStartDate) {
-                dateDisplayText.textContent = `${formatDate(selectedStartDate)} - Bitiş Tarihi Seçin`;
-                dateDisplayText.style.color = '#333';
-            } else {
-                dateDisplayText.textContent = 'Başlangıç - Bitiş Tarihi';
+        // --- 2. Search Suggestions ---
+        // Function called inline from HTML onClick
+        function selectSuggestion(value) {
+            const input = document.getElementById('destinationInput');
+            if (input) {
+                input.value = value;
+                // Close suggestions (blur input)
+                input.blur();
             }
         }
 
-        function formatDate(date) {
-            return `${date.getDate()} ${monthNames[date.getMonth()]}`;
+        // Additional: Show suggestions on input focus (handled via CSS focus-within but good to ensure)
+        const destInput = document.getElementById('destinationInput');
+        const suggestionsBox = document.getElementById('searchSuggestions');
+
+        if (destInput && suggestionsBox) {
+            destInput.addEventListener('focus', () => {
+                // Determine if we want to show it explicitly or rely on CSS
+                // CSS :focus-within handles visibility usually.
+                // Just ensure Date picker is closed
+                if (calendarPopup) calendarPopup.style.display = 'none';
+            });
         }
     </script>
 </body>

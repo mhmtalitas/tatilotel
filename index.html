@@ -4,828 +4,395 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="TatilOtel - En iyi tatil fırsatları ve turlar. Hayalinizdeki tatili şimdi planlayın.">
-    <title>TatilOtel - Hayalinizdeki Tatil Burada</title>
+    <meta name="description" content="TatilOtel - En uygun tatil fırsatları ve turlar. Güvenle planlayın.">
+    <title>TatilOtel | Tatilin Tek Adresi</title>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="apple-touch-icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="slider.css">
+
+
+
+    <!-- Modern Styles -->
+    <link rel="stylesheet" href="modern-core.css">
+    <link rel="stylesheet" href="modern-components.css">
 </head>
 
 <body>
 
     <!-- Header -->
-    <div class="header-wrapper">
-        <!-- Top Row -->
-        <div class="top-header">
-            <div class="container top-header-container">
-                <a href="index.html" class="logo">
-                    <img src="assets/logo.png" alt="TatilOtel" class="logo-img">
+    <header class="header-main">
+        <div class="container" style="display: flex; align-items: center; width: 100%;">
+            <a href="index.html" class="logo-wrap" style="text-decoration: none; color: inherit;">
+                <span style="font-size: 1.5rem; font-weight: 800; color: var(--clr-primary);">TATIL</span><span
+                    style="font-size: 1.5rem; font-weight: 400;">OTEL</span>
+            </a>
+
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link active">Anasayfa</a>
+                <a href="tours.html?type=daily" class="nav-link">Günübirlik Turlar</a>
+                <a href="tours.html?type=accommodation" class="nav-link">Konaklamalı Turlar</a>
+                <a href="contact.html" class="nav-link">İletişim</a>
+            </nav>
+
+            <div class="header-right">
+                <a href="tel:08505323773" class="phone-link">
+                    <i class="fa-solid fa-phone"></i> 0850 532 37 73
                 </a>
-                <div class="top-actions">
-                    <div class="top-phone">
-                        <i class="fa-solid fa-phone"></i> 0850 532 37 73
-                    </div>
-                    <!-- Notification removed -->
-                    <a href="javascript:void(0)" class="btn-register" id="openRegister">Üye Ol</a>
-                    <a href="javascript:void(0)" class="btn-login" id="openLogin"><i class="fa-solid fa-user"></i> Giriş
-                        Yap</a>
-                </div>
-                <button class="mobile-menu-btn">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+                <a href="login.html" class="btn-red" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Giriş Yap</a>
+                <button class="mobile-nav-toggle" id="menuOpen"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
+    </header>
 
-        <div class="menu-overlay" id="menuOverlay"></div>
+    <!-- Side Menu -->
+    <div class="side-menu-overlay" id="menuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <a href="index.html" class="logo-wrap" style="text-decoration: none; color: inherit;">
+                <span style="font-size: 1.2rem; font-weight: 800; color: var(--clr-primary);">TATIL</span><span
+                    style="font-size: 1.2rem; font-weight: 400;">OTEL</span>
+            </a>
+            <button id="menuClose" style="background: none; border: none; font-size: 1.5rem;"><i
+                    class="fa-solid fa-xmark"></i></button>
+        </div>
+        <a href="index.html" class="side-nav-link active">Anasayfa</a>
+        <a href="tours.html?type=daily" class="side-nav-link">Günübirlik Turlar</a>
+        <a href="tours.html?type=accommodation" class="side-nav-link">Konaklamalı Turlar</a>
+        <a href="contact.html" class="side-nav-link">İletişim</a>
+        <a href="tel:08505323773" class="side-nav-link" style="margin-top: auto; border: none;"><i
+                class="fa-solid fa-phone"></i> 0850 532 37 73</a>
+    </div>
 
-        <!-- Bottom Row: Navigation -->
-        <div class="main-nav-bar" id="mobileMenu">
-            <div class="drawer-header">
-                <img src="assets/logo.png" alt="TatilOtel" class="logo-img" style="height: 30px;">
-                <button class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
+    <!-- Hero Section -->
+    <section class="hero-clean">
+        <div class="container">
+            <h1>Hayalindeki Tatili Hemen Planla!</h1>
+            <p style="opacity: 0.9;">Binlerce tur seçeneği ve en uygun fiyatlar TatilOtel'de.</p>
+        </div>
+    </section>
+
+    <!-- Search Widget -->
+    <div class="search-widget-wrap">
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; padding-left: 1rem;">
+            <button class="btn-red" onclick="window.location.href='tours.html?type=daily'"
+                style="padding: 0.5rem 1.5rem; height: auto; text-transform: none; font-size: 0.8rem; background: white; color: var(--clr-primary); border: 1px solid var(--clr-primary);">Günübirlik</button>
+            <button class="btn-red" onclick="window.location.href='tours.html?type=accommodation'"
+                style="padding: 0.5rem 1.5rem; height: auto; text-transform: none; font-size: 0.8rem;">Konaklamalı</button>
+        </div>
+        <div class="search-box-modern">
+            <div class="search-field">
+                <label>Nereye Gitmek İstersiniz?</label>
+                <div class="input-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" placeholder="Şehir, Ülke veya Tur Adı">
+                </div>
             </div>
-            <div class="container">
-                <nav class="main-nav">
-                    <ul class="main-nav-list">
-                        <!-- KONSEPT TURLAR Dropdown -->
-                        <li class="main-nav-item">
-                            <a href="tours.html" class="main-nav-link">
-                                KONSEPT TURLAR <i class="fa-solid fa-chevron-down"></i>
-                            </a>
-                            <div class="mega-menu">
-                                <div class="mega-menu-grid">
-                                    <div class="mega-col">
-                                        <ul>
-                                            <li><a href="#">Kültür Turları</a></li>
-                                            <li><a href="#">Balayı Turları</a></li>
-                                            <li><a href="#">Günübirlik Turlar</a></li>
-                                            <li><a href="#">Gemi Turları</a></li>
-                                            <li><a href="#">Fotoğraf Turları</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- YURTİÇİ TURLARI Dropdown -->
-                        <li class="main-nav-item">
-                            <a href="tours.html" class="main-nav-link">
-                                YURTİÇİ TURLARI <i class="fa-solid fa-chevron-down"></i>
-                            </a>
-                            <div class="mega-menu">
-                                <div class="mega-menu-grid">
-                                    <div class="mega-col">
-                                        <ul>
-                                            <li><a href="#">Ege Akdeniz Turları</a></li>
-                                            <li><a href="#">Doğu Anadolu</a></li>
-                                            <li><a href="#">Kapadokya Turları</a></li>
-                                            <li><a href="#">Karadeniz Turları</a></li>
-                                            <li><a href="#">GAP Turları</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- YURT DIŞI TURLARI Dropdown -->
-                        <li class="main-nav-item">
-                            <a href="tours.html" class="main-nav-link">
-                                YURT DIŞI TURLARI <i class="fa-solid fa-chevron-down"></i>
-                            </a>
-                            <div class="mega-menu">
-                                <div class="mega-menu-grid">
-                                    <div class="mega-col">
-                                        <ul>
-                                            <li><a href="#">Avrupa Turları</a></li>
-                                            <li><a href="#">Amerika Turları</a></li>
-                                            <li><a href="#">Balkan Turları</a></li>
-                                            <li><a href="#">Uzakdoğu Turları</a></li>
-                                            <li><a href="#">İspanya Turları</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="main-nav-item"><a href="tours.html" class="main-nav-link">SÖMESTİR TURLARI</a></li>
-                        <li class="main-nav-item"><a href="#" class="main-nav-link" style="color:red;">KAMPANYALAR</a>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="search-field">
+                <label>Gidiş Tarihi</label>
+                <div class="input-group">
+                    <i class="fa-solid fa-calendar"></i>
+                    <input type="text" placeholder="Tüm Aylar">
+                </div>
             </div>
-            <div class="drawer-footer">
-                <a href="tel:08505323773" class="drawer-phone">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>0850 532 37 73</span>
-                </a>
+            <div class="search-field">
+                <label>Kişi Sayısı</label>
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="2 Yetişkin">
+                </div>
             </div>
+            <button class="btn-red" style="height: 50px; padding: 0 3rem;">ARA</button>
         </div>
     </div>
 
-    <!-- Search Section (Obilet Style - Below Navbar) -->
-    <!-- ETS Tur Style Hero Section -->
-    <section class="ets-hero-wrapper">
-        <div class="ets-hero-bg">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-                alt="Tatil Arkaplan">
-            <div class="ets-hero-overlay"></div>
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 4rem;">
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h2 class="font-heading">Günün Fırsat Turları</h2>
+            <a href="tours.html" style="color: var(--clr-primary); font-weight: 700;">Tümünü Gör <i
+                    class="fa-solid fa-chevron-right"></i></a>
         </div>
 
-        <div class="container ets-hero-content">
-            <!-- Badge Removed -->
-            <h1 class="ets-hero-title">Hayalindeki tatili TatilOtel ile planla!</h1>
-
-            <div class="ets-search-container">
-                <!-- Tabs Removed -->
-
-
-                <!-- Search Box Card -->
-                <div class="ets-search-card">
-                    <form class="ets-search-form">
-                        <div class="ets-input-group search-trigger">
-                            <input type="text" id="destinationInput"
-                                placeholder="Tur adı, Şehir, Ülke veya Tema giriniz" autocomplete="off">
-                            <!-- Suggestions Dropdown -->
-                            <div class="search-suggestions" id="searchSuggestions">
-                                <div class="suggestion-category">
-                                    <h4>Popüler Kategoriler</h4>
-                                    <div class="suggestion-tags">
-                                        <span class="suggestion-tag" onclick="selectSuggestion('Yurt Dışı Turlar')">Yurt
-                                            Dışı Turlar</span>
-                                        <span class="suggestion-tag" onclick="selectSuggestion('Kültür Turları')">Kültür
-                                            Turları</span>
-                                        <span class="suggestion-tag" onclick="selectSuggestion('Gemi Turları')">Gemi
-                                            Turları</span>
-                                        <span class="suggestion-tag" onclick="selectSuggestion('Balayı Turları')">Balayı
-                                            Turları</span>
-                                    </div>
-                                </div>
-                                <div class="suggestion-category">
-                                    <h4>Yurt İçi Turlar</h4>
-                                    <div class="suggestion-tags">
-                                        <span class="suggestion-tag"
-                                            onclick="selectSuggestion('Karadeniz Turları')">Karadeniz Turları</span>
-                                        <span class="suggestion-tag"
-                                            onclick="selectSuggestion('Kapadokya Turları')">Kapadokya Turları</span>
-                                        <span class="suggestion-tag"
-                                            onclick="selectSuggestion('Ege - Akdeniz Turları')">Ege - Akdeniz</span>
-                                        <span class="suggestion-tag" onclick="selectSuggestion('GAP Turları')">GAP
-                                            Turları</span>
-                                    </div>
-                                </div>
-                                <div class="suggestion-category">
-                                    <h4>Yurt Dışı Turlar</h4>
-                                    <div class="suggestion-tags">
-                                        <span class="suggestion-tag" onclick="selectSuggestion('İtalya Turları')">İtalya
-                                            Turları</span>
-                                        <span class="suggestion-tag" onclick="selectSuggestion('Balkan Turları')">Balkan
-                                            Turları</span>
-                                        <span class="suggestion-tag" onclick="selectSuggestion('Mısır Turları')">Mısır
-                                            Turları</span>
-                                        <span class="suggestion-tag"
-                                            onclick="selectSuggestion('Uzakdoğu Turları')">Uzakdoğu Turları</span>
-                                    </div>
-                                </div>
-                            </div>
+        <div class="card-grid">
+            <!-- Tour Card 1: Yeşil Kanyon -->
+            <div class="tour-card">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1584148721201-b6432e0d510e?q=80&w=800&auto=format&fit=crop"
+                        alt="Yeşil Kanyon">
+                    <span class="card-badge-top">Fırsat</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-location">Manavgat</span>
+                    <h3 class="card-title">Yeşil Kanyon Tekne Turu</h3>
+                    <div class="card-price-wrap">
+                        <div class="price-box">
+                            <span class="price-sub">Kişi başı</span>
+                            <span class="price-main">180 ₺</span>
                         </div>
-                        <div class="ets-input-group date-trigger" id="datePickerTrigger">
-                            <span id="dateDisplayText">Tarih Seçiniz</span>
-                            <div class="custom-calendar-popup" id="customCalendar">
-                                <!-- Calendar Tabs -->
-                                <div class="calendar-tabs">
-                                    <div class="cal-tab active">Aylar</div>
-                                    <div class="cal-tab">Resmi Tatil ve Özel Günler</div>
-                                </div>
-
-                                <!-- Month Grid Content -->
-                                <div class="calendar-content">
-                                    <div class="months-grid" id="monthsGrid">
-                                        <!-- Helper function in JS will populate this to ensure dynamic dates -->
-                                        <label class="month-option">
-                                            <input type="radio" name="monthSelect" value="Şubat 2026" checked>
-                                            <span class="checkmark"></span>
-                                            <span class="month-text">Şubat 2026</span>
-                                        </label>
-                                        <label class="month-option">
-                                            <input type="radio" name="monthSelect" value="Mart 2026">
-                                            <span class="checkmark"></span>
-                                            <span class="month-text">Mart 2026</span>
-                                        </label>
-                                        <label class="month-option">
-                                            <input type="radio" name="monthSelect" value="Nisan 2026">
-                                            <span class="checkmark"></span>
-                                            <span class="month-text">Nisan 2026</span>
-                                        </label>
-                                        <label class="month-option">
-                                            <input type="radio" name="monthSelect" value="Mayıs 2026">
-                                            <span class="checkmark"></span>
-                                            <span class="month-text">Mayıs 2026</span>
-                                        </label>
-                                        <label class="month-option">
-                                            <input type="radio" name="monthSelect" value="Haziran 2026">
-                                            <span class="checkmark"></span>
-                                            <span class="month-text">Haziran 2026</span>
-                                        </label>
-                                        <label class="month-option">
-                                            <input type="radio" name="monthSelect" value="Temmuz 2026">
-                                            <span class="checkmark"></span>
-                                            <span class="month-text">Temmuz 2026</span>
-                                        </label>
-                                        <label class="month-option">
-                                            <input type="radio" name="monthSelect" value="Ağustos 2026">
-                                            <span class="checkmark"></span>
-                                            <span class="month-text">Ağustos 2026</span>
-                                        </label>
-                                        <label class="month-option">
-                                            <input type="radio" name="monthSelect" value="Eylül 2026">
-                                            <span class="checkmark"></span>
-                                            <span class="month-text">Eylül 2026</span>
-                                        </label>
-                                        <label class="month-option">
-                                            <input type="radio" name="monthSelect" value="Ekim 2026">
-                                            <span class="checkmark"></span>
-                                            <span class="month-text">Ekim 2026</span>
-                                        </label>
-                                        <label class="month-option">
-                                            <input type="radio" name="monthSelect" value="Kasım 2026">
-                                            <span class="checkmark"></span>
-                                            <span class="month-text">Kasım 2026</span>
-                                        </label>
-                                        <label class="month-option">
-                                            <input type="radio" name="monthSelect" value="Aralık 2026">
-                                            <span class="checkmark"></span>
-                                            <span class="month-text">Aralık 2026</span>
-                                        </label>
-                                        <label class="month-option">
-                                            <input type="radio" name="monthSelect" value="Ocak 2027">
-                                            <span class="checkmark"></span>
-                                            <span class="month-text">Ocak 2027</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="button" class="ets-search-btn">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <span class="btn-text">Tur Ara</span>
-                        </button>
-                    </form>
-
-                    <!-- Popular Searches (Inside the card) -->
-                    <div class="ets-popular-searches">
-                        <span class="label">Popüler Aramalar:</span>
-                        <a href="#">Kapadokya Turları <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="#">Balkan Turları <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="#">Karadeniz Turları <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="#">GAP Turları <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="tour-detail.html?id=green-kanyon" class="btn-red"
+                            style="padding: 0.5rem 1rem; font-size: 0.7rem;">İNCELE</a>
                     </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Hero Section removed -->
-
-
-    <!-- Professional Tour Cards Section (Replaces Quick Actions) -->
-    <section class="pro-section" style="background-color: #fff; padding-top: 40px; padding-bottom: 20px;">
-        <div class="container">
-            <div class="pro-section-header">
-                <div class="pro-title-group">
-                    <h2>Popüler Turlar</h2>
-                    <p>En çok tercih edilen turları keşfedin</p>
-                </div>
-                <div class="pro-view-all">
-                    <span>Tümünü İncele</span>
-                    <a href="#" class="pro-nav-btn"><i class="fa-solid fa-chevron-left"></i></a>
-                    <a href="#" class="pro-nav-btn"><i class="fa-solid fa-chevron-right"></i></a>
                 </div>
             </div>
 
-            <div class="pro-card-grid">
-                <!-- Tour Card 1 -->
-                <div class="pro-card">
-                    <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Dubai Turu">
-                    </div>
-                    <div class="pro-card-body">
-                        <h3 class="pro-card-title">FIRSAT DUBAİ TURU VİZE DAHİL 3 Gece 4 Gün</h3>
-                        <div class="pro-card-location">
-                            <span>Dubai Turları</span>
-                            <span>Yurt Dışı</span>
+            <!-- Tour Card 2: Doğu Karadeniz -->
+            <div class="tour-card">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1590480459586-3f19159935f0?q=80&w=800&auto=format&fit=crop"
+                        alt="Doğu Karadeniz">
+                    <span class="card-badge-top">Konaklamalı</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-location">Artvin - Rize - Trabzon</span>
+                    <h3 class="card-title">Doğu Karadeniz Turu (6 Gece)</h3>
+                    <div class="card-price-wrap">
+                        <div class="price-box">
+                            <span class="price-sub">Kişi başı</span>
+                            <span class="price-main">1800 ₺</span>
                         </div>
-                        <div class="pro-card-footer">
-                            <a href="#" class="btn-deal" style="color: #e67e22;">Fırsatı Yakala! <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
+                        <a href="tour-detail.html?id=dogu-karadeniz-turu" class="btn-red"
+                            style="padding: 0.5rem 1rem; font-size: 0.7rem;">İNCELE</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Tour Card 2 -->
-                <div class="pro-card">
-                    <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Venedik Turu">
-                    </div>
-                    <div class="pro-card-body">
-                        <h3 class="pro-card-title">Klasik İtalya Turu: 7 Gece Özel Freebird Havayolları Seferi ile</h3>
-                        <div class="pro-card-location">
-                            <span>İtalya Turları</span>
-                            <span>Avrupa</span>
+            <!-- Tour Card 3: Jeep Safari -->
+            <div class="tour-card">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1533550822823-325e408891aa?q=80&w=800&auto=format&fit=crop"
+                        alt="Jeep Safari">
+                    <span class="card-badge-top">Macera</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-location">Alanya</span>
+                    <h3 class="card-title">Jeep Safari Turu</h3>
+                    <div class="card-price-wrap">
+                        <div class="price-box">
+                            <span class="price-sub">Kişi başı</span>
+                            <span class="price-main">130 ₺</span>
                         </div>
-                        <div class="pro-card-footer">
-                            <a href="#" class="btn-deal" style="color: #e67e22;">Fırsatı Yakala! <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
+                        <a href="tour-detail.html?id=jeep-safari" class="btn-red"
+                            style="padding: 0.5rem 1rem; font-size: 0.7rem;">İNCELE</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Tour Card 3 -->
-                <div class="pro-card">
-                    <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="İspanya Turu">
-                    </div>
-                    <div class="pro-card-body">
-                        <h3 class="pro-card-title">Büyük İspanya Turu ve Endülüs Rüyası</h3>
-                        <div class="pro-card-location">
-                            <span>İspanya Turları</span>
-                            <span>Avrupa</span>
+            <!-- Tour Card 4: GAP Turu -->
+            <div class="tour-card">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1582260193108-7a56193796bd?q=80&w=800&auto=format&fit=crop"
+                        alt="GAP Turu">
+                    <span class="card-badge-top">Yeni</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-location">Güneydoğu Anadolu</span>
+                    <h3 class="card-title">GAP Turu (5 Gece Konaklamalı)</h3>
+                    <div class="card-price-wrap">
+                        <div class="price-box">
+                            <span class="price-sub">Kişi başı</span>
+                            <span class="price-main">1600 ₺</span>
                         </div>
-                        <div class="pro-card-footer">
-                            <a href="#" class="btn-deal" style="color: #e67e22;">Fırsatı Yakala! <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
+                        <a href="tour-detail.html?id=gap-turu" class="btn-red"
+                            style="padding: 0.5rem 1rem; font-size: 0.7rem;">İNCELE</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Tour Card 4 -->
-                <div class="pro-card">
-                    <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Avustralya Turu">
-                    </div>
-                    <div class="pro-card-body">
-                        <h3 class="pro-card-title">Westerdam ile Yılbaşında Bangkok & Uzakdoğu 16</h3>
-                        <div class="pro-card-location">
-                            <span>Uzakdoğu Turları</span>
-                            <span>Asya</span>
+            <!-- Tour Card 5: Sapadere Kanyonu -->
+            <div class="tour-card">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?q=80&w=800&auto=format&fit=crop"
+                        alt="Sapadere">
+                    <span class="card-badge-top">Doğa</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-location">Alanya</span>
+                    <h3 class="card-title">Jeep Sapadere Kanyon Turu</h3>
+                    <div class="card-price-wrap">
+                        <div class="price-box">
+                            <span class="price-sub">Kişi başı</span>
+                            <span class="price-main">180 ₺</span>
                         </div>
-                        <div class="pro-card-footer">
-                            <a href="#" class="btn-deal" style="color: #e67e22;">Fırsatı Yakala! <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
+                        <a href="tour-detail.html?id=sapadere-kanyonu" class="btn-red"
+                            style="padding: 0.5rem 1rem; font-size: 0.7rem;">İNCELE</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Tour Card 5 -->
-                <div class="pro-card">
-                    <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Hollanda Turu">
-                    </div>
-                    <div class="pro-card-body">
-                        <h3 class="pro-card-title">Benelüks & Paris Turu (Amsterdam, Brüksel)</h3>
-                        <div class="pro-card-location">
-                            <span>Avrupa Turları</span>
-                            <span>Vizesiz</span>
-                        </div>
-                        <div class="pro-card-footer">
-                            <a href="#" class="btn-deal" style="color: #e67e22;">Fırsatı Yakala! <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
-                    </div>
+            <!-- Tour Card 6: Deniz Yoluyla Alanya -->
+            <div class="tour-card">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop"
+                        alt="Alanya Tekne">
+                    <span class="card-badge-top">Popüler</span>
                 </div>
-
-                <!-- Tour Card 6 -->
-                <div class="pro-card">
-                    <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Roma Turu">
-                    </div>
-                    <div class="pro-card-body">
-                        <h3 class="pro-card-title">Roma & Floransa & Venedik - İtalya Ekspresi</h3>
-                        <div class="pro-card-location">
-                            <span>İtalya Turları</span>
-                            <span>Avrupa</span>
+                <div class="card-body">
+                    <span class="card-location">Alanya</span>
+                    <h3 class="card-title">Deniz Yoluyla Alanya Tekne Turu</h3>
+                    <div class="card-price-wrap">
+                        <div class="price-box">
+                            <span class="price-sub">Kişi başı</span>
+                            <span class="price-main">200 ₺</span>
                         </div>
-                        <div class="pro-card-footer">
-                            <a href="#" class="btn-deal" style="color: #e67e22;">Fırsatı Yakala! <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tour Card 7 -->
-                <div class="pro-card">
-                    <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Kapadokya Turu">
-                    </div>
-                    <div class="pro-card-body">
-                        <h3 class="pro-card-title">Kapadokya Balon Turu & Peribacaları (3 Gece)</h3>
-                        <div class="pro-card-location">
-                            <span>Kapadokya Turları</span>
-                            <span>Yurt İçi</span>
-                        </div>
-                        <div class="pro-card-footer">
-                            <a href="#" class="btn-deal" style="color: #e67e22;">Fırsatı Yakala! <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tour Card 8 -->
-                <div class="pro-card">
-                    <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Yunanistan Turu">
-                    </div>
-                    <div class="pro-card-body">
-                        <h3 class="pro-card-title">Yunan Adaları & Atina Kültür Turu (5 Gece)</h3>
-                        <div class="pro-card-location">
-                            <span>Yunanistan Turları</span>
-                            <span>Avrupa</span>
-                        </div>
-                        <div class="pro-card-footer">
-                            <a href="#" class="btn-deal" style="color: #e67e22;">Fırsatı Yakala! <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tour Card 9 -->
-                <div class="pro-card">
-                    <div class="pro-card-img">
-                        <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                            alt="Mısır Turu">
-                    </div>
-                    <div class="pro-card-body">
-                        <h3 class="pro-card-title">Mısır Piramitler & Nil Nehri Kruvaziyer Turu</h3>
-                        <div class="pro-card-location">
-                            <span>Mısır Turları</span>
-                            <span>Afrika</span>
-                        </div>
-                        <div class="pro-card-footer">
-                            <a href="#" class="btn-deal" style="color: #e67e22;">Fırsatı Yakala! <i
-                                    class="fa-solid fa-chevron-right"></i></a>
-                        </div>
+                        <a href="tour-detail.html?id=deniz-yoluyla-alanya" class="btn-red"
+                            style="padding: 0.5rem 1rem; font-size: 0.7rem;">İNCELE</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Kıbrıs Otelleri section removed -->
-
-
-
-    <!-- Popular Hotels section removed -->
-
-    <!-- Call to Action -->
-    <section class="cta section-padding">
-        <div class="container cta-container">
-            <div class="cta-content">
-                <h2>Özel Fırsatları Kaçırmayın!</h2>
-                <p>E-bültenimize abone olun, en güncel kampanyalardan ve indirimlerden ilk siz haberdar olun.</p>
-                <form class="cta-form">
-                    <input type="email" placeholder="E-posta adresiniz">
-                    <button type="submit" class="btn btn-primary">Abone Ol</button>
-                </form>
+        <!-- Trust Section -->
+        <section
+            style="padding: 4rem 0; background: white; margin-top: 4rem; border-radius: var(--radius-md); text-align: center;">
+            <h2 class="font-heading" style="margin-bottom: 3rem;">Neden Bizimle Seyahat Etmelisiniz?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+                <div class="trust-item">
+                    <i class="fa-solid fa-guarantee"
+                        style="font-size: 3rem; color: var(--clr-primary); margin-bottom: 1.5rem;"></i>
+                    <h3 style="margin-bottom: 1rem;">En İyi Fiyat Garantisi</h3>
+                    <p style="font-size: 0.9rem; color: var(--clr-text-muted);">Aynı turu daha uygun fiyata
+                        bulursanız
+                        aradaki farkı iade ediyoruz.</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fa-solid fa-headset"
+                        style="font-size: 3rem; color: var(--clr-primary); margin-bottom: 1.5rem;"></i>
+                    <h3 style="margin-bottom: 1rem;">7/24 Kesintisiz Destek</h3>
+                    <p style="font-size: 0.9rem; color: var(--clr-text-muted);">Seyahatinizin her anında
+                        yanınızdayız.
+                        Bir telefon uzağınızdayız.</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fa-solid fa-shield-halved"
+                        style="font-size: 3rem; color: var(--clr-primary); margin-bottom: 1.5rem;"></i>
+                    <h3 style="margin-bottom: 1rem;">Güvenli Ödeme</h3>
+                    <p style="font-size: 0.9rem; color: var(--clr-text-muted);">Tüm ödemeleriniz 256-bit SSL
+                        güvenlik
+                        sertifikası ile korunmaktadır.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Testimonials -->
+        <section style="padding: 4rem 0;">
+            <h2 class="font-heading" style="text-align: center; margin-bottom: 3rem;">Misafirlerimizin Yorumları
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div
+                    style="background: white; padding: 2rem; border-radius: var(--radius-sm); border: 1px solid var(--clr-border);">
+                    <div style="color: #FBBF24; margin-bottom: 1rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: var(--clr-text-muted); margin-bottom: 1.5rem;">"Balkan
+                        turuna
+                        katıldık, her şey mükemmel organize edilmişti. Rehberimiz çok bilgiliydi."</p>
+                    <div style="font-weight: 700;">- Mehmet Yılmaz</div>
+                </div>
+                <div
+                    style="background: white; padding: 2rem; border-radius: var(--radius-sm); border: 1px solid var(--clr-border);">
+                    <div style="color: #FBBF24; margin-bottom: 1rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: var(--clr-text-muted); margin-bottom: 1.5rem;">"İtalya turu
+                        tam
+                        bir rüya gibiydi. TatilOtel ekibine ilgilerinden dolayı teşekkür ederim."</p>
+                    <div style="font-weight: 700;">- Ayşe Demir</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <a href="#" class="footer-logo">
-                    Tatil<span class="highlight">Otel</span>
-                </a>
-                <p>Hayalinizdeki tatili planlamanın en güvenilir ve kolay yolu. 10 yılı aşkın tecrübemizle
-                    hizmetinizdeyiz.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+    <footer class="footer-simple">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 1;">
+                    <a href="index.html" class="logo-wrap" style="text-decoration: none; color: inherit;">
+                        <span style="font-size: 1.3rem; font-weight: 800; color: var(--clr-primary);">TATIL</span><span
+                            style="font-size: 1.3rem; font-weight: 400;">OTEL</span>
+                    </a>
+                    <p style="margin-top: 1.5rem; color: var(--clr-text-muted); font-size: 0.9rem;">
+                        TatilOtel, en kaliteli tatil deneyimlerini en uygun fiyatlarla sunan lider turizm acentesidir.
+                    </p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Popüler Rotalar</h4>
+                    <ul>
+                        <li><a href="#">Balkan Turları</a></li>
+                        <li><a href="#">Avrupa Turları</a></li>
+                        <li><a href="#">Uzak Doğu</a></li>
+                        <li><a href="#">Kültür Turları</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kurumsal</h4>
+                    <ul>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                        <li><a href="#">KVKK</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Müşteri Hizmetleri</h4>
+                    <ul>
+                        <li><a href="#">Yardım Merkezi</a></li>
+                        <li><a href="#">İptal/İade Koşulları</a></li>
+                        <li><a href="#">Ödeme Seçenekleri</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-col">
-                <h4>Hızlı Bağlantılar</h4>
-                <ul>
-                    <li><a href="#">Hakkımızda</a></li>
-                    <li><a href="#">Turlar</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">İletişim</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Kurumsal</h4>
-                <ul>
-                    <li><a href="#">Kullanım Şartları</a></li>
-                    <li><a href="#">Gizlilik Politikası</a></li>
-                    <li><a href="#">KVKK</a></li>
-                    <li><a href="#">İptal ve İade</a></li>
-                    <li><a href="#">Çerez Politikası</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>İletişim</h4>
-                <ul>
-                    <li><i class="fa-solid fa-phone"></i> 0850 532 37 73</li>
-                    <li><i class="fa-solid fa-envelope"></i> info@tatilotel.com.tr</li>
-                    <li><i class="fa-solid fa-location-dot"></i> İstanbul, Türkiye</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 TatilOtel. Tüm hakları saklıdır.</p>
+            <div class="footer-bottom-simple">
+                <p>&copy; 2026 TatilOtel. Tüm hakları saklıdır. ETS Tur ilhamıyla geliştirilmiştir.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Auth Modal -->
-    <div class="modal-overlay" id="authModal">
-        <div class="modal-container">
-            <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
-            <div class="modal-tabs">
-                <div class="modal-tab active" data-target="loginSection">Giriş Yap</div>
-                <div class="modal-tab" data-target="registerSection">Üye Ol</div>
-            </div>
-            <div class="modal-content">
-                <!-- Login Section -->
-                <div class="modal-form-section active" id="loginSection">
-
-                    <form class="auth-form">
-                        <div class="form-group">
-                            <label>E-posta Adresi</label>
-                            <div class="input-wrapper">
-                                <i class="fa-solid fa-envelope"></i>
-                                <input type="email" placeholder="ornek@mail.com" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Parola</label>
-                            <div class="input-wrapper">
-                                <i class="fa-solid fa-lock"></i>
-                                <input type="password" placeholder="••••••••" required>
-                            </div>
-                        </div>
-                        <div class="remember-forgot">
-                            <label class="remember-me"><input type="checkbox"> Beni Hatırla</label>
-                            <a href="#" class="forgot-pass">Şifremi Unuttum?</a>
-                        </div>
-                        <button type="submit" class="auth-btn">Giriş Yap</button>
-                    </form>
-                    <div class="auth-footer">
-                        Henüz üye değil misiniz? <button class="modal-switch-btn"
-                            onclick="switchModal('registerSection')">Üye Ol</button>
-                    </div>
-                </div>
-
-                <!-- Register Section -->
-                <div class="modal-form-section" id="registerSection">
-
-                    <form class="auth-form">
-                        <div class="form-group">
-                            <label>Ad Soyad</label>
-                            <div class="input-wrapper"><i class="fa-solid fa-user"></i><input type="text"
-                                    placeholder="Adınız Soyadınız" required></div>
-                        </div>
-                        <div class="form-group">
-                            <label>E-posta Adresi</label>
-                            <div class="input-wrapper"><i class="fa-solid fa-envelope"></i><input type="email"
-                                    placeholder="ornek@mail.com" required></div>
-                        </div>
-                        <div class="form-group">
-                            <label>Telefon Numarası</label>
-                            <div class="input-wrapper"><i class="fa-solid fa-phone"></i><input type="tel"
-                                    placeholder="05XX XXX XX XX" required></div>
-                        </div>
-                        <div class="form-group">
-                            <label>Parola</label>
-                            <div class="input-wrapper"><i class="fa-solid fa-lock"></i><input type="password"
-                                    placeholder="••••••••" required></div>
-                        </div>
-                        <button type="submit" class="auth-btn">Üye Ol</button>
-                    </form>
-                    <div class="auth-footer">
-                        Zaten üye misiniz? <button class="modal-switch-btn" onclick="switchModal('loginSection')">Giriş
-                            Yap</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
-        function openSearch(evt, searchName) {
-            // Get all elements with class="search-box" and hide them
-            var i, searchBox, searchTabs;
-            searchBox = document.getElementsByClassName("search-box");
-            for (i = 0; i < searchBox.length; i++) {
-                searchBox[i].classList.remove("active");
-            }
-
-            // Get all elements with class="search-tab" and remove the class "active"
-            searchTabs = document.getElementsByClassName("search-tab");
-            for (i = 0; i < searchTabs.length; i++) {
-                searchTabs[i].classList.remove("active");
-            }
-
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(searchName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-
-        // Mobile Menu Toggle - Side Drawer Version
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const closeDrawer = document.getElementById('closeDrawer');
-        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOpen = document.getElementById('menuOpen');
+        const menuClose = document.getElementById('menuClose');
+        const sideMenu = document.getElementById('sideMenu');
         const menuOverlay = document.getElementById('menuOverlay');
 
-        function toggleMenu(show = true) {
-            if (show) {
-                mobileMenu.classList.add('active');
-                menuOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            } else {
-                mobileMenu.classList.remove('active');
-                menuOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
+        function toggleMenu(show) {
+            sideMenu.classList.toggle('active', show);
+            menuOverlay.classList.toggle('active', show);
+            document.body.style.overflow = show ? 'hidden' : '';
         }
 
-        if (menuBtn) menuBtn.addEventListener('click', () => toggleMenu(true));
-        if (closeDrawer) closeDrawer.addEventListener('click', () => toggleMenu(false));
-        if (menuOverlay) menuOverlay.addEventListener('click', () => toggleMenu(false));
+        menuOpen.addEventListener('click', () => toggleMenu(true));
+        menuClose.addEventListener('click', () => toggleMenu(false));
+        menuOverlay.addEventListener('click', () => toggleMenu(false));
 
-
-        // Mega menu accordion - Direct approach on each link
-        const menuItems = document.querySelectorAll('.main-nav-item');
-
-        menuItems.forEach((item, index) => {
-            const link = item.querySelector('.main-nav-link');
-            const megaMenu = item.querySelector('.mega-menu');
-
-            if (link && megaMenu) {
-                link.addEventListener('click', function (e) {
-                    // Only handle on mobile
-                    if (window.innerWidth > 768) {
-                        return;
-                    }
-
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    // Get current state
-                    const wasActive = item.classList.contains('active');
-
-                    // Close all menus
-                    menuItems.forEach((otherItem) => {
-                        otherItem.classList.remove('active');
-                    });
-
-                    // Toggle this one
-                    if (!wasActive) {
-                        item.classList.add('active');
-                    }
-                }, true); // Use capture phase
-            }
-        });
-
-
-
-        // Modal Functionality
-        const authModal = document.getElementById('authModal');
-        const closeModal = document.getElementById('closeModal');
-        const openLogin = document.getElementById('openLogin');
-        const openRegister = document.getElementById('openRegister');
-        const modalTabs = document.querySelectorAll('.modal-tab');
-        const modalSections = document.querySelectorAll('.modal-form-section');
-
-        function toggleModal(show = true, section = 'loginSection') {
-            if (show) {
-                authModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                switchModal(section);
-            } else {
-                authModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        function switchModal(sectionId) {
-            modalSections.forEach(section => section.classList.remove('active'));
-            modalTabs.forEach(tab => tab.classList.remove('active'));
-
-            document.getElementById(sectionId).classList.add('active');
-            document.querySelector(`[data-target="${sectionId}"]`).classList.add('active');
-        }
-
-        openLogin.addEventListener('click', () => toggleModal(true, 'loginSection'));
-        openRegister.addEventListener('click', () => toggleModal(true, 'registerSection'));
-        closeModal.addEventListener('click', () => toggleModal(false));
-
-        authModal.addEventListener('click', (e) => {
-            if (e.target === authModal) toggleModal(false);
-        });
-
-        modalTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                switchModal(tab.getAttribute('data-target'));
-            });
-        });
-
-        // ========================================
-        // CUSTOM DATE RANGE PICKER (Obilet Style)
-        // ========================================
-        // ========================================
-        // SEARCH & DATE PICKER LOGIC
-        // ========================================
-
-        // --- 1. Date Picker (Month Selection) ---
-        const dateTrigger = document.getElementById('datePickerTrigger');
-        const calendarPopup = document.getElementById('customCalendar');
-        const dateDisplayText = document.getElementById('dateDisplayText');
-        const monthOptions = document.querySelectorAll('input[name="monthSelect"]');
-
-        if (dateTrigger && calendarPopup) {
-            // Toggle Popup
-            dateTrigger.addEventListener('click', (e) => {
-                e.stopPropagation();
-                // Close other popups (suggestions)
-                const suggestions = document.getElementById('searchSuggestions');
-                if (suggestions) suggestions.style.display = 'none';
-
-                // Toggle display
-                const isVisible = calendarPopup.style.display === 'block';
-                calendarPopup.style.display = isVisible ? 'none' : 'block';
-            });
-
-            // Close when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!calendarPopup.contains(e.target) && !dateTrigger.contains(e.target)) {
-                    calendarPopup.style.display = 'none';
-                }
-            });
-
-            // Handle Month Selection
-            monthOptions.forEach(option => {
-                option.addEventListener('change', (e) => {
-                    if (e.target.checked) {
-                        const selectedMonth = e.target.value;
-                        dateDisplayText.textContent = selectedMonth;
-                        dateDisplayText.style.color = '#333';
-                        dateDisplayText.style.fontWeight = '600';
-
-                        // Close popup after short delay for better UX
-                        setTimeout(() => {
-                            calendarPopup.style.display = 'none';
-                        }, 200);
-                    }
+        // Search Tabs Logic
+        const tabs = document.querySelectorAll('.search-widget-wrap .btn-red');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                tabs.forEach(t => {
+                    t.style.background = 'white';
+                    t.style.color = 'var(--clr-primary)';
+                    t.style.border = '1px solid var(--clr-primary)';
                 });
+                this.style.background = 'var(--clr-primary)';
+                this.style.color = 'white';
+                this.style.border = 'none';
             });
-        }
-
-        // --- 2. Search Suggestions ---
-        // Function called inline from HTML onClick
-        function selectSuggestion(value) {
-            const input = document.getElementById('destinationInput');
-            if (input) {
-                input.value = value;
-                // Close suggestions (blur input)
-                input.blur();
-            }
-        }
-
-        // Additional: Show suggestions on input focus (handled via CSS focus-within but good to ensure)
-        const destInput = document.getElementById('destinationInput');
-        const suggestionsBox = document.getElementById('searchSuggestions');
-
-        if (destInput && suggestionsBox) {
-            destInput.addEventListener('focus', () => {
-                // Determine if we want to show it explicitly or rely on CSS
-                // CSS :focus-within handles visibility usually.
-                // Just ensure Date picker is closed
-                if (calendarPopup) calendarPopup.style.display = 'none';
-            });
-        }
+        });
     </script>
 </body>
 
 </html>
-```

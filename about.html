@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda | TatilOtel</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Modern Styles -->
+    <link rel="stylesheet" href="modern-core.css">
+    <link rel="stylesheet" href="modern-components.css">
+</head>
+
+<body>
+
+    <!-- Side Menu -->
+    <div class="side-menu-overlay" id="menuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <a href="index.html" class="logo-wrap" style="text-decoration: none; color: inherit;">
+                <span style="font-size: 1.2rem; font-weight: 800; color: var(--clr-primary);">TATIL</span><span
+                    style="font-size: 1.2rem; font-weight: 400;">OTEL</span>
+            </a>
+            <button id="menuClose" style="background: none; border: none; font-size: 1.5rem;"><i
+                    class="fa-solid fa-xmark"></i></button>
+        </div>
+        <a href="index.html" class="side-nav-link">Anasayfa</a>
+        <a href="tours.html?type=daily" class="side-nav-link">Günübirlik Turlar</a>
+        <a href="tours.html?type=accommodation" class="side-nav-link">Konaklamalı Turlar</a>
+        <a href="contact.html" class="side-nav-link">İletişim</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header-main">
+        <div class="container" style="display: flex; align-items: center; width: 100%;">
+            <a href="index.html" class="logo-wrap" style="text-decoration: none; color: inherit;">
+                <span style="font-size: 1.5rem; font-weight: 800; color: var(--clr-primary);">TATIL</span><span
+                    style="font-size: 1.5rem; font-weight: 400;">OTEL</span>
+            </a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Anasayfa</a>
+                <a href="tours.html?type=daily" class="nav-link">Günübirlik Turlar</a>
+                <a href="tours.html?type=accommodation" class="nav-link">Konaklamalı Turlar</a>
+                <a href="contact.html" class="nav-link">İletişim</a>
+            </nav>
+            <div class="header-right">
+                <a href="tel:08505323773" class="phone-link"><i class="fa-solid fa-phone"></i> 0850 532 37 73</a>
+                <button class="mobile-nav-toggle" id="menuOpen"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div style="background: var(--clr-primary); color: white; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h1 class="font-heading" style="font-size: 3rem;">Biz Kimiz?</h1>
+            <p style="opacity: 0.9; margin-top: 1rem;">10 yılı aşkın tecrübemizle tatilinize değer katıyoruz.</p>
+        </div>
+    </div>
+
+    <main class="container" style="padding: 4rem 0;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+            <div>
+                <h2 class="font-heading" style="margin-bottom: 2rem;">Seyahat Tutkumuzu Sizinle Paylaşıyoruz</h2>
+                <p style="color: var(--clr-text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+                    TatilOtel olarak, her seyahatin bir hikaye olduğuna inanıyoruz. Misafirlerimize sadece bir "tur"
+                    değil, hayat boyu unutamayacakları deneyimler sunmak için çalışıyoruz.
+                </p>
+                <p style="color: var(--clr-text-muted); line-height: 1.8;">
+                    Uzman rehber kadromuz, konforlu ulaşım seçeneklerimiz ve özenle seçilmiş otellerimizle Balkanlar'dan
+                    Avrupa'ya, Anadolu'nun her köşesinden vizesiz rotalara kadar geniş bir yelpazede hizmet veriyoruz.
+                </p>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop"
+                    alt="Team" style="width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+            </div>
+        </div>
+
+        <div
+            style="margin-top: 6rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center;">
+            <div
+                style="padding: 2rem; background: white; border: 1px solid var(--clr-border); border-radius: var(--radius-sm);">
+                <i class="fa-solid fa-users"
+                    style="font-size: 2.5rem; color: var(--clr-primary); margin-bottom: 1rem;"></i>
+                <h3 style="margin-bottom: 0.5rem;">50.000+</h3>
+                <p style="font-size: 0.85rem; color: var(--clr-text-muted);">Mutlu Misafir</p>
+            </div>
+            <div
+                style="padding: 2rem; background: white; border: 1px solid var(--clr-border); border-radius: var(--radius-sm);">
+                <i class="fa-solid fa-map-location-dot"
+                    style="font-size: 2.5rem; color: var(--clr-primary); margin-bottom: 1rem;"></i>
+                <h3 style="margin-bottom: 0.5rem;">120+</h3>
+                <p style="font-size: 0.85rem; color: var(--clr-text-muted);">Farklı Rota</p>
+            </div>
+            <div
+                style="padding: 2rem; background: white; border: 1px solid var(--clr-border); border-radius: var(--radius-sm);">
+                <i class="fa-solid fa-award"
+                    style="font-size: 2.5rem; color: var(--clr-primary); margin-bottom: 1rem;"></i>
+                <h3 style="margin-bottom: 0.5rem;">15</h3>
+                <p style="font-size: 0.85rem; color: var(--clr-text-muted);">Hizmet Ödülü</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-simple">
+        <div class="container">
+            <div class="footer-bottom-simple">
+                <p>&copy; 2026 TatilOtel. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuOpen = document.getElementById('menuOpen');
+        const menuClose = document.getElementById('menuClose');
+        const sideMenu = document.getElementById('sideMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        function toggleMenu(show) {
+            sideMenu.classList.toggle('active', show);
+            menuOverlay.classList.toggle('active', show);
+            document.body.style.overflow = show ? 'hidden' : '';
+        }
+
+        if (menuOpen) menuOpen.addEventListener('click', () => toggleMenu(true));
+        if (menuClose) menuClose.addEventListener('click', () => toggleMenu(false));
+        if (menuOverlay) menuOverlay.addEventListener('click', () => toggleMenu(false));
+    </script>
+</body>
+
+</html>

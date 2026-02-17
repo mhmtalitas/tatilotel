@@ -4,538 +4,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turlar - TatilOtel</title>
+    <title>Tur Listesi | TatilOtel</title>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="apple-touch-icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="slider.css">
+
+    <!-- Modern Styles -->
+    <link rel="stylesheet" href="modern-core.css">
+    <link rel="stylesheet" href="modern-components.css">
+
+    <style>
+        .page-header-mini {
+            background-color: white;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--clr-border);
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: var(--clr-text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .layout-tours {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+
+        .filter-sidebar {
+            background: white;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            height: fit-content;
+        }
+
+        .filter-group {
+            margin-bottom: 2rem;
+        }
+
+        .filter-group h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--clr-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+
+        .checkbox-item input {
+            accent-color: var(--clr-primary);
+        }
+
+        .tour-list-wide {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .tour-card-wide {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            background: white;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: var(--transition);
+            min-height: 220px;
+        }
+
+        .tour-card-wide:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .wide-card-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wide-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .tour-card-wide:hover .wide-card-img img {
+            transform: scale(1.05);
+        }
+
+        .wide-card-content {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .wide-card-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--clr-text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .wide-card-meta i {
+            color: var(--clr-primary);
+        }
+
+        .wide-card-title {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .wide-card-desc {
+            font-size: 0.9rem;
+            color: var(--clr-text-muted);
+            line-height: 1.5;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-clamp: 2;
+        }
+
+        .wide-card-price-bot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--clr-border);
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- Header -->
-    <div class="header-wrapper">
-        <!-- Top Row -->
-        <div class="top-header">
-            <div class="container top-header-container">
-                <a href="index.html" class="logo">
-                    <img src="assets/logo.png" alt="TatilOtel" class="logo-img">
-                </a>
-                <div class="top-actions">
-                    <div class="top-phone">
-                        <i class="fa-solid fa-phone"></i> 0850 532 37 73
-                    </div>
-                    <a href="javascript:void(0)" class="btn-register" id="openRegister">Üye Ol</a>
-                    <a href="javascript:void(0)" class="btn-login" id="openLogin"><i class="fa-solid fa-user"></i> Giriş
-                        Yap</a>
-                </div>
-                <button class="mobile-menu-btn">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+    <header class="header-main">
+        <div class="container" style="display: flex; align-items: center; width: 100%;">
+            <a href="index.html" class="logo-wrap" style="text-decoration: none; color: inherit;">
+                <span style="font-size: 1.5rem; font-weight: 800; color: var(--clr-primary);">TATIL</span><span
+                    style="font-size: 1.5rem; font-weight: 400;">OTEL</span>
+            </a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Anasayfa</a>
+                <a href="tours.html?type=daily" class="nav-link">Günübirlik Turlar</a>
+                <a href="tours.html?type=accommodation" class="nav-link">Konaklamalı Turlar</a>
+                <a href="contact.html" class="nav-link">İletişim</a>
+            </nav>
+            <div class="header-right">
+                <a href="tel:08505323773" class="phone-link"><i class="fa-solid fa-phone"></i> 0850 532 37 73</a>
+                <a href="login.html" class="btn-red" style="padding: 0.6rem 1.5rem; font-size: 0.8rem;">Giriş Yap</a>
+                <button class="mobile-nav-toggle" id="menuOpen"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
-        <!-- header-wrapper continues -->
+    </header>
 
-        <div class="menu-overlay" id="menuOverlay"></div>
-
-        <!-- Bottom Row: Navigation -->
-        <div class="main-nav-bar" id="mobileMenu">
-            <div class="drawer-header">
-                <img src="assets/logo.png" alt="TatilOtel" class="logo-img" style="height: 30px;">
-                <button class="close-drawer" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="container">
-                <nav class="main-nav">
-                    <ul class="main-nav-list">
-                        <!-- KONSEPT TURLAR Dropdown -->
-                        <li class="main-nav-item">
-                            <a href="tours.html" class="main-nav-link">
-                                KONSEPT TURLAR <i class="fa-solid fa-chevron-down"></i>
-                            </a>
-                            <div class="mega-menu">
-                                <div class="mega-menu-grid">
-                                    <div class="mega-col">
-                                        <ul>
-                                            <li><a href="#">Kültür Turları</a></li>
-                                            <li><a href="#">Balayı Turları</a></li>
-                                            <li><a href="#">Günübirlik Turlar</a></li>
-                                            <li><a href="#">Gemi Turları</a></li>
-                                            <li><a href="#">Fotoğraf Turları</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- YURTİÇİ TURLARI Dropdown -->
-                        <li class="main-nav-item">
-                            <a href="tours.html" class="main-nav-link">
-                                YURTİÇİ TURLARI <i class="fa-solid fa-chevron-down"></i>
-                            </a>
-                            <div class="mega-menu">
-                                <div class="mega-menu-grid">
-                                    <div class="mega-col">
-                                        <ul>
-                                            <li><a href="#">Ege Akdeniz Turları</a></li>
-                                            <li><a href="#">Doğu Anadolu</a></li>
-                                            <li><a href="#">Kapadokya Turları</a></li>
-                                            <li><a href="#">Karadeniz Turları</a></li>
-                                            <li><a href="#">GAP Turları</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- YURT DIŞI TURLARI Dropdown -->
-                        <li class="main-nav-item">
-                            <a href="tours.html" class="main-nav-link">
-                                YURT DIŞI TURLARI <i class="fa-solid fa-chevron-down"></i>
-                            </a>
-                            <div class="mega-menu">
-                                <div class="mega-menu-grid">
-                                    <div class="mega-col">
-                                        <ul>
-                                            <li><a href="#">Avrupa Turları</a></li>
-                                            <li><a href="#">Amerika Turları</a></li>
-                                            <li><a href="#">Balkan Turları</a></li>
-                                            <li><a href="#">Uzakdoğu Turları</a></li>
-                                            <li><a href="#">İspanya Turları</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="main-nav-item"><a href="tours.html" class="main-nav-link">SÖMESTİR TURLARI</a></li>
-                        <li class="main-nav-item"><a href="#" class="main-nav-link" style="color:red;">KAMPANYALAR</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="drawer-footer">
-                <a href="tel:08505323773" class="drawer-phone">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>0850 532 37 73</span>
-                </a>
-            </div>
+    <!-- Side Menu -->
+    <div class="side-menu-overlay" id="menuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <a href="index.html" class="logo-wrap" style="text-decoration: none; color: inherit;">
+                <span style="font-size: 1.2rem; font-weight: 800; color: var(--clr-primary);">TATIL</span><span
+                    style="font-size: 1.2rem; font-weight: 400;">OTEL</span>
+            </a>
+            <button id="menuClose" style="background: none; border: none; font-size: 1.5rem;"><i
+                    class="fa-solid fa-xmark"></i></button>
         </div>
+        <a href="index.html" class="side-nav-link">Anasayfa</a>
+        <a href="tours.html?type=daily" class="side-nav-link">Günübirlik Turlar</a>
+        <a href="tours.html?type=accommodation" class="side-nav-link">Konaklamalı Turlar</a>
+        <a href="contact.html" class="side-nav-link">İletişim</a>
+        <a href="tel:08505323773" class="side-nav-link" style="margin-top: auto; border: none;"><i
+                class="fa-solid fa-phone"></i> 0850 532 37 73</a>
     </div>
 
-    <!-- Results Header / Filter Bar -->
-    <div class="results-top-bar">
+    <div class="page-header-mini">
         <div class="container">
-            <div class="search-mini-bar">
-                <div class="mini-input">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <input type="text" placeholder="Tur adı, Şehir veya Tema giriniz" value="Ramazan Bayramı Turları">
-                </div>
-                <div class="mini-input">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <input type="text" placeholder="Dönem Seçiniz" value="Nisan 2026">
-                </div>
-                <button class="mini-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
+            <div class="breadcrumb">Anasayfa > Yurtdışı Turlar > Balkan Turları</div>
+            <h1 class="font-heading">Balkan Turları Listeleniyor</h1>
+            <p style="color: var(--clr-text-muted); font-size: 0.9rem;">12 adet tur bulundu.</p>
         </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="tours-main">
-        <div class="container search-layout">
-            <!-- Sidebar Filters -->
-            <aside class="search-sidebar">
-                <div class="online-res-box">
-                    <label class="custom-checkbox">
-                        <input type="checkbox" checked>
-                        <span class="checkmark"></span>
-                        Online Rezervasyon <span class="count">(131)</span>
-                    </label>
+    <main class="container">
+        <div class="layout-tours">
+            <!-- Sidebar -->
+            <aside class="filter-sidebar">
+                <div class="filter-group">
+                    <h4>Tur Tipi</h4>
+                    <label class="checkbox-item"><input type="checkbox" id="filterAccommodation" checked> Konaklamalı
+                        Turlar</label>
+                    <label class="checkbox-item"><input type="checkbox" id="filterDaily" checked> Günübirlik
+                        Turlar</label>
                 </div>
 
                 <div class="filter-group">
-                    <h4 class="filter-title">Sonuçları Filtrele <span class="reset">Tümünü Temizle</span></h4>
+                    <h4>Bölge</h4>
+                    <label class="checkbox-item"><input type="checkbox" checked> Balkanlar</label>
+                    <label class="checkbox-item"><input type="checkbox" checked> Karadeniz</label>
+                    <label class="checkbox-item"><input type="checkbox" checked> Kapadokya</label>
+                    <label class="checkbox-item"><input type="checkbox" checked> Akdeniz/Ege</label>
+                </div>
 
-                    <div class="filter-section">
-                        <h5>Dönemler</h5>
-                        <div class="tag-filters">
-                            <span class="tag">Ocak</span>
-                            <span class="tag">Şubat</span>
-                            <span class="tag">Mart</span>
-                            <span class="tag active">Nisan</span>
-                            <span class="tag">Mayıs</span>
-                            <span class="tag">Haziran</span>
-                        </div>
-                    </div>
-
-                    <div class="filter-section">
-                        <h5>Özel Günler</h5>
-                        <div class="tag-filters">
-                            <span class="tag">Sömestir</span>
-                            <span class="tag active">Ramazan Bayramı</span>
-                            <span class="tag">Kurban Bayramı</span>
-                            <span class="tag">Yılbaşı</span>
-                        </div>
-                    </div>
-
-                    <div class="filter-section">
-                        <h5>Vize Durumu</h5>
-                        <div class="checkbox-filters">
-                            <label><input type="checkbox"> Vizesiz Turlar (48)</label>
-                            <label><input type="checkbox"> Vizeli Turlar (83)</label>
-                        </div>
-                    </div>
-
-                    <div class="filter-section">
-                        <h5>Gece Sayısı</h5>
-                        <div class="checkbox-filters">
-                            <label><input type="checkbox"> 1-3 Gece (37)</label>
-                            <label><input type="checkbox"> 4-6 Gece (61)</label>
-                            <label><input type="checkbox"> 7-9 Gece (27)</label>
-                        </div>
-                    </div>
-
-                    <div class="filter-section">
-                        <h5>Kalkış Noktaları</h5>
-                        <div class="checkbox-filters">
-                            <label><input type="checkbox"> İstanbul (117)</label>
-                            <label><input type="checkbox"> İzmir (4)</label>
-                            <label><input type="checkbox"> Ankara (4)</label>
-                        </div>
-                    </div>
+                <div class="filter-group">
+                    <h4>Kategori</h4>
+                    <label class="checkbox-item"><input type="checkbox" checked> Kültür Turları</label>
+                    <label class="checkbox-item"><input type="checkbox" checked> Safari & Macera</label>
+                    <label class="checkbox-item"><input type="checkbox" checked> Tekne & Deniz</label>
                 </div>
             </aside>
 
-            <!-- Results Content -->
-            <div class="search-results">
-                <div class="results-summary">
-                    <h2>Ramazan Bayramı Turları için toplam 131 tur bulduk!</h2>
-                    <nav class="breadcrumb-mini">
-                        <span>Etstur</span> > <span>Yurtdışı Turları</span> > <span class="active">Ramazan Bayramı
-                            Turları</span>
-                    </nav>
+            <!-- Results -->
+            <div id="tourListWrapper">
+                <div class="tour-list-wide" id="tourContainer">
+                    <!-- Dynamic tours will be injected here -->
                 </div>
 
-                <div class="sorting-bar">
-                    <div class="sort-select">Kalkış Noktaları <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="sort-options">
-                        <span class="sort-item"><i class="fa-solid fa-arrow-up-wide-short"></i> Tarihe Göre</span>
-                        <span class="sort-item"><i class="fa-solid fa-arrow-down-wide-short"></i> Fiyata Göre</span>
-                    </div>
+                <div id="noResults" style="display: none; text-align: center; padding: 5rem 0;">
+                    <i class="fa-solid fa-map-location-dot"
+                        style="font-size: 4rem; color: var(--clr-border); margin-bottom: 1.5rem;"></i>
+                    <h3>Aradığınız kriterlere uygun tur bulunamadı.</h3>
+                    <p style="color: var(--clr-text-muted);">Lütfen filtreleri temizleyip tekrar deneyin.</p>
                 </div>
 
-                <!-- Tour Cards Area -->
-                <div class="tour-results-list">
-                    <!-- Tour Card 1 -->
-                    <div class="tour-card-horizontal">
-                        <div class="card-img-side">
-                            <img src="https://images.unsplash.com/photo-1581442111166-5f80b9bcd382?q=80&w=800&auto=format&fit=crop"
-                                alt="Balkanlar">
-                            <span class="card-badge firsat">Fırsat Turu</span>
-                        </div>
-                        <div class="card-info-side">
-                            <div class="card-main-info">
-                                <h3><a href="tour-detail.html" style="text-decoration: none; color: inherit;">Pegasus
-                                        Hava Yolları ile Ohrid ve Üsküp 3 Gece 4 Gün Panorama | Ramazan Bayramı |</a>
-                                </h3>
-                                <div class="info-meta">
-                                    <span class="meta-item"><i class="fa-solid fa-location-dot"></i> İstanbul -> Ohrid,
-                                        Üsküp</span>
-                                    <span class="meta-item"><i class="fa-regular fa-moon"></i> 3 gece 4 gün</span>
-                                    <span class="meta-item"><i class="fa-regular fa-calendar"></i> 19 Mar'26 - 22
-                                        Mar'26</span>
-                                </div>
-                                <div class="card-labels">
-                                    <span class="lbl-primary">Ortak Katılıma Uygun</span>
-                                    <span class="lbl-secondary">Ramazan Bayramı</span>
-                                    <span class="lbl-success">Vizesiz Turlar</span>
-                                    <span class="lbl-info">Balkanlar Turu</span>
-                                </div>
-                            </div>
-                            <div class="card-price-side">
-                                <div class="online-tag"><i class="fa-solid fa-circle-check"></i> Online Rezervasyon
-                                </div>
-                                <div class="price-box">
-                                    <span class="price-from">529 EUR</span>
-                                    <span class="price-tl">'dan itibaren 27.578 TL</span>
-                                </div>
-                                <a href="tour-detail.html" class="view-btn"><i
-                                        class="fa-solid fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tour Card 2 -->
-                    <div class="tour-card-horizontal">
-                        <div class="card-img-side">
-                            <img src="https://images.unsplash.com/photo-1559905952-b1bd68df4fb1?q=80&w=800&auto=format&fit=crop"
-                                alt="Belgrad">
-                            <span class="card-badge hizli">Hızlı Tüketim</span>
-                        </div>
-                        <div class="card-info-side">
-                            <div class="card-main-info">
-                                <h3><a href="tour-detail.html" style="text-decoration: none; color: inherit;">Türk Hava
-                                        Yolları ile Belgrad 3 Gece 4 Gün Panorama | Ocak - Mart |</a></h3>
-                                <div class="info-meta">
-                                    <span class="meta-item"><i class="fa-solid fa-location-dot"></i> İstanbul ->
-                                        Belgrad</span>
-                                    <span class="meta-item"><i class="fa-regular fa-moon"></i> 3 gece 4 gün</span>
-                                    <span class="meta-item"><i class="fa-regular fa-calendar"></i> 18 Mar'26 - 21
-                                        Mar'26</span>
-                                </div>
-                                <div class="card-labels">
-                                    <span class="lbl-primary">Ortak Katılıma Uygun</span>
-                                    <span class="lbl-secondary">Ramazan Bayramı</span>
-                                    <span class="lbl-success">Vizesiz Turlar</span>
-                                    <span class="lbl-info">Balkanlar Turu</span>
-                                </div>
-                            </div>
-                            <div class="card-price-side">
-                                <div class="online-tag"><i class="fa-solid fa-circle-check"></i> Online Rezervasyon
-                                </div>
-                                <div class="price-box">
-                                    <span class="price-from">559 EUR</span>
-                                    <span class="price-tl">'dan itibaren 29.142 TL</span>
-                                </div>
-                                <a href="tour-detail.html" class="view-btn"><i
-                                        class="fa-solid fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <div id="loadMoreSection" style="text-align: center; padding: 2rem;">
+                    <p id="tourCountText" style="color: var(--clr-text-muted); margin-bottom: 1.5rem;"></p>
+                    <button class="btn-red" id="loadMoreBtn" style="padding: 0.8rem 3rem;">DAHA FAZLA GÖSTER</button>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <a href="#" class="footer-logo">
-                    Tatil<span class="highlight">Otel</span>
-                </a>
-                <p>Hayalinizdeki tatili planlamanın en güvenilir ve kolay yolu. 10 yılı aşkın tecrübemizle
-                    hizmetinizdeyiz.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+    <footer class="footer-simple">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 1;">
+                    <a href="index.html" class="logo-wrap" style="text-decoration: none; color: inherit;">
+                        <span style="font-size: 1.3rem; font-weight: 800; color: var(--clr-primary);">TATIL</span><span
+                            style="font-size: 1.3rem; font-weight: 400;">OTEL</span>
+                    </a>
+                    <p style="margin-top: 1.5rem; color: var(--clr-text-muted); font-size: 0.9rem;">
+                        TatilOtel, en kaliteli tatil deneyimlerini en uygun fiyatlarla sunan lider turizm acentesidir.
+                    </p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Popüler Rotalar</h4>
+                    <ul>
+                        <li><a href="#">Balkan Turları</a></li>
+                        <li><a href="#">Avrupa Turları</a></li>
+                        <li><a href="#">Uzak Doğu</a></li>
+                        <li><a href="#">Kültür Turları</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kurumsal</h4>
+                    <ul>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                        <li><a href="#">KVKK</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Müşteri Hizmetleri</h4>
+                    <ul>
+                        <li><a href="#">Yardım Merkezi</a></li>
+                        <li><a href="#">İptal/İade Koşulları</a></li>
+                        <li><a href="#">Ödeme Seçenekleri</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-col">
-                <h4>Hızlı Bağlantılar</h4>
-                <ul>
-                    <li><a href="#">Hakkımızda</a></li>
-                    <li><a href="#">Oteller</a></li>
-                    <li><a href="#">Turlar</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">İletişim</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Kurumsal</h4>
-                <ul>
-                    <li><a href="#">Kullanım Şartları</a></li>
-                    <li><a href="#">Gizlilik Politikası</a></li>
-                    <li><a href="#">KVKK</a></li>
-                    <li><a href="#">İptal ve İade</a></li>
-                    <li><a href="#">Çerez Politikası</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>İletişim</h4>
-                <ul>
-                    <li><i class="fa-solid fa-phone"></i> 0850 532 37 73</li>
-                    <li><i class="fa-solid fa-envelope"></i> info@tatilotel.com.tr</li>
-                    <li><i class="fa-solid fa-location-dot"></i> İstanbul, Türkiye</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
+            <div class="footer-bottom-simple">
                 <p>&copy; 2026 TatilOtel. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="reference_tours_utf8.js"></script>
     <script>
-        // Mobile Menu Toggle - Side Drawer Version
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const closeDrawer = document.getElementById('closeDrawer');
-        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOpen = document.getElementById('menuOpen');
+        const menuClose = document.getElementById('menuClose');
+        const sideMenu = document.getElementById('sideMenu');
         const menuOverlay = document.getElementById('menuOverlay');
 
-        function toggleMenu(show = true) {
-            if (show) {
-                mobileMenu.classList.add('active');
-                menuOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            } else {
-                mobileMenu.classList.remove('active');
-                menuOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
+        function toggleMenu(show) {
+            sideMenu.classList.toggle('active', show);
+            menuOverlay.classList.toggle('active', show);
+            document.body.style.overflow = show ? 'hidden' : '';
         }
 
-        if (menuBtn) menuBtn.addEventListener('click', () => toggleMenu(true));
-        if (closeDrawer) closeDrawer.addEventListener('click', () => toggleMenu(false));
+        if (menuOpen) menuOpen.addEventListener('click', () => toggleMenu(true));
+        if (menuClose) menuClose.addEventListener('click', () => toggleMenu(false));
         if (menuOverlay) menuOverlay.addEventListener('click', () => toggleMenu(false));
 
+        // Filters
+        const filterAccommodation = document.getElementById('filterAccommodation');
+        const filterDaily = document.getElementById('filterDaily');
+        const tourContainer = document.getElementById('tourContainer');
+        const noResults = document.getElementById('noResults');
+        const tourCountText = document.getElementById('tourCountText');
+        const loadMoreSection = document.getElementById('loadMoreSection');
 
-        // Mega menu accordion - Direct approach on each link
-        const menuItems = document.querySelectorAll('.main-nav-item');
+        // Image Map for Unsplash (Backup)
+        const unsplashMap = {
+            'at-safari': 'https://images.unsplash.com/photo-1598974357801-cbca100e65d3',
+            'antalya-akvaryum': 'https://images.unsplash.com/photo-1509130298739-651801c76e96',
+            'rafting-turu': 'https://images.unsplash.com/photo-1530866495547-152483f5bf21',
+            'rafting-extra': 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57',
+            'alanya-tekne-turu': 'https://images.unsplash.com/photo-1544551763-46a013bb70d5',
+            'jeep-safari': 'https://images.unsplash.com/photo-1533550822823-325e408891aa',
+            'yamac-parasutu': 'https://images.unsplash.com/photo-1597858905333-e7f09f538743',
+            'yunus-gosterisi': 'https://images.unsplash.com/photo-1570481662006-a3a1374699e8',
+            'aquapark': 'https://images.unsplash.com/photo-1540541338287-41700207dee6',
+            'quad-safari': 'https://images.unsplash.com/photo-1453306458620-5bbef13a5bca',
+            'dalis': 'https://images.unsplash.com/photo-1544551763-8dd0c4578fe6',
+            'manavgat-tekne-turu': 'https://images.unsplash.com/photo-1516627145497-ae6968895b74',
+            'deniz-yoluyla-alanya': 'https://images.unsplash.com/photo-1464948950524-746aae7264a6',
+            'mini-alanya-jeep': 'https://images.unsplash.com/photo-1542031024357-1903673c6838',
+            'gece-safarisi': 'https://images.unsplash.com/photo-1541410965313-d53b3c16ef17',
+            'sapadere-kanyonu': 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b',
+            'green-kanyon': 'https://images.unsplash.com/photo-1584148721201-b6432e0d510e',
+            'balkan-turu': 'https://images.unsplash.com/photo-1543783207-c1f5fc6953c9',
+            'gap-turu': 'https://images.unsplash.com/photo-1582260193108-7a56193796bd',
+            'kapadokya-turu': 'https://images.unsplash.com/photo-1506744038136-46273834b3fb'
+        };
 
-        menuItems.forEach((item, index) => {
-            const link = item.querySelector('.main-nav-link');
-            const megaMenu = item.querySelector('.mega-menu');
+        function renderTours() {
+            const showAcc = filterAccommodation.checked;
+            const showDaily = filterDaily.checked;
 
-            if (link && megaMenu) {
-                link.addEventListener('click', function (e) {
-                    // Only handle on mobile
-                    if (window.innerWidth > 768) {
-                        return;
-                    }
+            tourContainer.innerHTML = '';
 
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    // Get current state
-                    const wasActive = item.classList.contains('active');
-
-                    // Close all menus
-                    menuItems.forEach((otherItem) => {
-                        otherItem.classList.remove('active');
-                    });
-
-                    // Toggle this one
-                    if (!wasActive) {
-                        item.classList.add('active');
-                    }
-                }, true); // Use capture phase
-            }
-        });
-
-        // Modal Functionality
-        const authModal = document.getElementById('authModal');
-        const closeModal = document.getElementById('closeModal');
-        const openLogin = document.getElementById('openLogin');
-        const openRegister = document.getElementById('openRegister');
-        const modalTabs = document.querySelectorAll('.modal-tab');
-        const modalSections = document.querySelectorAll('.modal-form-section');
-
-        function toggleModal(show = true, section = 'loginSection') {
-            if (show) {
-                authModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                switchModal(section);
-            } else {
-                authModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        function switchModal(sectionId) {
-            modalSections.forEach(section => section.classList.remove('active'));
-            modalTabs.forEach(tab => tab.classList.remove('active'));
-
-            document.getElementById(sectionId).classList.add('active');
-            document.querySelector(`[data-target="${sectionId}"]`).classList.add('active');
-        }
-
-        openLogin.addEventListener('click', () => toggleModal(true, 'loginSection'));
-        openRegister.addEventListener('click', () => toggleModal(true, 'registerSection'));
-        closeModal.addEventListener('click', () => toggleModal(false));
-
-        authModal.addEventListener('click', (e) => {
-            if (e.target === authModal) toggleModal(false);
-        });
-
-        modalTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                switchModal(tab.getAttribute('data-target'));
+            const filtered = toursData.filter(tour => {
+                if (tour.type === 'accommodation' && showAcc) return true;
+                if (tour.type === 'daily' && showDaily) return true;
+                return false;
             });
-        });
+
+            if (filtered.length === 0) {
+                noResults.style.display = 'block';
+                loadMoreSection.style.display = 'none';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            loadMoreSection.style.display = 'block';
+            tourCountText.textContent = `Toplam ${filtered.length} Tur Listeleniyor`;
+
+            filtered.forEach(tour => {
+                const img = unsplashMap[tour.id] || (tour.images[0]?.startsWith('http') ? tour.images[0] : 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800');
+
+                const card = `
+                    <div class="tour-card-wide">
+                        <div class="wide-card-img">
+                            <img src="${img}?q=80&w=800&auto=format&fit=crop" alt="${tour.title}">
+                            <span class="card-badge-top">${tour.type === 'accommodation' ? 'Konaklamalı' : tour.category}</span>
+                        </div>
+                        <div class="wide-card-content">
+                            <div>
+                                <div class="wide-card-meta">
+                                    <span><i class="fa-solid fa-clock"></i> ${tour.duration}</span>
+                                    <span><i class="fa-solid fa-calendar-days"></i> ${tour.days.join(', ')}</span>
+                                </div>
+                                <h3 class="wide-card-title">${tour.title}</h3>
+                                <p class="wide-card-desc">${tour.description}</p>
+                            </div>
+                            <div class="wide-card-price-bot">
+                                <div class="price-box">
+                                    <span class="price-sub">Kişi başı</span>
+                                    <span class="price-main">${tour.price.adult} ${tour.price.currency}</span>
+                                </div>
+                                <a href="tour-detail.html?id=${tour.id}" class="btn-red">DETAYLARI GÖR</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                tourContainer.insertAdjacentHTML('beforeend', card);
+            });
+        }
+
+        function updateActiveLinks(type) {
+            document.querySelectorAll('.nav-link, .side-nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (type && link.getAttribute('href').includes(`type=${type}`)) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        filterAccommodation.addEventListener('change', renderTours);
+        filterDaily.addEventListener('change', renderTours);
+
+        function handleUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            const typeParam = params.get('type');
+
+            if (typeParam === 'accommodation') {
+                filterAccommodation.checked = true;
+                filterDaily.checked = false;
+            } else if (typeParam === 'daily') {
+                filterAccommodation.checked = false;
+                filterDaily.checked = true;
+            } else {
+                // Default or unfiltered state
+                filterAccommodation.checked = true;
+                filterDaily.checked = true;
+            }
+
+            updateActiveLinks(typeParam);
+            renderTours();
+        }
+
+        window.addEventListener('load', handleUrlParams);
+        window.addEventListener('popstate', handleUrlParams);
+
+        // Handle clicks on internal links to avoid full reload if possible, 
+        // but since they are standard <a> tags, popstate/load is sufficient.
+        // If we wanted true SPA feel, we'd intercept clicks, but standard links work fine now.
     </script>
-
-    <!-- Auth Modal -->
-    <div class="modal-overlay" id="authModal">
-        <div class="modal-container">
-            <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
-            <div class="modal-tabs">
-                <div class="modal-tab active" data-target="loginSection">Giriş Yap</div>
-                <div class="modal-tab" data-target="registerSection">Üye Ol</div>
-            </div>
-            <div class="modal-content">
-                <!-- Login Section -->
-                <div class="modal-form-section active" id="loginSection">
-
-                    <form class="auth-form">
-                        <div class="form-group">
-                            <label>E-posta Adresi</label>
-                            <div class="input-wrapper">
-                                <i class="fa-solid fa-envelope"></i>
-                                <input type="email" placeholder="ornek@mail.com" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Parola</label>
-                            <div class="input-wrapper">
-                                <i class="fa-solid fa-lock"></i>
-                                <input type="password" placeholder="••••••••" required>
-                            </div>
-                        </div>
-                        <div class="remember-forgot">
-                            <label class="remember-me"><input type="checkbox"> Beni Hatırla</label>
-                            <a href="#" class="forgot-pass">Şifremi Unuttum?</a>
-                        </div>
-                        <button type="submit" class="auth-btn">Giriş Yap</button>
-                    </form>
-                    <div class="auth-footer">
-                        Henüz üye değil misiniz? <button class="modal-switch-btn"
-                            onclick="switchModal('registerSection')">Üye Ol</button>
-                    </div>
-                </div>
-
-                <!-- Register Section -->
-                <div class="modal-form-section" id="registerSection">
-
-                    <form class="auth-form">
-                        <div class="form-group">
-                            <label>Ad Soyad</label>
-                            <div class="input-wrapper"><i class="fa-solid fa-user"></i><input type="text"
-                                    placeholder="Adınız Soyadınız" required></div>
-                        </div>
-                        <div class="form-group">
-                            <label>E-posta Adresi</label>
-                            <div class="input-wrapper"><i class="fa-solid fa-envelope"></i><input type="email"
-                                    placeholder="ornek@mail.com" required></div>
-                        </div>
-                        <div class="form-group">
-                            <label>Telefon Numarası</label>
-                            <div class="input-wrapper"><i class="fa-solid fa-phone"></i><input type="tel"
-                                    placeholder="05XX XXX XX XX" required></div>
-                        </div>
-                        <div class="form-group">
-                            <label>Parola</label>
-                            <div class="input-wrapper"><i class="fa-solid fa-lock"></i><input type="password"
-                                    placeholder="••••••••" required></div>
-                        </div>
-                        <button type="submit" class="auth-btn">Üye Ol</button>
-                    </form>
-                    <div class="auth-footer">
-                        Zaten üye misiniz? <button class="modal-switch-btn" onclick="switchModal('loginSection')">Giriş
-                            Yap</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

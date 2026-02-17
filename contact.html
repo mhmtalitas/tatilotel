@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | TatilOtel</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Modern Styles -->
+    <link rel="stylesheet" href="modern-core.css">
+    <link rel="stylesheet" href="modern-components.css">
+</head>
+
+<body>
+
+    <!-- Side Menu -->
+    <div class="side-menu-overlay" id="menuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <a href="index.html" class="logo-wrap" style="text-decoration: none; color: inherit;">
+                <span style="font-size: 1.2rem; font-weight: 800; color: var(--clr-primary);">TATIL</span><span
+                    style="font-size: 1.2rem; font-weight: 400;">OTEL</span>
+            </a>
+            <button id="menuClose" style="background: none; border: none; font-size: 1.5rem;"><i
+                    class="fa-solid fa-xmark"></i></button>
+        </div>
+        <a href="index.html" class="side-nav-link">Anasayfa</a>
+        <a href="tours.html?type=daily" class="side-nav-link">Günübirlik Turlar</a>
+        <a href="tours.html?type=accommodation" class="side-nav-link">Konaklamalı Turlar</a>
+        <a href="contact.html" class="side-nav-link active">İletişim</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header-main">
+        <div class="container" style="display: flex; align-items: center; width: 100%;">
+            <a href="index.html" class="logo-wrap" style="text-decoration: none; color: inherit;">
+                <span style="font-size: 1.5rem; font-weight: 800; color: var(--clr-primary);">TATIL</span><span
+                    style="font-size: 1.5rem; font-weight: 400;">OTEL</span>
+            </a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Anasayfa</a>
+                <a href="tours.html?type=daily" class="nav-link">Günübirlik Turlar</a>
+                <a href="tours.html?type=accommodation" class="nav-link">Konaklamalı Turlar</a>
+                <a href="contact.html" class="nav-link active">İletişim</a>
+            </nav>
+            <div class="header-right">
+                <a href="tel:08505323773" class="phone-link"><i class="fa-solid fa-phone"></i> 0850 532 37 73</a>
+                <button class="mobile-nav-toggle" id="menuOpen"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 4rem 0;">
+        <h1 class="font-heading" style="text-align: center; margin-bottom: 3.5rem;">Bizimle İletişime Geçin</h1>
+
+        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem;">
+            <!-- Contact Info -->
+            <div>
+                <div style="margin-bottom: 2.5rem;">
+                    <h3 class="font-heading" style="margin-bottom: 1rem; font-size: 1.2rem;">Merkez Ofisimiz</h3>
+                    <p style="color: var(--clr-text-muted); font-size: 0.95rem; line-height: 1.6;">
+                        Maslak Mah. Büyükdere Cad. No: 123<br>
+                        34485 Sarıyer / İSTANBUL
+                    </p>
+                </div>
+                <div style="margin-bottom: 2.5rem;">
+                    <h3 class="font-heading" style="margin-bottom: 1rem; font-size: 1.2rem;">Müşteri Hizmetleri</h3>
+                    <p
+                        style="color: var(--clr-text-muted); font-size: 1.1rem; font-weight: 700; color: var(--clr-primary);">
+                        0850 532 37 73
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--clr-text-muted);">Haftanın her günü 09:00 - 22:00 arası
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-heading" style="margin-bottom: 1rem; font-size: 1.2rem;">E-posta</h3>
+                    <p style="color: var(--clr-text-muted); font-size: 0.95rem;">info@tatilotel.com.tr</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div
+                style="background: white; padding: 3rem; border: 1px solid var(--clr-border); border-radius: var(--radius-sm);">
+                <form>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="search-field">
+                            <label>Adınız Soyadınız</label>
+                            <input type="text" class="input-modern" placeholder="Ad Soyad">
+                        </div>
+                        <div class="search-field">
+                            <label>E-posta Adresiniz</label>
+                            <input type="email" class="input-modern" placeholder="E-posta">
+                        </div>
+                    </div>
+                    <div class="search-field" style="margin-bottom: 1.5rem;">
+                        <label>Konu</label>
+                        <select class="input-modern">
+                            <option>Rezervasyon Hakkında</option>
+                            <option>İptal / İade İşlemleri</option>
+                            <option>Şikayet / Öneri</option>
+                            <option>Diğer</option>
+                        </select>
+                    </div>
+                    <div class="search-field" style="margin-bottom: 2rem;">
+                        <label>Mesajınız</label>
+                        <textarea class="input-modern" style="height: 150px; resize: none;"
+                            placeholder="Mesajınızı buraya yazınız..."></textarea>
+                    </div>
+                    <button class="btn-red" style="width: 100%; height: 50px;">MESAJI GÖNDER</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div
+            style="margin-top: 4rem; border-radius: var(--radius-md); overflow: hidden; height: 400px; box-shadow: var(--shadow-md);">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192635.03314167396!2d28.847748834606706!3d41.00550051185566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1cc2f9844490a!2zxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-simple" style="margin-top: 4rem;">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 1;">
+                    <a href="index.html" class="logo-wrap" style="text-decoration: none; color: inherit;">
+                        <span style="font-size: 1.3rem; font-weight: 800; color: var(--clr-primary);">TATIL</span><span
+                            style="font-size: 1.3rem; font-weight: 400;">OTEL</span>
+                    </a>
+                    <p style="margin-top: 1.5rem; color: var(--clr-text-muted); font-size: 0.9rem;">
+                        TatilOtel, en kaliteli tatil deneyimlerini en uygun fiyatlarla sunan lider turizm acentesidir.
+                    </p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- ... other columns ... -->
+            </div>
+            <div class="footer-bottom-simple">
+                <p>&copy; 2026 TatilOtel. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuOpen = document.getElementById('menuOpen');
+        const menuClose = document.getElementById('menuClose');
+        const sideMenu = document.getElementById('sideMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        function toggleMenu(show) {
+            sideMenu.classList.toggle('active', show);
+            menuOverlay.classList.toggle('active', show);
+            document.body.style.overflow = show ? 'hidden' : '';
+        }
+
+        if (menuOpen) menuOpen.addEventListener('click', () => toggleMenu(true));
+        if (menuClose) menuClose.addEventListener('click', () => toggleMenu(false));
+        if (menuOverlay) menuOverlay.addEventListener('click', () => toggleMenu(false));
+    </script>
+</body>
+
+</html>

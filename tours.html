@@ -111,7 +111,8 @@
             border-radius: var(--radius-md);
             overflow: hidden;
             transition: var(--transition);
-            min-height: 220px;
+            height: 240px;
+            /* Fixed height for consistency */
         }
 
         .tour-card-wide:hover {
@@ -122,12 +123,14 @@
         .wide-card-img {
             position: relative;
             overflow: hidden;
+            height: 100%;
         }
 
         .wide-card-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
             transition: var(--transition);
         }
 
@@ -136,10 +139,11 @@
         }
 
         .wide-card-content {
-            padding: 1.75rem;
+            padding: 1.25rem 1.75rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            overflow: hidden;
         }
 
         .wide-card-meta {
@@ -178,6 +182,34 @@
             margin-top: 1.5rem;
             padding-top: 1.25rem;
             border-top: 1px solid var(--clr-border);
+        }
+
+        @media (max-width: 900px) {
+            .layout-tours {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-sidebar {
+                display: none;
+                /* Can be toggled with a button later if needed */
+            }
+
+            .tour-card-wide {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .wide-card-img {
+                height: 200px;
+            }
+
+            .wide-card-content {
+                padding: 1.5rem;
+            }
+
+            .wide-card-title {
+                font-size: 1.15rem;
+            }
         }
     </style>
 </head>

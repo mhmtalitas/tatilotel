@@ -15,8 +15,8 @@
 
     /* 2. Fix Header */
     body {
-        padding-top: 140px !important;
-        /* Header height safety */
+        padding-top: 0 !important;
+        /* Modern header uses sticky, no padding needed on body */
     }
 
     .header-wrapper {
@@ -50,7 +50,9 @@
 
     /* 4. Reset Grid Layout to Stack */
     .detail-grid,
-    .info-grid-2col {
+    .info-grid-2col,
+    .contact-grid,
+    .form-grid {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;

@@ -20,8 +20,47 @@
     <style>
         .tour-hero-wrap {
             background-color: white;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             border-bottom: 1px solid var(--clr-border);
+        }
+
+        .page-header-slim {
+            background-color: #f8f9fa;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--clr-border);
+        }
+
+        .header-flex-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .breadcrumb-nav {
+            font-size: 0.8rem;
+            color: var(--clr-text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--clr-primary);
+        }
+
+        .breadcrumb-nav i {
+            font-size: 0.6rem;
+            opacity: 0.5;
+        }
+
+        .results-stat {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--clr-text-muted);
+        }
+
+        .results-stat span {
+            color: var(--clr-primary);
         }
 
         .tour-header-info {
@@ -35,14 +74,14 @@
             height: 500px;
             object-fit: cover;
             border-radius: var(--radius-md);
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         .detail-page-grid {
             display: grid;
             grid-template-columns: 1fr 350px;
             gap: 2rem;
-            padding: 3rem 0;
+            padding: var(--sp-md) 0;
         }
 
         .tab-menu {
@@ -167,10 +206,25 @@
                 class="fa-solid fa-phone"></i> 0850 532 37 73</a>
     </div>
 
+    <div class="page-header-slim">
+        <div class="container">
+            <div class="header-flex-row">
+                <nav class="breadcrumb-nav">
+                    <a href="index.html">Anasayfa</a> <i class="fa-solid fa-chevron-right"></i>
+                    <a href="tours.html">Turlar</a> <i class="fa-solid fa-chevron-right"></i>
+                    <span id="bcCategory">Kategori</span> <i class="fa-solid fa-chevron-right"></i>
+                    <span id="bcTitle" style="color: var(--clr-text); font-weight: 700;">Tur Adı</span>
+                </nav>
+                <div class="results-stat">
+                    <span>TatilOtel</span> Güvencesiyle
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="tourContent">
         <div class="tour-hero-wrap">
             <div class="container">
-                <div class="breadcrumb" id="tourBreadcrumb">Anasayfa > Turlar</div>
                 <div class="tour-header-info">
                     <div>
                         <h1 class="font-heading" id="tourTitle">Tur Başlığı Yükleniyor...</h1>
@@ -453,7 +507,8 @@
             document.getElementById('tourDays').innerHTML = `<i class="fa-solid fa-calendar-days"></i> ${fixTurkish(tour.days.join(', '))}`;
             document.getElementById('tourDescription').textContent = fixTurkish(tour.description);
             document.getElementById('tourPriceMain').textContent = tour.price.adult + " " + tour.price.currency;
-            document.getElementById('tourBreadcrumb').textContent = `Anasayfa > ${fixTurkish(tour.category)} > ${fixTurkish(tour.title)}`;
+            document.getElementById('bcCategory').textContent = fixTurkish(tour.category);
+            document.getElementById('bcTitle').textContent = fixTurkish(tour.title);
 
             // Populate Images & Gallery
             const imgUrl = unsplashMap[tourId] || "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1920&auto=format&fit=crop";

@@ -16,6 +16,7 @@
     <!-- Modern Styles -->
     <link rel="stylesheet" href="modern-core.css">
     <link rel="stylesheet" href="modern-components.css">
+    <link rel="stylesheet" href="mobile-fixes.css">
 </head>
 
 <body>
@@ -39,7 +40,7 @@
 
     <!-- Header -->
     <header class="header-main">
-        <div class="container" style="display: flex; align-items: center; width: 100%;">
+        <div class="container">
             <a href="index.html" class="logo-wrap" style="text-decoration: none; color: inherit;">
                 <span style="font-size: 1.5rem; font-weight: 800; color: var(--clr-primary);">TATIL</span><span
                     style="font-size: 1.5rem; font-weight: 400;">OTEL</span>
@@ -56,74 +57,127 @@
             </div>
         </div>
     </header>
-
-    <main class="container" style="padding: 4rem 0;">
-        <h1 class="font-heading" style="text-align: center; margin-bottom: 3.5rem;">Bizimle İletişime Geçin</h1>
-
-        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem;">
-            <!-- Contact Info -->
-            <div>
-                <div style="margin-bottom: 2.5rem;">
-                    <h3 class="font-heading" style="margin-bottom: 1rem; font-size: 1.2rem;">Merkez Ofisimiz</h3>
-                    <p style="color: var(--clr-text-muted); font-size: 0.95rem; line-height: 1.6;">
-                        Maslak Mah. Büyükdere Cad. No: 123<br>
-                        34485 Sarıyer / İSTANBUL
-                    </p>
+    <div class="page-header-slim">
+        <div class="container">
+            <div class="header-flex-row">
+                <nav class="breadcrumb-nav">
+                    <a href="index.html">Anasayfa</a> <i class="fa-solid fa-chevron-right"></i>
+                    <span style="color: var(--clr-text); font-weight: 700;">İletişim</span>
+                </nav>
+                <div class="results-stat">
+                    <span>TatilOtel</span> Destek Merkezi
                 </div>
-                <div style="margin-bottom: 2.5rem;">
-                    <h3 class="font-heading" style="margin-bottom: 1rem; font-size: 1.2rem;">Müşteri Hizmetleri</h3>
-                    <p
-                        style="color: var(--clr-text-muted); font-size: 1.1rem; font-weight: 700; color: var(--clr-primary);">
-                        0850 532 37 73
-                    </p>
-                    <p style="font-size: 0.85rem; color: var(--clr-text-muted);">Haftanın her günü 09:00 - 22:00 arası
-                    </p>
-                </div>
-                <div>
-                    <h3 class="font-heading" style="margin-bottom: 1rem; font-size: 1.2rem;">E-posta</h3>
-                    <p style="color: var(--clr-text-muted); font-size: 0.95rem;">info@tatilotel.com.tr</p>
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div
-                style="background: white; padding: 3rem; border: 1px solid var(--clr-border); border-radius: var(--radius-sm);">
-                <form>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-                        <div class="search-field">
-                            <label>Adınız Soyadınız</label>
-                            <input type="text" class="input-modern" placeholder="Ad Soyad">
-                        </div>
-                        <div class="search-field">
-                            <label>E-posta Adresiniz</label>
-                            <input type="email" class="input-modern" placeholder="E-posta">
-                        </div>
-                    </div>
-                    <div class="search-field" style="margin-bottom: 1.5rem;">
-                        <label>Konu</label>
-                        <select class="input-modern">
-                            <option>Rezervasyon Hakkında</option>
-                            <option>İptal / İade İşlemleri</option>
-                            <option>Şikayet / Öneri</option>
-                            <option>Diğer</option>
-                        </select>
-                    </div>
-                    <div class="search-field" style="margin-bottom: 2rem;">
-                        <label>Mesajınız</label>
-                        <textarea class="input-modern" style="height: 150px; resize: none;"
-                            placeholder="Mesajınızı buraya yazınız..."></textarea>
-                    </div>
-                    <button class="btn-red" style="width: 100%; height: 50px;">MESAJI GÖNDER</button>
-                </form>
             </div>
         </div>
+    </div>
 
-        <!-- Map Section -->
-        <div
-            style="margin-top: 4rem; border-radius: var(--radius-md); overflow: hidden; height: 400px; box-shadow: var(--shadow-md);">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192635.03314167396!2d28.847748834606706!3d41.00550051185566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1cc2f9844490a!2zxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <main>
+        <div class="container" style="padding: 4rem 0;">
+            <div class="contact-grid">
+                <!-- Contact Info Panels -->
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <div
+                        style="background: white; padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--clr-border); transition: var(--transition); box-shadow: var(--shadow-sm);">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(227, 6, 19, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--clr-primary);">
+                            <i class="fa-solid fa-location-dot" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 class="font-heading" style="margin-bottom: 0.75rem; font-size: 1.25rem;">Merkez Ofis</h3>
+                        <p style="color: var(--clr-text-muted); font-size: 0.95rem; line-height: 1.6;">
+                            Maslak Mah. Büyükdere Cad. No: 123<br>
+                            Spine Tower Kat: 12<br>
+                            34485 Sarıyer / İSTANBUL
+                        </p>
+                    </div>
+
+                    <div
+                        style="background: white; padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--clr-border); transition: var(--transition); box-shadow: var(--shadow-sm);">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(227, 6, 19, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--clr-primary);">
+                            <i class="fa-solid fa-headset" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 class="font-heading" style="margin-bottom: 0.75rem; font-size: 1.25rem;">Müşteri Destek
+                            Hattı</h3>
+                        <p
+                            style="color: var(--clr-primary); font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">
+                            0850 532 37 73
+                        </p>
+                        <p style="font-size: 0.85rem; color: var(--clr-text-muted);">
+                            <i class="fa-regular fa-clock" style="margin-right: 5px;"></i> Her gün 09:00 - 22:00
+                        </p>
+                    </div>
+
+                    <div
+                        style="background: white; padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--clr-border); transition: var(--transition); box-shadow: var(--shadow-sm);">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(227, 6, 19, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--clr-primary);">
+                            <i class="fa-solid fa-envelope" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 class="font-heading" style="margin-bottom: 0.75rem; font-size: 1.25rem;">E-posta Yazın</h3>
+                        <p style="color: var(--clr-text-muted); font-size: 1rem; font-weight: 500;">
+                            info@tatilotel.com.tr
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form Card -->
+                <div
+                    style="background: white; padding: 3rem; border: 1px solid var(--clr-border); border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+                    <div style="margin-bottom: 2.5rem;">
+                        <h2 class="font-heading" style="font-size: 1.75rem; margin-bottom: 0.75rem;">Mesaj Gönderin</h2>
+                        <p style="color: var(--clr-text-muted); font-size: 0.95rem;">Size en kısa sürede dönüş
+                            sağlayacağız.</p>
+                    </div>
+
+                    <form>
+                        <div class="form-grid" style="margin-bottom: 1.5rem;">
+                            <div class="search-field">
+                                <label>Adınız Soyadınız</label>
+                                <input type="text" class="input-modern" placeholder="Lütfen adınızı giriniz">
+                            </div>
+                            <div class="search-field">
+                                <label>E-posta Adresi</label>
+                                <input type="email" class="input-modern" placeholder="example@mail.com">
+                            </div>
+                        </div>
+                        <div class="search-field" style="margin-bottom: 1.5rem;">
+                            <label>Konu</label>
+                            <select class="input-modern">
+                                <option>Rezervasyon ve Bilgi</option>
+                                <option>Grup Turları Teklif</option>
+                                <option>İptal ve İade Talebi</option>
+                                <option>Öneri ve Şikayet</option>
+                                <option>Diğer</option>
+                            </select>
+                        </div>
+                        <div class="search-field" style="margin-bottom: 2.5rem;">
+                            <label>Mesajınız</label>
+                            <textarea class="input-modern" style="height: 180px; resize: none;"
+                                placeholder="Size nasıl yardımcı olabiliriz?"></textarea>
+                        </div>
+                        <button class="btn-red"
+                            style="width: 100%; height: 55px; border-radius: var(--radius-sm); font-size: 1.1rem;">MESAJI
+                            GÖNDER</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div style="margin-top: 4rem;">
+                <div
+                    style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: flex-end;">
+                    <h3 class="font-heading" style="font-size: 1.5rem;">Haritada Yerimiz</h3>
+                    <a href="https://maps.google.com" target="_blank"
+                        style="color: var(--clr-primary); font-size: 0.9rem; font-weight: 700;">Yol Tarifi Al <i
+                            class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 5px;"></i></a>
+                </div>
+                <div class="map-wrap"
+                    style="border-radius: var(--radius-md); overflow: hidden; height: 450px; box-shadow: var(--shadow-md); border: 1px solid var(--clr-border);">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.111!2d29.021!3d41.111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1cc2f9844490a!2zTWFzbGFrLCBTYXLEsXllci_EsHN0YW5idWw!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -145,10 +199,35 @@
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </div>
                 </div>
-                <!-- ... other columns ... -->
+                <div class="footer-col">
+                    <h4>Popüler Rotalar</h4>
+                    <ul>
+                        <li><a href="#">Balkan Turları</a></li>
+                        <li><a href="#">Avrupa Turları</a></li>
+                        <li><a href="#">Uzak Doğu</a></li>
+                        <li><a href="#">Kültür Turları</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kurumsal</h4>
+                    <ul>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                        <li><a href="#">KVKK</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Müşteri Hizmetleri</h4>
+                    <ul>
+                        <li><a href="#">Yardım Merkezi</a></li>
+                        <li><a href="#">İptal/İade Koşulları</a></li>
+                        <li><a href="#">Ödeme Seçenekleri</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="footer-bottom-simple">
-                <p>&copy; 2026 TatilOtel. Tüm hakları saklıdır.</p>
+                <p>&copy; 2026 TatilOtel. Tüm hakları saklıdır. ETS Tur ilhamıyla geliştirilmiştir.</p>
             </div>
         </div>
     </footer>

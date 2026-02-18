@@ -18,23 +18,50 @@
     <link rel="stylesheet" href="modern-components.css">
 
     <style>
-        .page-header-mini {
+        .page-header-slim {
             background-color: white;
-            padding: 2rem 0;
+            padding: 1rem 0;
             border-bottom: 1px solid var(--clr-border);
         }
 
-        .breadcrumb {
-            font-size: 0.8rem;
+        .header-flex-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .breadcrumb-nav {
+            font-size: 0.85rem;
             color: var(--clr-text-muted);
-            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--clr-primary);
+        }
+
+        .breadcrumb-nav i {
+            font-size: 0.65rem;
+            opacity: 0.5;
+        }
+
+        .results-stat {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--clr-text);
+        }
+
+        .results-stat span {
+            color: var(--clr-primary);
         }
 
         .layout-tours {
             display: grid;
             grid-template-columns: 280px 1fr;
             gap: 2rem;
-            padding: 3rem 0;
+            padding: var(--sp-md) 0;
         }
 
         .filter-sidebar {
@@ -197,11 +224,18 @@
                 class="fa-solid fa-phone"></i> 0850 532 37 73</a>
     </div>
 
-    <div class="page-header-mini">
+    <div class="page-header-slim">
         <div class="container">
-            <div class="breadcrumb">Anasayfa > Yurtdışı Turlar > Balkan Turları</div>
-            <h1 class="font-heading">Balkan Turları Listeleniyor</h1>
-            <p style="color: var(--clr-text-muted); font-size: 0.9rem;">12 adet tur bulundu.</p>
+            <div class="header-flex-row">
+                <nav class="breadcrumb-nav">
+                    <a href="index.html">Anasayfa</a> <i class="fa-solid fa-chevron-right"></i>
+                    <a href="tours.html">Turlar</a> <i class="fa-solid fa-chevron-right"></i>
+                    <span id="currentCategory" style="color: var(--clr-text); font-weight: 700;">Balkan Turları</span>
+                </nav>
+                <div class="results-stat">
+                    <span id="tourCountText">Yükleniyor...</span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -375,7 +409,7 @@
 
             noResults.style.display = 'none';
             loadMoreSection.style.display = 'block';
-            tourCountText.textContent = `Toplam ${filtered.length} Tur Listeleniyor`;
+            tourCountText.innerHTML = `<span>${filtered.length}</span> Tur Bulundu`;
 
             filtered.forEach(tour => {
                 const img = unsplashMap[tour.id] || (tour.images[0]?.startsWith('http') ? tour.images[0] : 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800');

@@ -10,7 +10,7 @@
 :root {
     /* Brand Colors */
     --clr-primary: #E30613;
-    /* Signature Red */
+    /* Signature Red (ETS Style) */
     --clr-primary-hover: #C40510;
     --clr-white: #FFFFFF;
     --clr-bg: #F8F9FA;
@@ -85,9 +85,17 @@ ul {
 }
 
 .container {
+    width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 5%;
+    /* Fluid padding for better spacing on all screens */
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 1.5rem;
+    }
 }
 
 /* Red Button - Primary Action */

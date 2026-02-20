@@ -541,7 +541,17 @@
         duration: "5 Gece 6 Gün",
         days: ["Her Pazar"],
         description: "Mezopotamya'nın kalbine yolculuk. Göbeklitepe, Balıklıgöl, Mardin Eski Şehir ve Halfeti tekne turu ile tarihin sıfır noktasına tanıklık edin.",
-        images: ["https://images.unsplash.com/photo-1582260193108-7a56193796bd"],
+        images: [
+            "assets/images/tours/gap-turu/gap-1.webp",
+            "assets/images/tours/gap-turu/gap-2.webp",
+            "assets/images/tours/gap-turu/gap-3.webp",
+            "assets/images/tours/gap-turu/gap-4.webp",
+            "assets/images/tours/gap-turu/gap-5.webp",
+            "assets/images/tours/gap-turu/gap-6.webp",
+            "assets/images/tours/gap-turu/gap-7.webp",
+            "assets/images/tours/gap-turu/gap-8.webp",
+            "assets/images/tours/gap-turu/gap-9.webp"
+        ],
         highlights: ["Göbeklitepe Ziyareti", "Mardin Taş Evler", "Halfeti Batık Şehir"],
         included: ["Ulaşım", "Konaklama", "Rehberlik", "Müze Girişleri"],
         excluded: ["Yemeklerdeki İçecekler"],
@@ -562,5 +572,30 @@
         included: ["Lüks Otobüslerle Ulaşım", "Mağara Otelde Konaklama", "Kahvaltı"],
         excluded: ["Balon Turu"],
         notes: ["Hava durumuna göre balon turları iptal olabilir."]
+    },
+    {
+        id: "dogu-karadeniz-turu",
+        location: "Artvin - Rize - Trabzon",
+        title: "Doğu Karadeniz Turu (6 Gece)",
+        category: "Kültür Turları",
+        type: "accommodation",
+        price: { adult: 1800, child: 1500, infant: 0, currency: "₺" },
+        duration: "6 Gece 7 Gün",
+        days: ["Her Pazartesi"],
+        description: "Yeşilin her tonunu göreceğiniz, yaylalarında huzur bulacağınız eşsiz Karadeniz turu. Uzungöl, Ayder Yaylası, Sümela Manastırı ve Karagöl gibi doğa harikalarını keşfedin.",
+        images: [
+            "assets/images/tours/dogu-karadeniz-turu/dogu karadeniz 1.webp",
+            "assets/images/tours/dogu-karadeniz-turu/dogu karadeniz 2.webp",
+            "assets/images/tours/dogu-karadeniz-turu/dogu karadeniz 3.webp",
+            "assets/images/tours/dogu-karadeniz-turu/dogu karadeniz 4.webp",
+            "assets/images/tours/dogu-karadeniz-turu/dogu karadeniz 5.webp",
+            "assets/images/tours/dogu-karadeniz-turu/dogu karadeniz 6.webp",
+            "assets/images/tours/dogu-karadeniz-turu/dogu karadeniz 7.webp",
+            "assets/images/tours/dogu-karadeniz-turu/dogu karadeniz.webp"
+        ],
+        highlights: ["Uzungöl Manzarası", "Ayder Yaylası", "Sümela Manastırı", "Borçka Karagöl"],
+        included: ["Lüks Otobüslerle Ulaşım", "Konaklama", "Kahvaltı ve Akşam Yemeği", "Profesyonel Rehberlik"],
+        excluded: ["Öğle Yemekleri", "Müze ve Ören Yeri Girişleri", "Kişisel Harcamalar"],
+        notes: ["Bölgede hava şartları anlık değişebilir, yağmurluk ve rahat ayakkabı bulundurunuz.", "Yaylalara çıkarken yanınızda mutlaka kalın kıyafet bulundurun."]
     }
 ];

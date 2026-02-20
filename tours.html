@@ -444,12 +444,13 @@
             tourCountText.innerHTML = `<span>${filtered.length}</span> Tur Bulundu`;
 
             filtered.forEach(tour => {
-                const img = unsplashMap[tour.id] || (tour.images[0]?.startsWith('http') ? tour.images[0] : 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800');
+                const img = tour.images && tour.images.length > 0 ? tour.images[0] : 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800';
+                const imgSrc = img.startsWith('http') ? `${img}?q=80&w=800&auto=format&fit=crop` : img;
 
                 const card = `
                     <div class="tour-card-wide">
                         <div class="wide-card-img">
-                            <img src="${img}?q=80&w=800&auto=format&fit=crop" alt="${tour.title}">
+                            <img src="${imgSrc}" alt="${tour.title}">
                             <span class="card-badge-top">${tour.type === 'accommodation' ? 'Konaklamalı' : tour.category}</span>
                         </div>
                         <div class="wide-card-content">

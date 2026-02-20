@@ -462,26 +462,7 @@
                 .replace(/ÔÇô/g, "–");
         }
 
-        // Image Map for Unsplash (since local images are missing)
-        const unsplashMap = {
-            'at-safari': 'https://images.unsplash.com/photo-1598974357801-cbca100e65d3',
-            'antalya-akvaryum': 'https://images.unsplash.com/photo-1509130298739-651801c76e96',
-            'rafting-turu': 'https://images.unsplash.com/photo-1530866495547-152483f5bf21',
-            'rafting-extra': 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57',
-            'alanya-tekne-turu': 'https://images.unsplash.com/photo-1544551763-46a013bb70d5',
-            'jeep-safari': 'https://images.unsplash.com/photo-1533550822823-325e408891aa',
-            'yamac-parasutu': 'https://images.unsplash.com/photo-1597858905333-e7f09f538743',
-            'yunus-gosterisi': 'https://images.unsplash.com/photo-1570481662006-a3a1374699e8',
-            'aquapark': 'https://images.unsplash.com/photo-1540541338287-41700207dee6',
-            'quad-safari': 'https://images.unsplash.com/photo-1453306458620-5bbef13a5bca',
-            'dalis': 'https://images.unsplash.com/photo-1544551763-8dd0c4578fe6',
-            'manavgat-tekne-turu': 'https://images.unsplash.com/photo-1516627145497-ae6968895b74',
-            'deniz-yoluyla-alanya': 'https://images.unsplash.com/photo-1464948950524-746aae7264a6',
-            'mini-alanya-jeep': 'https://images.unsplash.com/photo-1542031024357-1903673c6838',
-            'gece-safarisi': 'https://images.unsplash.com/photo-1541410965313-d53b3c16ef17',
-            'sapadere-kanyonu': 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b',
-            'green-kanyon': 'https://images.unsplash.com/photo-1584148721201-b6432e0d510e'
-        };
+        /* Images will be loaded directly from local assets */
 
         // Load Content
         window.addEventListener('load', () => {
@@ -511,18 +492,16 @@
             document.getElementById('bcTitle').textContent = fixTurkish(tour.title);
 
             // Populate Images & Gallery
-            const imgUrl = unsplashMap[tourId] || "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1920&auto=format&fit=crop";
             const mainImgElement = document.getElementById('tourImg');
-            mainImgElement.src = imgUrl + "?q=80&w=1920&auto=format&fit=crop";
+            const defaultImg = "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1920&auto=format&fit=crop";
+            const firstImg = tour.images && tour.images.length > 0 ? tour.images[0] : defaultImg;
+            mainImgElement.src = firstImg;
 
             const galleryContainer = document.getElementById('tourGallery');
             if (tour.images && tour.images.length > 0) {
                 tour.images.forEach((img, index) => {
                     const imgThumb = document.createElement('img');
-                    // We use Unsplash for variety or just the main one with different params
-                    // But if we had real images we would use: imgThumb.src = img;
-                    // For now, let's just use the same Unsplash with different IDs if possible, or just the same one
-                    imgThumb.src = imgUrl + `?q=60&w=200&auto=format&fit=crop&sig=${index}`;
+                    imgThumb.src = img;
                     imgThumb.style.width = "80px";
                     imgThumb.style.height = "60px";
                     imgThumb.style.objectFit = "cover";
@@ -530,12 +509,14 @@
                     imgThumb.style.cursor = "pointer";
                     imgThumb.style.transition = "0.2s";
                     imgThumb.onclick = () => {
-                        mainImgElement.src = imgUrl + `?q=80&w=1920&auto=format&fit=crop&sig=${index}`;
+                        mainImgElement.src = img;
                         document.querySelectorAll('#tourGallery img').forEach(i => i.style.border = 'none');
                         imgThumb.style.border = '2px solid var(--clr-primary)';
                     };
                     galleryContainer.appendChild(imgThumb);
-                    if (index === 0) imgThumb.style.border = '2px solid var(--clr-primary)';
+                    if (index === 0) {
+                        imgThumb.style.border = '2px solid var(--clr-primary)';
+                    }
                 });
             }
 

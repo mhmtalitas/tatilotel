@@ -133,7 +133,7 @@
 /* Functional Hero */
 .hero-clean {
     background-color: #E30613;
-    padding: max(1.5rem, 3vh) 0 max(5rem, 11vh);
+    padding: max(1.5rem, 3vh) 0 max(4rem, 8vh);
     color: var(--clr-white);
     text-align: center;
     position: relative;
@@ -149,7 +149,7 @@
 /* Trust Widget / Search Bar */
 .search-widget-wrap {
     max-width: 1100px;
-    margin: -3rem auto 1.5rem;
+    margin: -4rem auto 1.5rem;
     position: relative;
     z-index: 10;
 }
@@ -203,8 +203,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 2rem;
-    grid-row-gap: max(3rem, 10vh);
-    padding: 2rem 0;
+    grid-row-gap: max(2rem, 8vh);
+    padding: 1rem 0 2rem;
 }
 
 @media (max-width: 1024px) {
@@ -505,6 +505,7 @@
 
 .campaigns-scroll {
     display: flex;
+    justify-content: center;
     gap: 1.5rem;
     overflow-x: auto;
     padding: 1rem 1rem 1rem 1rem;
@@ -512,6 +513,12 @@
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     -ms-overflow-style: none;
+}
+
+@media (max-width: 1024px) {
+    .campaigns-scroll {
+        justify-content: flex-start;
+    }
 }
 
 .campaigns-scroll::-webkit-scrollbar {
@@ -535,8 +542,8 @@
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-    width: 136px;
-    height: 136px;
+    width: 124px;
+    height: 124px;
     position: relative;
     z-index: 2;
     overflow: hidden;
@@ -550,8 +557,8 @@
 }
 
 .campaign-img-wrap {
-    width: 124px;
-    height: 124px;
+    width: 112px;
+    height: 112px;
     border-radius: 50%;
     flex-shrink: 0;
     position: relative;
@@ -668,24 +675,6 @@
     opacity: 0;
 }
 
-.btn-blue {
-    background: #0072FF;
-    color: white;
-    padding: 0.8rem 2rem;
-    border-radius: var(--radius-sm);
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: var(--transition);
-}
-
-.btn-blue:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 114, 255, 0.3);
-}
 
 @media (max-width: 768px) {
     .campaign-item {

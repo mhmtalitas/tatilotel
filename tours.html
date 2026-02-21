@@ -425,12 +425,26 @@
             const showAcc = filterAccommodation.checked;
             const showDaily = filterDaily.checked;
 
+            const params = new URLSearchParams(window.location.search);
+            const searchQuery = params.get('q') ? params.get('q').toLowerCase() : '';
+
             tourContainer.innerHTML = '';
 
             const filtered = toursData.filter(tour => {
-                if (tour.type === 'accommodation' && showAcc) return true;
-                if (tour.type === 'daily' && showDaily) return true;
-                return false;
+                let typeMatch = false;
+                if (tour.type === 'accommodation' && showAcc) typeMatch = true;
+                if (tour.type === 'daily' && showDaily) typeMatch = true;
+
+                if (!typeMatch) return false;
+
+                if (searchQuery) {
+                    const titleMatch = tour.title.toLowerCase().includes(searchQuery);
+                    const descMatch = tour.description.toLowerCase().includes(searchQuery);
+                    const locMatch = tour.location && tour.location.toLowerCase().includes(searchQuery);
+                    if (!titleMatch && !descMatch && !locMatch) return false;
+                }
+
+                return true;
             });
 
             if (filtered.length === 0) {

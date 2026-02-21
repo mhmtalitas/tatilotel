@@ -204,7 +204,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 2rem;
     grid-row-gap: max(2rem, 8vh);
-    padding: 1rem 0 2rem;
+    padding: 0.5rem 0 2rem;
 }
 
 @media (max-width: 1024px) {
@@ -639,10 +639,7 @@
 }
 
 .campaign-label {
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 12px;
     font-size: 0.85rem;
     color: var(--clr-text);
     font-weight: 600;
@@ -650,6 +647,8 @@
     text-align: center;
     transition: opacity 0.3s;
     opacity: 1;
+    position: relative;
+    z-index: 10;
 }
 
 .campaign-label::after {
@@ -703,7 +702,7 @@
     }
 
     .campaign-label {
-        bottom: -20px;
+        margin-top: 10px;
         font-size: 0.75rem;
     }
 }
